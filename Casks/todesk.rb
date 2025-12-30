@@ -10,7 +10,11 @@ cask "todesk" do
 
   depends_on macos: ">= :big_sur"
 
-  pkg "ToDesk_latest.pkg"
+  installer script: {
+    executable: "/usr/sbin/installer",
+    args: ["-pkg", "#{staged_path}/ToDesk_latest.pkg", "-target", "/"],
+    sudo: true,
+  }
 
   uninstall delete: [
     "/Applications/ToDesk.app",
