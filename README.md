@@ -4,6 +4,19 @@ Homebrew Tap 仓库，包含实用工具的 Casks 和 Formulas
 
 ## 可用工具
 
+### ToDesk - 远程桌面软件
+
+[ToDesk](https://www.todesk.com/) 是一款免费、安全、流畅的远程桌面软件，支持跨平台连接，提供高性能远程控制体验。
+
+**主要功能：**
+- 超强性能：最高支持 8K 和 360FPS 帧率画质，<3ms 超低延迟
+- 隐私保护：隐私屏防窥和远程关闭物理屏
+- 外设映射：支持映射游戏手柄、数位板、游戏鼠标、摄像头、麦克风
+- 全平台覆盖：Win/Mac/Linux/Android/iOS/鸿蒙
+- 高速文件传输：支持拖拽与复制粘贴，专享高速服务器
+- 安全守护：移动端主设备二次验证
+- 多屏协作与虚拟屏：自由驾驭多屏电脑和支持虚拟屏
+
 ### XTerminal - 现代化终端管理工具
 
 [XTerminal](https://www.terminal.icu/) 是一款现代化跨平台终端管理工具，专为需要管理多台服务器的开发者、运维工程师和系统管理员设计。
@@ -48,6 +61,9 @@ brew tap lz-lunzi/homebrew-buket
 2. 安装工具：
 
 ```bash
+# 安装 ToDesk
+brew install --cask todesk
+
 # 安装 XTerminal
 brew install --cask xterminal
 
@@ -61,6 +77,9 @@ brew install --cask quotio
 ## 升级
 
 ```bash
+# 升级 ToDesk
+brew upgrade --cask todesk
+
 # 升级 XTerminal
 brew upgrade --cask xterminal
 
@@ -74,6 +93,9 @@ brew upgrade --cask quotio
 ## 卸载
 
 ```bash
+# 卸载 ToDesk
+brew uninstall --cask todesk
+
 # 卸载 XTerminal
 brew uninstall --cask xterminal
 
@@ -95,6 +117,8 @@ brew uninstall --cask quotio
 
 ## 官方文档
 
+- [ToDesk 官网](https://www.todesk.com/)
+- [XTerminal 官网](https://www.terminal.icu/)
 - [Z Code 官网](https://zcode-ai.com/cn)
 - [Quotio GitHub](https://github.com/nguyenphutrong/quotio)
 - [Qoder CLI 文档](https://docs.qoder.com/cli)
