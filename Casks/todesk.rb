@@ -1,6 +1,6 @@
 cask "todesk" do
-  version "4.8.2.3"
-  sha256 "688f5d20308e22c4acc721253e52ec6b61bebf686bc26e86c6999a960c6d9781"
+  version :latest
+  sha256 :no_check
 
   url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg",
       verified: "dl.todesk.com"
@@ -10,14 +10,16 @@ cask "todesk" do
 
   depends_on macos: ">= :big_sur"
 
-  pkg "ToDesk_#{version}.pkg"
+  pkg "ToDesk_#{version}.pkg",
+      allow_untrusted: true
 
-  uninstall pkgutil: [
-             "com.todesk.pkg.ToDesk",
-           ],
+  uninstall pkgutil: ["com.todesk.pkg.ToDesk"],
              quit: "ToDesk"
 
   caveats <<~EOS
+    NOTE: ToDesk installer is dynamically generated and may change checksums.
+    SHA256 verification has been disabled.
+
     ToDesk features:
     - Remote desktop control with <3ms latency
     - 8K and 360FPS display support
