@@ -6,7 +6,6 @@ cask "quotio" do
   name "Quotio"
   desc "AI coding assistants manager with multi-provider support and quota tracking"
   homepage "https://github.com/nguyenphutrong/quotio"
-  license "MIT"
 
   app "Quotio.app"
 
