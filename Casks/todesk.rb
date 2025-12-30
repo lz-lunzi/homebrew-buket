@@ -10,13 +10,12 @@ cask "todesk" do
 
   depends_on macos: ">= :big_sur"
 
-  pkg "ToDesk_#{version}.pkg",
-      allow_untrusted: true
+  pkg "ToDesk_#{version}.pkg"
 
   uninstall pkgutil: [
-    "com.todesk.pkg.ToDesk",
-  ],
-      quit: "ToDesk"
+             "com.todesk.pkg.ToDesk",
+           ],
+             quit: "ToDesk"
 
   caveats <<~EOS
     ToDesk features:
