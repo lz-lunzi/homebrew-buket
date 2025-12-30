@@ -1,6 +1,19 @@
 # homebrew-buket
 
-Qoder CLI 的 Homebrew Tap 仓库（示例）
+Homebrew Tap 仓库，包含实用工具的 Casks 和 Formulas
+
+## 可用工具
+
+### Quotio - AI 编程助手管理器
+
+[Quotio](https://github.com/nguyenphutrong/quotio) 是一个原生的 macOS 菜单栏应用，用于统一管理多个 AI 账户（Claude、Gemini、OpenAI、Qwen、Antigravity 等），提供实时配额追踪和智能故障转移。
+
+**主要功能：**
+- 多提供商支持：Claude、Gemini、OpenAI Codex、Qwen、Vertex AI 等
+- 实时仪表盘：监控请求流量、令牌使用和成功率
+- 智能配额管理：可视化配额追踪和自动故障转移策略
+- 菜单栏集成：快速访问服务器状态和配额概览
+- 代理配置：自动配置 AI 编程工具（Claude Code、OpenCode 等）
 
 ## 安装
 
@@ -10,30 +23,37 @@ Qoder CLI 的 Homebrew Tap 仓库（示例）
 brew tap your-username/homebrew-buket
 ```
 
-2. 安装 qodercli：
+2. 安装工具：
 
 ```bash
-brew install qodercli
+# 安装 Quotio
+brew install --cask quotio
 ```
-
-## 注意
-
-- 这是一个示例仓库，展示了如何创建 Homebrew Tap
-- qoder CLI 官方 tap：`brew install qoderai/qoder/qodercli --cask`
-- 实际使用时，请访问 [qoder.com/cli](https://qoder.com/cli) 获取官方安装方式
 
 ## 升级
 
 ```bash
-brew upgrade qodercli
+# 升级 Quotio
+brew upgrade --cask quotio
 ```
 
 ## 卸载
 
 ```bash
-brew uninstall qodercli
+# 卸载 Quotio
+brew uninstall --cask quotio
 ```
+
+## 其他工具
+
+### Qoder CLI（示例）
+
+这是 qoder CLI 的 Formula 示例，展示了如何创建 Homebrew Formula。注意：
+
+- qoder CLI 官方 tap：`brew install qoderai/qoder/qodercli --cask`
+- 实际使用时，请访问 [qoder.com/cli](https://qoder.com/cli) 获取官方安装方式
 
 ## 官方文档
 
-[Qoder CLI 文档](https://docs.qoder.com/cli)
+- [Quotio GitHub](https://github.com/nguyenphutrong/quotio)
+- [Qoder CLI 文档](https://docs.qoder.com/cli)
