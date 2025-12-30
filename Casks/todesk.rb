@@ -2,7 +2,7 @@ cask "todesk" do
   version :latest
   sha256 :no_check
 
-  url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg",
+  url "https://dl.todesk.com/macos/ToDesk_latest.pkg",
       verified: "dl.todesk.com"
   name "ToDesk"
   desc "Secure and fast remote desktop software with high performance"
@@ -10,7 +10,7 @@ cask "todesk" do
 
   depends_on macos: ">= :big_sur"
 
-  installer manual: "ToDesk_#{version}.pkg"
+  pkg "ToDesk_latest.pkg"
 
   uninstall pkgutil: ["com.todesk.pkg.ToDesk"],
              quit: "ToDesk"
