@@ -4,6 +4,18 @@ Homebrew Tap 仓库，包含实用工具的 Casks 和 Formulas
 
 ## 可用工具
 
+### XTerminal - 现代化终端管理工具
+
+[XTerminal](https://www.terminal.icu/) 是一款现代化跨平台终端管理工具，专为需要管理多台服务器的开发者、运维工程师和系统管理员设计。
+
+**主要功能：**
+- SSH 终端：支持密码、秘钥、登录凭证等多种验证方式
+- SFTP 文件传输：图形化文件浏览器，拖拽上传下载
+- 端口转发：本地转发、远程转发、动态代理（SOCKS5）
+- 本地终端：直接操作本机 Shell
+- AI 助手：内置 AI 对话能力，命令解释与生成
+- 服务器资源监控：CPU/内存/磁盘/网络实时监控
+
 ### Z Code - AI 编程平台
 
 [Z Code](https://zcode-ai.com/cn) 是一个简单、快速、即时可用的 AI 编程平台，将最强大的 AI Agents 与现有工具链结合，让你在熟悉的流程中完成规划、编码、评审与上线。
@@ -36,6 +48,9 @@ brew tap lz-lunzi/homebrew-buket
 2. 安装工具：
 
 ```bash
+# 安装 XTerminal
+brew install --cask xterminal
+
 # 安装 Z Code
 brew install --cask z-code
 
@@ -46,6 +61,9 @@ brew install --cask quotio
 ## 升级
 
 ```bash
+# 升级 XTerminal
+brew upgrade --cask xterminal
+
 # 升级 Z Code
 brew upgrade --cask z-code
 
@@ -56,6 +74,9 @@ brew upgrade --cask quotio
 ## 卸载
 
 ```bash
+# 卸载 XTerminal
+brew uninstall --cask xterminal
+
 # 卸载 Z Code
 brew uninstall --cask z-code
 
