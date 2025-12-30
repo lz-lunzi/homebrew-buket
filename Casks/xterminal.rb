@@ -1,6 +1,6 @@
 cask "xterminal" do
   version "4.3.7"
-  sha256 :no_check
+  sha256 "f764f567c2867b9fd2c6a797811a3c558db6f9e44db0dc9b6cc2ce12a9ab9be9"
 
   url "https://cdn-office.xterminal.cn/downloads/XTerminal-#{version}-mac-arm64.dmg",
       verified: "cdn-office.xterminal.cn"
