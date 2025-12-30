@@ -10,11 +10,18 @@ cask "todesk" do
 
   depends_on macos: ">= :big_sur"
 
-  pkg "ToDesk_#{version}.pkg",
-      allow_untrusted: true
+  installer script: {
+    executable: "/usr/sbin/installer",
+    args: ["-pkg", "#{staged_path}/ToDesk_latest.pkg", "-target", "/"],
+    sudo: true,
+  }
 
-  uninstall pkgutil: ["com.todesk.pkg.ToDesk"],
-             quit: "ToDesk"
+  uninstall script: {
+    executable: "/usr/sbin/pkgutil",
+    args: ["--forget", "com.todesk.pkg.ToDesk"],
+    sudo: true,
+  },
+      quit: "ToDesk"
 
   caveats <<~EOS
     NOTE: ToDesk installer is dynamically generated and may change checksums.
