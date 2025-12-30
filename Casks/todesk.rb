@@ -1,18 +1,16 @@
 cask "todesk" do
-  version :latest
-  sha256 :no_check
+  version "4.8.2.3"
+  sha256 "ab3ed412820f537e7b8bbec757112163da55914084955df759429abe0c857f39"
 
-  url "https://www.todesk.com/download.html",
-      verified: "www.todesk.com"
+  url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg",
+      verified: "dl.todesk.com"
   name "ToDesk"
   desc "Secure and fast remote desktop software with high performance"
   homepage "https://www.todesk.com/"
 
   depends_on macos: ">= :big_sur"
 
-  # ToDesk installer will be downloaded from official website
-  # The website may require manual selection for macOS version
-  app "ToDesk.app"
+  pkg "ToDesk_#{version}.pkg"
 
   caveats <<~EOS
     ToDesk features:
@@ -23,9 +21,6 @@ cask "todesk" do
     - Security: privacy protection, two-factor authentication
     - Advanced features: multi-screen collaboration, game controller mapping
 
-    For manual download if installation fails:
-    1. Visit https://www.todesk.com/download.html
-    2. Download the macOS version
-    3. Drag ToDesk.app to /Applications
+    Enterprise version available: https://enterprise.todesk.com
   EOS
 end
