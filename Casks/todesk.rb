@@ -12,7 +12,9 @@ cask "todesk" do
 
   pkg "ToDesk_latest.pkg"
 
-  uninstall pkgutil: ["com.todesk.pkg.ToDesk"],
+  uninstall delete: [
+    "/Applications/ToDesk.app",
+  ],
              quit: "ToDesk"
 
   caveats <<~EOS
