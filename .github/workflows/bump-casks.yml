@@ -1,0 +1,21 @@
+name: Auto Bump Casks
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Auto-bump casks
+        uses: Homebrew/actions/bump-formulae@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tap: lz-lunzi/homebrew-buket
+          formulae-dir: Casks
