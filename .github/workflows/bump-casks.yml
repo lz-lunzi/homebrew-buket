@@ -2,8 +2,8 @@ name: Auto Bump Casks
 
 on:
   schedule:
-    # Every 6 hours
-    - cron: '0 */6 * * *'
+    # Every 5 days at China time 00:00 (UTC 16:00 previous day)
+    - cron: '0 16 1,6,11,16,21,26,31 * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:

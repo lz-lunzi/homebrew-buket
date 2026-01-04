@@ -50,6 +50,17 @@ Homebrew Tap 仓库，包含实用工具的 Casks 和 Formulas
 - 菜单栏集成：快速访问服务器状态和配额概览
 - 代理配置：自动配置 AI 编程工具（Claude Code、OpenCode 等）
 
+### CodeBuddy - AI 智能编程助手
+
+[CodeBuddy](https://www.codebuddy.ai/ide) 是一款强大的 AI 编程助手，提供智能代码补全和上下文感知的代码生成能力，帮助你更高效地完成编程任务。
+
+**主要功能：**
+- 智能代码补全：基于上下文实时生成代码建议
+- 多语言支持：支持多种编程语言和框架
+- 上下文感知代码生成：理解项目结构，生成高质量代码
+- 实时代码分析：自动检测代码问题并提供优化建议
+- AI 辅助调试：智能诊断错误并提供解决方案
+
 ## 安装
 
 1. 添加 tap 仓库：
@@ -72,6 +83,9 @@ brew install --cask z-code
 
 # 安装 Quotio
 brew install --cask quotio
+
+# 安装 CodeBuddy
+brew install --cask codebuddy
 ```
 
 ## 升级
@@ -88,6 +102,9 @@ brew upgrade --cask z-code
 
 # 升级 Quotio
 brew upgrade --cask quotio
+
+# 升级 CodeBuddy
+brew upgrade --cask codebuddy
 ```
 
 ## 卸载
@@ -104,6 +121,9 @@ brew uninstall --cask z-code
 
 # 卸载 Quotio
 brew uninstall --cask quotio
+
+# 卸载 CodeBuddy
+brew uninstall --cask codebuddy
 ```
 
 ## 其他工具
@@ -121,4 +141,5 @@ brew uninstall --cask quotio
 - [XTerminal 官网](https://www.terminal.icu/)
 - [Z Code 官网](https://zcode-ai.com/cn)
 - [Quotio GitHub](https://github.com/nguyenphutrong/quotio)
+- [CodeBuddy 官网](https://www.codebuddy.ai/ide)
 - [Qoder CLI 文档](https://docs.qoder.com/cli)
