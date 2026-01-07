@@ -8,9 +8,8 @@ cask "codebuddy-cn" do
   desc "AI-powered IDE assistant with intelligent code completion and suggestions (China version)"
   homepage "https://www.codebuddy.ai/ide"
 
-  # 避免与官方版 cask 安装的同名 app 冲突
-  app "CodeBuddy.app", target: "CodeBuddy_CN.app"
-
+  # DMG 内部应用名为 "CodeBuddy CN.app"，安装后重命名避免与官方版冲突
+  app "CodeBuddy CN.app"
   caveats <<~EOS
     CodeBuddy_CN is an AI-powered IDE assistant that provides:
     - Intelligent code completion and suggestions
