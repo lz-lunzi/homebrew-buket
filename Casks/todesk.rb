@@ -2,19 +2,20 @@ cask "todesk" do
   version "4.8.2.3"
   sha256 :no_check
 
-  url "https://dl.todesk.com/macos/ToDesk_latest.pkg",
+  url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg",
       verified: "dl.todesk.com"
   name "ToDesk"
   desc "Secure and fast remote desktop software with high performance"
   homepage "https://www.todesk.com/"
 
+  livecheck do
+    url "https://www.todesk.com/download/"
+    regex(/href=.*?ToDesk[._-]v?(\d+(?:\.\d+)+)\.pkg/i)
+  end
+
   depends_on macos: ">= :big_sur"
 
-  installer script: {
-    executable: "/usr/sbin/installer",
-    args: ["-pkg", "#{staged_path}/ToDesk_latest.pkg", "-target", "/"],
-    sudo: true,
-  }
+  pkg "ToDesk_#{version}.pkg"
 
   uninstall delete: [
     "/Applications/ToDesk.app",
