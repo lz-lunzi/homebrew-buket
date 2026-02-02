@@ -1,5 +1,5 @@
 cask "todesk" do
-  version "4.8.2.3"
+  version "4.8.5.1"
   sha256 :no_check
 
   url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg",
