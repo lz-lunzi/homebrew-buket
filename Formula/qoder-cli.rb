@@ -2,7 +2,7 @@ class QoderCli < Formula
   desc "Agentic AI coding platform for terminal-based development"
   homepage "https://qoder.com"
   url "https://registry.npmjs.org/@qoder-ai/qodercli/-/qodercli-0.1.29.tgz"
-  sha256 "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f2"
+  sha256 "d1319b0db3a3d05b47feacf5eb1c8ba295791a910ca10868bd2e08065132f769"
   license "MIT"
   version "0.1.29"
 
