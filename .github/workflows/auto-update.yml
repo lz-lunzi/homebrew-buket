@@ -1,0 +1,73 @@
+name: Auto Update Formulae and Casks
+
+on:
+  schedule:
+    # Every 10 days at China time 09:00 (UTC 01:00)
+    - cron: '0 1 1,11,21,31 * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  setup:
+    runs-on: macos-latest
+    outputs:
+      formulae-updated: ${{ steps.bump-formulae.outputs.updated }}
+      casks-updated: ${{ steps.bump-casks.outputs.updated }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Auto-bump Formulae
+        id: bump-formulae
+        uses: Homebrew/actions/bump-formulae@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tap: ${{ github.repository }}
+          formulae-dir: Formula
+        continue-on-error: true
+
+      - name: Auto-bump Casks
+        id: bump-casks
+        uses: Homebrew/actions/bump-cask-pr@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tap: ${{ github.repository }}
+          cask-dir: Casks
+        continue-on-error: true
+
+      - name: Summary
+        run: |
+          echo "## Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Formulae" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.bump-formulae.outputs.updated || 'No updates' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Casks" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.bump-casks.outputs.updated || 'No updates' }}" >> $GITHUB_STEP_SUMMARY
+
+  # Sync tap to ensure everything is up to date
+  sync:
+    needs: setup
+    runs-on: ubuntu-latest
+    if: needs.setup.outputs.formulae-updated != '' || needs.setup.outputs.casks-updated != ''
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync tap
+        uses: Homebrew/actions/sync-tap@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tap: ${{ github.repository }}
+          force: false

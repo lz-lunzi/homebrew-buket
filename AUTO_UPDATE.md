@@ -1,78 +1,75 @@
 # 自动更新说明
 
-## Homebrew Cask 自动更新机制
+## Homebrew 官方 Actions 支持
 
-### 内置更新功能
+本仓库使用 Homebrew 官方 Actions 实现自动化更新：
 
-Homebrew casks 已经内置了自动检查更新功能。用户只需要运行：
+| Action | 用途 | 使用场景 |
+|--------|------|----------|
+| `setup-homebrew` | 安装和配置 Homebrew | 初始化环境 |
+| `bump-formulae` | 自动检测并更新 Formula 版本 | 更新 npm 包等 |
+| `bump-cask-pr` | 自动更新 Cask 版本 | 更新 GUI 应用 |
+| `sync-tap` | 同步 tap 仓库 | 确保仓库最新状态 |
 
-```bash
-# 检查所有已安装 casks 的更新
-brew update
+## 自动更新工作流
 
-# 升级所有可更新的 casks
-brew upgrade --cask
+### 配置文件
 
-# 升级特定的 cask
-brew upgrade --cask quotio
-brew upgrade --cask z-code
-brew upgrade --cask xterminal
-brew upgrade --cask todesk
-```
+`.github/workflows/auto-update.yml` 集成了所有官方 Actions：
 
-### GitHub Actions 自动更新
+- **触发条件**：
+  - 每 10 天 09:00 (北京时间) 自动运行
+  - 支持手动触发 (`workflow_dispatch`)
 
-已配置 `.github/workflows/bump-casks.yml`，使用 Homebrew 官方的 `bump-formulae` action 自动检测版本更新。
+- **更新流程**：
+  1. 设置 Homebrew 环境 (`setup-homebrew`)
+  2. 自动更新 Formula (`bump-formulae`)
+  3. 自动更新 Cask (`bump-cask-pr`)
+  4. 同步 tap 仓库 (`sync-tap`)
 
-**工作原理**：
-- 每 6 小时自动运行一次
-- 检测各 cask 的最新版本
-- 自动创建 Pull Request 到你的 tap 仓库
+### 支持的自动更新
 
-**注意事项**：
-- `bump-formulae` action 主要为 formula 设计，对 cask 支持有限
-- 需要在 GitHub 仓库中设置 `GITHUB_TOKEN` secret
-- 对于没有 GitHub releases 的工具（如 Z Code, XTerminal），可能无法自动检测
+#### Formula (自动更新支持)
+- ✅ **iflow-cli**: npm 包，自动检测版本
+- ✅ **qoder-cli**: npm 包，自动检测版本
+
+#### Cask (自动更新支持)
+- ✅ **quotio**: GitHub releases，自动检测
+- ✅ **github-store**: GitHub releases，自动检测
+- ✅ **flclash**: GitHub releases，自动检测
+- ⚠️ **codebuddy / codebuddy-cn**: CDN 分发，有限支持
+- ⚠️ **z-code**: CDN 分发，有限支持
+- ⚠️ **xterminal**: CDN 分发，有限支持
+- ⚠️ **zenflow**: 动态版本，有限支持
 
 ### 手动更新流程
 
-当 GitHub Actions 无法自动更新时，可以手动维护：
+当自动更新无法工作时：
 
 1. 从官网或 GitHub releases 获取最新版本号
-2. 更新 `Casks/*.rb` 中的 `version` 字段
+2. 更新对应的 `.rb` 文件中的 `version` 字段
 3. 获取下载文件的 SHA256（如果需要）
 4. 提交并推送到 GitHub
-5. 用户运行 `brew upgrade` 获取更新
-
-### 各工具更新策略
-
-| 工具 | 发布渠道 | 自动更新 | 说明 |
-|------|---------|---------|------|
-| Quotio | GitHub releases | ✅ 支持 | 可自动检测并 PR |
-| Z Code | 官网 CDN | ⚠️ 有限 | 需要 HTML 解析 |
-| XTerminal | CDN | ⚠️ 有限 | 需要 HTML 解析 |
-| ToDesk | 动态 PKG | ❌ 不支持 | 文件每次不同 |
-
-### 推荐做法
-
-1. **依赖 GitHub Actions**：大部分更新自动完成
-2. **定期检查**：关注各工具的 GitHub releases 或官网
-3. **响应 PR**：及时 review 并合并自动创建的 PR
-4. **用户通知**：在 README 中说明更新方式
-
-### 本地测试更新
-
-测试新的 cask 版本：
 
 ```bash
-# 方法1: 强制重新安装
-brew reinstall --cask <cask-name>
-
-# 方法2: 先卸载再安装
-brew uninstall --cask <cask-name>
-brew install --cask <cask-name>
-
-# 方法3: 清除缓存后升级
-brew cleanup
-brew upgrade --cask <cask-name>
+# 获取 SHA256 示例
+curl -sL <download-url> | shasum -a 256
 ```
+
+### 用户更新方式
+
+```bash
+# 更新 Homebrew
+brew update
+
+# 升级所有应用
+brew upgrade
+
+# 升级特定应用
+brew upgrade iflow-cli
+brew upgrade --cask github-store
+```
+
+## 旧版工作流
+
+原 `bump-casks.yml` 已被 `auto-update.yml` 替代，提供更全面的自动更新支持。
