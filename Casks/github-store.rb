@@ -15,7 +15,7 @@ cask "github-store" do
   desc "Free, open-source app store for GitHub releases with one-click installation"
   homepage "https://www.github-store.org/"
 
-  app "GitHub Store.app"
+  app "GitHubStore.app"
 
   caveats <<~EOS
     GitHub Store is a cross-platform app store for GitHub releases that provides:
