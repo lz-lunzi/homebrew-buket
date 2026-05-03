@@ -4,10 +4,13 @@ on:
   schedule:
     # Every 3 days at China time 09:00 (UTC 01:00)
     - cron: '0 1 1,4,7,10,13,16,19,22,25,28 * *'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  bump:
+  update:
     runs-on: macos-14
     steps:
       - name: Checkout repository
@@ -23,22 +26,30 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Auto-bump packages
-        uses: Homebrew/actions/bump-packages@main
-        with:
-          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-          formulae: >
-            codebuddy-code
-            iflow-cli
-            octopus
-          casks: >
-            quotio
-            flclash
-            github-store
-            xterminal
-            z-code
-            codebuddy
-            codebuddy-cn
-            qodercli
-            zenflow
-        continue-on-error: true
+      - name: Bump formulae
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for f in codebuddy-code iflow-cli octopus; do
+            echo "Checking $f..."
+            brew bump-formula-pr "$f" --write-only --no-fork 2>/dev/null || echo "No update for $f"
+          done
+
+      - name: Bump casks
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for c in quotio flclash github-store xterminal z-code codebuddy codebuddy-cn qodercli zenflow; do
+            echo "Checking $c..."
+            brew bump-cask-pr "$c" --write-only --no-fork 2>/dev/null || echo "No update for $c"
+          done
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: bump outdated packages [skip ci]"
+          git push
