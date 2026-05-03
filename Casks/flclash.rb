@@ -1,14 +1,12 @@
 cask "flclash" do
-  version "0.8.91"
+  version "0.8.92"
   sha256 :no_check
 
   on_arm do
-    url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-arm64.dmg",
-        verified: "github.com/chen08209/FlClash/"
+    url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-arm64.dmg"
   end
   on_intel do
-    url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-amd64.dmg",
-        verified: "github.com/chen08209/FlClash/"
+    url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-amd64.dmg"
   end
 
   name "FlClash"
