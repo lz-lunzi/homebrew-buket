@@ -32,4 +32,9 @@ class CodebuddyCode < Formula
   test do
     assert_match "codebuddy", shell_output("#{bin}/codebuddy --version")
   end
+
+  livecheck do
+    url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/latest"
+    regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/)
+  end
 end

@@ -29,4 +29,9 @@ class IflowCli < Formula
   test do
     assert_match "iflow", shell_output("#{bin}/iflow --version")
   end
+
+  livecheck do
+    url "https://registry.npmjs.org/@iflow-ai/iflow-cli/latest"
+    regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/)
+  end
 end

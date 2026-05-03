@@ -2,7 +2,7 @@ cask "codebuddy" do
   version "4.2.2.16135922"
   sha256 :no_check
 
-  url "https://codebuddy-1328495429.cos.accelerate.myqcloud.com/aiide/darwin-arm64/CodeBuddy-darwin-arm64-#{version}-ac46abb397-d4a42927.dmg",
+  url "https://codebuddy-1328495429.cos.accelerate.myqcloud.com/aiide/darwin-arm64/CodeBuddy-darwin-arm64-4.2.2.16135922-ac46abb397-d4a42927.dmg",
       verified: "codebuddy-1328495429.cos.accelerate.myqcloud.com"
   name "CodeBuddy"
   desc "AI-powered IDE assistant with intelligent code completion and suggestions"
@@ -18,4 +18,8 @@ cask "codebuddy" do
     - Real-time code analysis and optimization
     - AI-assisted debugging and error resolution
   EOS
+
+  livecheck do
+    skip "No public version information available"
+  end
 end

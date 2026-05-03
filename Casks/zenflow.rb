@@ -20,4 +20,8 @@ cask "zenflow" do
 
     Visit https://zencoder.ai for more information.
   EOS
+
+  livecheck do
+    skip "Uses version :latest"
+  end
 end

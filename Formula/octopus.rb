@@ -51,4 +51,9 @@ class Octopus < Formula
   test do
     assert_match "octopus version #{version}", shell_output("#{bin}/octopus version", 1)
   end
+
+  livecheck do
+    url "https://github.com/bestruirui/octopus/releases"
+    strategy :github_latest
+  end
 end

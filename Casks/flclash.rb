@@ -3,10 +3,10 @@ cask "flclash" do
   sha256 :no_check
 
   on_arm do
-    url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-arm64.dmg"
+    url "https://github.com/chen08209/FlClash/releases/download/v0.8.92/FlClash-0.8.92-macos-arm64.dmg"
   end
   on_intel do
-    url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-amd64.dmg"
+    url "https://github.com/chen08209/FlClash/releases/download/v0.8.92/FlClash-0.8.92-macos-amd64.dmg"
   end
 
   name "FlClash"
@@ -27,5 +27,10 @@ cask "flclash" do
     - Supports data sync via WebDAV
     - Support subscription link, Dark mode
   EOS
+
+  livecheck do
+    url "https://github.com/chen08209/FlClash/releases"
+    strategy :github_latest
+  end
 end
 

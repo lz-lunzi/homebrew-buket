@@ -2,7 +2,7 @@ cask "quotio" do
   version "0.3.0"
   sha256 "9bf212f5d6409d42792bfc71f65fa7f3557f9249e792243cad521e229d720cc8"
 
-  url "https://github.com/nguyenphutrong/quotio/releases/download/v#{version}/Quotio-#{version}.dmg"
+  url "https://github.com/nguyenphutrong/quotio/releases/download/v0.3.0/Quotio-0.3.0.dmg"
   name "Quotio"
   desc "AI coding assistants manager with multi-provider support and quota tracking"
   homepage "https://github.com/nguyenphutrong/quotio"
@@ -15,4 +15,9 @@ cask "quotio" do
 
       xattr -cr /Applications/Quotio.app
   EOS
+
+  livecheck do
+    url "https://github.com/nguyenphutrong/quotio/releases"
+    strategy :github_latest
+  end
 end

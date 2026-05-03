@@ -3,11 +3,11 @@ cask "github-store" do
   sha256 :no_check
 
   on_arm do
-    url "https://github.com/rainxchzed/Github-Store/releases/download/#{version}/GitHub.Store-#{version}_arm64.dmg",
+    url "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/GitHub.Store-1.5.1_arm64.dmg",
         verified: "github.com/rainxchzed/Github-Store/"
   end
   on_intel do
-    url "https://github.com/rainxchzed/Github-Store/releases/download/#{version}/Github.Store-#{version}_x64.dmg",
+    url "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/Github.Store-1.5.1_x64.dmg",
         verified: "github.com/rainxchzed/Github-Store/"
   end
 
@@ -30,4 +30,9 @@ cask "github-store" do
 
     Visit https://www.github-store.org for more information.
   EOS
+
+  livecheck do
+    url "https://github.com/rainxchzed/Github-Store/releases"
+    strategy :github_latest
+  end
 end
