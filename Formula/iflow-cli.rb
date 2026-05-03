@@ -1,8 +1,8 @@
 class IflowCli < Formula
   desc "Terminal AI assistant for code analysis, programming tasks and development workflows"
   homepage "https://platform.iflow.cn/cli"
-  url "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.13.tgz"
-  sha256 "cb20836899728afec257396d1e5824643c43e2a7001a1c6e72b9db9b7998bb77"
+  url "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz"
+  sha256 "4ac4ec1d6e52362c5794bb07213886bafb554d4036752b8af8c8ca08462ab365"
   license "MIT"
 
   depends_on "node"
