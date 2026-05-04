@@ -86,6 +86,9 @@ brew install --cask quotio
 
 # 安装 CodeBuddy
 brew install --cask codebuddy
+
+# 安装 LiteLLM
+brew install litellm
 ```
 
 ## 升级
@@ -105,6 +108,9 @@ brew upgrade --cask quotio
 
 # 升级 CodeBuddy
 brew upgrade --cask codebuddy
+
+# 升级 LiteLLM
+brew upgrade litellm
 ```
 
 ## 卸载
@@ -124,9 +130,24 @@ brew uninstall --cask quotio
 
 # 卸载 CodeBuddy
 brew uninstall --cask codebuddy
+
+# 卸载 LiteLLM
+brew uninstall litellm
 ```
 
 ## 其他工具
+
+### LiteLLM - LLM API 统一接口库
+
+[LiteLLM](https://github.com/BerriAI/litellm) 是一个开源 AI 网关，提供统一的接口来调用 100+ 个 LLM 提供商（OpenAI、Anthropic、Gemini、Bedrock、Azure 等），使用 OpenAI 格式。
+
+**主要功能：**
+- 统一 API：一个接口对接 100+ LLM，无需处理各提供商的 SDK 差异
+- OpenAI 兼容：可直接替换提供商，无需改写代码
+- Python SDK：直接在 Python 代码中集成
+- Proxy Server：作为团队/组织的集中式服务部署
+- 生产就绪：虚拟密钥、支出跟踪、防护栏、负载均衡、管理仪表板
+- 8ms P95 延迟（1k RPS 下）
 
 ### Qoder CLI（示例）
 
@@ -143,3 +164,5 @@ brew uninstall --cask codebuddy
 - [Quotio GitHub](https://github.com/nguyenphutrong/quotio)
 - [CodeBuddy 官网](https://www.codebuddy.ai/ide)
 - [Qoder CLI 文档](https://docs.qoder.com/cli)
+- [LiteLLM GitHub](https://github.com/BerriAI/litellm)
+- [LiteLLM 文档](https://docs.litellm.ai)
