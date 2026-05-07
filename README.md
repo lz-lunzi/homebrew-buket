@@ -61,6 +61,17 @@ Homebrew Tap 仓库，包含实用工具的 Casks 和 Formulas
 - 实时代码分析：自动检测代码问题并提供优化建议
 - AI 辅助调试：智能诊断错误并提供解决方案
 
+### v2rayN - 多平台代理客户端
+
+[v2rayN](https://github.com/2dust/v2rayN) 是一款支持多平台的 GUI 代理客户端，支持 Xray 和 sing-box 等核心。
+
+**主要功能：**
+- 多核心支持：支持 Xray core 和 sing-box core
+- 跨平台：支持 Windows、Linux 和 macOS
+- 多协议支持：VMess、VLESS、Trojan、Shadowsocks 等
+- 内置规则：GeoIP 和 GeoSite 规则集
+- 用户友好：图形化界面，操作简单
+
 ## 安装
 
 1. 添加 tap 仓库：
@@ -87,6 +98,9 @@ brew install --cask quotio
 # 安装 CodeBuddy
 brew install --cask codebuddy
 
+# 安装 v2rayN
+brew install --cask v2rayn
+
 # 安装 LiteLLM
 brew install litellm
 ```
@@ -109,6 +123,9 @@ brew upgrade --cask quotio
 # 升级 CodeBuddy
 brew upgrade --cask codebuddy
 
+# 升级 v2rayN
+brew upgrade --cask v2rayn
+
 # 升级 LiteLLM
 brew upgrade litellm
 ```
@@ -130,6 +147,9 @@ brew uninstall --cask quotio
 
 # 卸载 CodeBuddy
 brew uninstall --cask codebuddy
+
+# 卸载 v2rayN
+brew uninstall --cask v2rayn
 
 # 卸载 LiteLLM
 brew uninstall litellm
@@ -163,6 +183,7 @@ brew uninstall litellm
 - [Z Code 官网](https://zcode-ai.com/cn)
 - [Quotio GitHub](https://github.com/nguyenphutrong/quotio)
 - [CodeBuddy 官网](https://www.codebuddy.ai/ide)
+- [v2rayN GitHub](https://github.com/2dust/v2rayN)
 - [Qoder CLI 文档](https://docs.qoder.com/cli)
 - [LiteLLM GitHub](https://github.com/BerriAI/litellm)
 - [LiteLLM 文档](https://docs.litellm.ai)
