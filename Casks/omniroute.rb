@@ -1,8 +1,14 @@
 cask "omniroute" do
-  version "3.7.8"
+  version "3.7.9"
   sha256 :no_check
 
-  url "https://github.com/diegosouzapw/OmniRoute/releases/download/v#{version}/OmniRoute-#{version}-arm64.dmg"
+  on_arm do
+    url "https://github.com/diegosouzapw/OmniRoute/releases/download/v#{version}/OmniRoute-#{version}-arm64.dmg"
+  end
+  on_intel do
+    url "https://github.com/diegosouzapw/OmniRoute/releases/download/v#{version}/OmniRoute-#{version}.dmg"
+  end
+
   name "OmniRoute"
   desc "Free AI gateway: one endpoint, 160+ providers, RTK+Caveman compression"
   homepage "https://github.com/diegosouzapw/OmniRoute"
@@ -12,7 +18,7 @@ cask "omniroute" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "OmniRoute.app"
 
