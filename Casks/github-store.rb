@@ -15,6 +15,13 @@ cask "github-store" do
   desc "Free, open-source app store for GitHub releases with one-click installation"
   homepage "https://www.github-store.org/"
 
+  livecheck do
+    url "https://github.com/rainxchzed/Github-Store/releases"
+    strategy :github_latest
+  end
+
+  depends_on :macos
+
   app "GitHubStore.app"
 
   caveats <<~EOS
@@ -30,9 +37,4 @@ cask "github-store" do
 
     Visit https://www.github-store.org for more information.
   EOS
-
-  livecheck do
-    url "https://github.com/rainxchzed/Github-Store/releases"
-    strategy :github_latest
-  end
 end

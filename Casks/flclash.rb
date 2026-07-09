@@ -10,10 +10,15 @@ cask "flclash" do
   end
 
   name "FlClash"
-  desc "A multi-platform proxy client based on ClashMeta, simple and easy to use, open-source and ad-free"
+  desc "Multi-platform proxy client based on ClashMeta"
   homepage "https://github.com/chen08209/FlClash"
 
-  depends_on macos: ">= :big_sur"
+  livecheck do
+    url "https://github.com/chen08209/FlClash/releases"
+    strategy :github_latest
+  end
+
+  depends_on macos: :big_sur
 
   app "FlClash.app"
 
@@ -27,10 +32,4 @@ cask "flclash" do
     - Supports data sync via WebDAV
     - Support subscription link, Dark mode
   EOS
-
-  livecheck do
-    url "https://github.com/chen08209/FlClash/releases"
-    strategy :github_latest
-  end
 end
-

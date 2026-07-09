@@ -2,8 +2,13 @@ class Octopus < Formula
   desc "LLM API aggregation & load balancing service for individuals"
   homepage "https://github.com/bestruirui/octopus"
   version "0.9.27"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
   head "https://github.com/bestruirui/octopus.git", branch: "dev"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   on_macos do
     on_arm do
@@ -50,10 +55,5 @@ class Octopus < Formula
 
   test do
     assert_match "octopus version #{version}", shell_output("#{bin}/octopus version", 1)
-  end
-
-  livecheck do
-    url "https://github.com/bestruirui/octopus/releases"
-    strategy :github_latest
   end
 end

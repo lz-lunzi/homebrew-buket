@@ -3,13 +3,19 @@ class Litellm < Formula
 
   desc "Library to easily interface with LLM API providers"
   homepage "https://github.com/BerriAI/litellm"
-  url "https://files.pythonhosted.org/packages/source/l/litellm/litellm-1.83.14.tar.gz"
+  url "https://files.pythonhosted.org/packages/8d/7c/c095649380adc96c8630273c1768c2ad1e74aa2ee1dd8dd05d218a60569f/litellm-1.83.14.tar.gz"
   sha256 "24aef9b47cdc424c833e32f3727f411741c690832cd1fe4405e0077144fe09c9"
   license "MIT"
   head "https://github.com/BerriAI/litellm.git", branch: "main"
 
-  depends_on "python@3.11"
+  livecheck do
+    url "https://pypi.org/pypi/litellm/json"
+    regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
+  end
+
   depends_on "rust" => :build
+
+  depends_on "python@3.11"
 
   def install
     virtualenv_install_with_resources
@@ -115,10 +121,5 @@ class Litellm < Formula
 
   test do
     system bin/"python", "-c", "import litellm; print(litellm.__version__)"
-  end
-
-  livecheck do
-    url "https://pypi.org/pypi/litellm/json"
-    regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/)
   end
 end

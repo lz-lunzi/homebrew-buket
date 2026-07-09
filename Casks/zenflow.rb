@@ -2,11 +2,16 @@ cask "zenflow" do
   version :latest
   sha256 :no_check
 
-  url "https://download.zencoder.ai/zenflowapp/latest/darwin-arm64/Zenflow.dmg",
-      verified: "download.zencoder.ai/zenflowapp/"
+  url "https://download.zencoder.ai/zenflowapp/latest/darwin-arm64/Zenflow.dmg"
   name "Zenflow"
   desc "Multi-agent orchestration platform for AI software development"
   homepage "https://zencoder.ai/"
+
+  livecheck do
+    skip "Uses version :latest"
+  end
+
+  depends_on :macos
 
   app "Zenflow.app"
 
@@ -20,8 +25,4 @@ cask "zenflow" do
 
     Visit https://zencoder.ai for more information.
   EOS
-
-  livecheck do
-    skip "Uses version :latest"
-  end
 end

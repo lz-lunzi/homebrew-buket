@@ -1,10 +1,10 @@
 class Omp < Formula
-  desc "AI coding agent for the terminal — hash-anchored edits, optimized tools, LSP, browser, subagents"
+  desc "AI coding agent for the terminal"
   homepage "https://omp.sh"
   license "MIT"
 
   livecheck do
-    url "https://api.github.com/repos/can1357/oh-my-pi/releases/latest"
+    url :stable
     regex(/"tag_name"\s*:\s*"v?(\d+(?:\.\d+)+)"/i)
   end
 

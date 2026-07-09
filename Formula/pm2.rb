@@ -2,9 +2,8 @@ class Pm2 < Formula
   desc "Process manager for Node.js applications"
   homepage "https://pm2.keymetrics.io"
   url "https://registry.npmjs.org/pm2/-/pm2-7.0.1.tgz"
-  version "7.0.1"
   sha256 "e668a26657a9a95ee0d903c6acfaf62995b5a219ac3a673773eded08b4465e5b"
-  license "AGPL-3.0"
+  license "AGPL-3.0-or-later"
 
   livecheck do
     url "https://registry.npmjs.org/pm2/latest"
