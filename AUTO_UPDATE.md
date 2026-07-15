@@ -1,15 +1,14 @@
 # 自动更新说明
 
-## Homebrew 官方 Actions
+## 使用的 Homebrew 命令
 
-本仓库使用 `Homebrew/actions/bump-packages` 实现自动化更新，该 Action 同时支持 Formula 和 Cask：
+本仓库逐个 formula/cask 调用官方命令检测并更新版本：
 
-| Action | 用途 |
+| 命令 | 用途 |
 |--------|------|
-| `setup-homebrew` | 安装和配置 Homebrew 环境 |
-| `bump-packages` | 自动检测并更新 Formula 和 Cask 版本 |
-
-> **注意**: `bump-formulae` 已废弃，`bump-cask-pr` 不存在。均已被 `bump-packages` 替代。
+| `setup-homebrew` (Action) | 安装和配置 Homebrew 环境 |
+| `brew bump-formula-pr --write-only` | 检测并更新单个 Formula 版本 |
+| `brew bump-cask-pr --write-only` | 检测并更新单个 Cask 版本 |
 
 ## 自动更新工作流
 
@@ -18,12 +17,12 @@
 `.github/workflows/auto-update.yml`
 
 - **触发条件**：
-  - 每 3 天 09:00 (北京时间) 自动运行
+  - 每天 09:00 (北京时间) 自动运行
   - 支持手动触发 (`workflow_dispatch`)
 
 - **更新流程**：
   1. 设置 Homebrew 环境 (`setup-homebrew`)
-  2. 使用 `bump-packages` 自动检测并更新 Formula 和 Cask
+  2. 逐个调用 `brew bump-formula-pr` / `brew bump-cask-pr` 检测并更新
 
 - **前置条件**：
   - 需要配置 `HOMEBREW_GITHUB_API_TOKEN` Secret（需要比默认 `GITHUB_TOKEN` 更高权限的 Personal Access Token，用于创建 PR）
@@ -31,19 +30,14 @@
 ### 支持的自动更新
 
 #### Formula
-- ✅ **codebuddy-code**: npm 包，自动检测版本
-- ✅ **iflow-cli**: npm 包，自动检测版本
-- ✅ **octopus**: GitHub releases，自动检测版本
+agentsync、bifrost、codebuddy-code、litellm、nine_remote、nine_router、octopus、oh-my-openagent、omniroute、omp、pm2、qodercli、relayplane、trae-cli
 
 #### Cask
-- ✅ **quotio**: GitHub releases，自动检测
-- ✅ **github-store**: GitHub releases，自动检测
-- ✅ **flclash**: GitHub releases，自动检测
-- ⚠️ **codebuddy / codebuddy-cn**: CDN 分发，有限支持
-- ⚠️ **z-code**: CDN 分发，有限支持
-- ⚠️ **xterminal**: CDN 分发，有限支持
-- ⚠️ **qodercli**: livecheck 已禁用，有限支持
-- ⚠️ **zenflow**: 动态版本 (`:latest`)，无法追踪版本变更
+ai-gateway、codebuddy-cn、flclash、github-store、nyro、otty、quotio、skills-manage、skills-manager、v2rayn、xterminal、z-code、zenflow
+
+> ⚠️ **otty**：版本为 `:latest`，无法追踪版本变更，自动更新会跳过。
+> ⚠️ **codebuddy-cn / z-code / xterminal**：CDN 分发，livecheck 有限支持。
+> ⚠️ **qodercli**：livecheck 依赖 release 页面正则，可能不稳定。
 
 ### 手动更新流程
 
@@ -69,6 +63,6 @@ brew update
 brew upgrade
 
 # 升级特定应用
-brew upgrade iflow-cli
+brew upgrade omp
 brew upgrade --cask github-store
 ```
