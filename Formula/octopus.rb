@@ -15,10 +15,6 @@ class Octopus < Formula
       url "https://github.com/bestruirui/octopus/releases/download/v0.9.27/octopus-darwin-arm64.zip"
       sha256 "0b191ede4a59ee839044402d529a221f5efa1874d8232fcd0890fd0f2e83aee4"
     end
-    on_intel do
-      url "https://github.com/bestruirui/octopus/releases/download/v0.9.27/octopus-darwin-x86_64.zip"
-      sha256 :no_check
-    end
   end
 
   def install
