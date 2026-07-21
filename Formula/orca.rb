@@ -9,6 +9,8 @@ class Orca < Formula
     strategy :github_latest
   end
 
+  depends_on "libfuse@2" if OS.linux?
+
   on_linux do
     on_arm do
       url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-linux-arm64.AppImage"
@@ -21,7 +23,23 @@ class Orca < Formula
   end
 
   def install
-    bin.install Dir.glob("orca*").first => "orca"
+    if OS.linux?
+      appimage = Dir.glob("orca-linux*").first
+      chmod 0755, appimage
+
+      ENV.prepend_path "LD_LIBRARY_PATH", formula_opt_lib("libfuse@2")
+      system appimage, "--appimage-extract"
+
+      libexec.install "squashfs-root"
+
+      (bin/"orca").write <<~BASH
+        #!/bin/bash
+        exec "#{libexec}/squashfs-root/AppRun" "$@"
+      BASH
+      chmod 0755, bin/"orca"
+    else
+      bin.install Dir.glob("orca*").first => "orca"
+    end
   end
 
   def caveats
