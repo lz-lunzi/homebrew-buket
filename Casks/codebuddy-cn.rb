@@ -1,19 +1,32 @@
 cask "codebuddy-cn" do
-  version "4.2.3.16929265"
-  sha256 :no_check
+  arch arm: "arm64", intel: "x64"
 
-  url "https://acc-1258344699.cos.accelerate.myqcloud.com/aiide/darwin-arm64/CodeBuddy-darwin-arm64-4.2.3.16929265-8da5bbfef2-a50b9bce-cn.dmg",
-      verified: "acc-1258344699.cos.accelerate.myqcloud.com/"
-  name "CodeBuddy_CN"
-  desc "AI-powered IDE assistant with code completion (China version)"
-  homepage "https://www.codebuddy.ai/ide"
+  version "4.10.3.33770460,427f3937"
+  sha256 arm:   "45d2554ef374741bac19cef689fb1b9d41ce6da1528a2739ba0edf8c021f00aa",
+         intel: "1785a8d37bfa2e22534b063ba10665ce3c316adc17ab96c6d634afd070d5bfaa"
+
+  url "https://acc-1258344699.cos.accelerate.myqcloud.com/aiide/darwin-#{arch}/CodeBuddy-darwin-#{arch}-#{version.csv.first}-#{version.csv.second}-cn.zip",
+      verified: "acc-1258344699.cos.accelerate.myqcloud.com/aiide/"
+  name "CodeBuddy CN"
+  desc "AI-powered adaptive IDE (Chinese version)"
+  homepage "https://copilot.tencent.com/ide/"
 
   livecheck do
-    skip "No public version information available"
+    url "https://copilot.tencent.com/v2/update?platform=ide-darwin-#{arch}&version=1.0.0&x-machine-id=default"
+    regex(%r{/CodeBuddy[._-]darwin[._-]#{arch}[._-]v?(\d+(?:\.\d+)+)-(\h+)[._-]cn\.zip}i)
+    strategy :json do |json, regex|
+      match = json["url"]&.match(regex)
+      next if match.blank?
+
+      "#{match[1]},#{match[2]}"
+    end
   end
 
-  # DMG 内部应用名为 "CodeBuddy CN.app"，安装后重命名避免与官方版冲突
-  depends_on :macos
+  deprecate! date: "2026-07-21", because: "moved to homebrew/cask", replacement_cask: "codebuddy-cn"
+  disable! date: "2027-01-21", because: "moved to homebrew/cask", replacement_cask: "codebuddy-cn"
+
+  auto_updates true
+  depends_on macos: :big_sur
 
   app "CodeBuddy CN.app"
 

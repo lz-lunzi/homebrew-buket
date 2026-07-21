@@ -155,6 +155,45 @@ brew uninstall --cask v2rayn
 brew uninstall litellm
 ```
 
+## 迁移到官方版本
+
+当某个工具被官方 `homebrew/core` 或 `homebrew/cask` 接管后，本 tap 会自动标记为 `deprecate!`（弃用）并指向官方版本。运行 `brew upgrade` 或 `brew install` 时会看到提示：
+
+```
+==> otty (Otty)
+Deprecated because it moved to homebrew/cask! It will be disabled on 2027-01-21.
+Replacement:
+  brew install --cask otty
+```
+
+迁移到官方版本（保留你的配置和数据）：
+
+```bash
+# 1. 卸载本 tap 版本
+brew uninstall --cask otty
+
+# 2. 安装官方版本（homebrew/cask 优先级高于第三方 tap，直接装即可）
+brew install --cask otty
+```
+
+Formula 同理（去掉 `--cask`）：
+
+```bash
+brew uninstall litellm
+brew install litellm
+```
+
+> 迁移后应用配置、数据文件不受影响，仅替换可执行文件。
+
+### 当前已迁移到官方的包
+
+| 包名 | 类型 | 官方位置 |
+|------|------|---------|
+| `otty` | Cask | `homebrew/cask/otty` |
+| `codebuddy-cn` | Cask | `homebrew/cask/codebuddy-cn` |
+
+完整列表见 [AUTO_UPDATE.md](AUTO_UPDATE.md#自动退役机制)。
+
 ## 其他工具
 
 ### LiteLLM - LLM API 统一接口库

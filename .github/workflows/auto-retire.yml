@@ -1,0 +1,75 @@
+name: Auto Retire Duplicated Packages
+
+on:
+  schedule:
+    # Every day at China time 10:00 (UTC 02:00)
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  retire:
+    runs-on: ubuntu-latest
+    env:
+      API_BASE: "https://formulae.brew.sh/api"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Detect and retire packages duplicated in official repos
+        run: |
+          set -euo pipefail
+          # Dynamic dates: deprecate today, disable 1 year later (long grace period).
+          DEPRECATE_DATE=$(date -u +%Y-%m-%d)
+          DISABLE_DATE=$(date -u -d "+1 year" +%Y-%m-%d)
+          echo "Deprecate date: $DEPRECATE_DATE"
+          echo "Disable date:  $DISABLE_DATE"
+
+          check_and_retire() {
+            local file="$1" kind="$2" name="$3"
+            # Skip if already marked (deprecate!/disable! present)
+            if grep -qE '^\s*(deprecate!|disable!)\s' "$file"; then
+              echo "  $name: already retired, skip"
+              return 0
+            fi
+            local url="$API_BASE/$kind/$name.json"
+            local code
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+            if [ "$code" = "200" ]; then
+              echo "  $name: DUPLICATE in official, adding deprecate/disable"
+              ruby scripts/add_retire.rb "$file" "$kind" "$name" "$DEPRECATE_DATE" "$DISABLE_DATE"
+            else
+              echo "  $name: not in official (HTTP $code), keep"
+            fi
+          }
+
+          echo "==> Checking Formulae"
+          for f in Formula/*.rb; do
+            [ -f "$f" ] || continue
+            name="$(basename "$f" .rb)"
+            check_and_retire "$f" formula "$name"
+          done
+
+          echo "==> Checking Casks"
+          for c in Casks/*.rb; do
+            [ -f "$c" ] || continue
+            name="$(basename "$c" .rb)"
+            check_and_retire "$c" cask "$name"
+          done
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: retire packages duplicated in homebrew core/cask [skip ci]"
+          git push

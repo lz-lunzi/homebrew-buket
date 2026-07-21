@@ -5,7 +5,7 @@ class Omp < Formula
 
   livecheck do
     url :stable
-    regex(/"tag_name"\s*:\s*"v?(\d+(?:\.\d+)+)"/i)
+    strategy :github_latest
   end
 
   on_macos do
