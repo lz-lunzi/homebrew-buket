@@ -1,13 +1,13 @@
 cask "orca" do
-  version "1.4.148"
+  version "1.4.149"
 
   on_arm do
-    sha256 "205584c78082e5b6d4ea6870e353fe3aac7e0ee3859f914dbde195afb1bce6eb"
+    sha256 "7a2442ca9207f520b69ebee3c94306639ed1bf162225452cf48ce50025d074e9"
 
     url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-arm64.dmg"
   end
   on_intel do
-    sha256 "3a67528ef2b31d5512511fa5afb20b05c6787328a707cd96201871cc1f956c6f"
+    sha256 "ae7a58ce945e5ae5f7ff73c689a886e1631e4c0bfb5401ce0d6af232cf03884b"
 
     url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-x64.dmg"
   end
