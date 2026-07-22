@@ -21,6 +21,9 @@ cask "orca" do
     strategy :github_latest
   end
 
+  deprecate! date: "2026-07-22", because: "moved to homebrew/cask", replacement_cask: "orca"
+  disable! date: "2027-07-22", because: "moved to homebrew/cask", replacement_cask: "orca"
+
   depends_on macos: :big_sur
 
   app "Orca.app"
