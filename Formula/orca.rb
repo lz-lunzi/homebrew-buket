@@ -5,7 +5,7 @@ class Orca < Formula
   license "MIT"
 
   livecheck do
-    url :stable
+    url "https://github.com/stablyai/orca/releases/latest"
     strategy :github_latest
   end
 
@@ -21,35 +21,17 @@ class Orca < Formula
   end
 
   def install
-    if OS.linux?
-      deb = Dir.glob("orca-ide_*.deb").first
-      system "ar", "x", deb
-      system "tar", "xf", "data.tar.xz"
-
-      libexec.install "opt/Orca"
-
-      (bin/"orca").write <<~BASH
-        #!/bin/bash
-        exec "#{libexec}/Orca/orca-ide" "$@"
-      BASH
-      chmod 0755, bin/"orca"
-    else
-      bin.install Dir.glob("orca*").first => "orca"
-    end
-  end
-
-  def caveats
-    <<~EOS
-      Orca — desktop IDE for parallel AI agent orchestration.
-
-      Launch from terminal:
-        orca
-
-      Visit https://github.com/stablyai/orca for documentation.
-    EOS
+    deb = Dir["*.deb"].first
+    system "ar", "x", deb
+    system "tar", "xf", "data.tar.xz"
+    libexec.install "opt/Orca"
+    (bin/"orca").write <<~BASH
+      #!/bin/bash
+      exec "#{libexec}/Orca/orca-ide" "$@"
+    BASH
   end
 
   test do
-    assert_path_exists bin/"orca"
+    system bin/"orca", "--version"
   end
 end
