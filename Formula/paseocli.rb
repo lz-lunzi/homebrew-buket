@@ -1,4 +1,4 @@
-class Paseo < Formula
+class Paseocli < Formula
   desc "Orchestrate multiple coding agents from desktop and mobile"
   homepage "https://paseo.sh"
   url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.2.5.tgz"
