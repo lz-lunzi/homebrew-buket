@@ -14,11 +14,11 @@ require "uri"
 formula_file, repo = ARGV
 abort "usage: update_multiarch.rb <formula_file> <owner/repo>" unless formula_file && repo
 
-# Fetch latest release from GitHub API
+token = ENV["GITHUB_TOKEN"]
+headers = token ? { "Authorization" => "Bearer #{token}" } : {}
 api_url = "https://api.github.com/repos/#{repo}/releases/latest"
 uri = URI(api_url)
-response = Net::HTTP.get_response(uri)
-abort "Failed to fetch #{api_url}: #{response.code}" unless response.is_a?(Net::HTTPSuccess)
+response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.get(uri.request_uri, headers) }
 
 release = JSON.parse(response.body)
 version = release["tag_name"].sub(/^v/, "")

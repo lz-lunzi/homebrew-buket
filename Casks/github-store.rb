@@ -1,5 +1,5 @@
 cask "github-store" do
-  version "1.5.1"
+  version "1.9.2"
   sha256 :no_check
 
   on_arm do

@@ -1,8 +1,8 @@
 class Bifrost < Formula
   desc "High-performance AI gateway CLI - connect to 12+ providers"
   homepage "https://github.com/maximhq/bifrost"
-  url "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.2.tgz"
-  sha256 "116fe10c07c53fcfbc2bfefad475b90ffeafe0a4da94213c391c1737f34bb328"
+  url "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz"
+  sha256 "b1f95e5c95af44f9b424f4f6e5ea194ff7965351f6e9a9ab70ce4eaa3714c0e6"
   license "Apache-2.0"
 
   livecheck do

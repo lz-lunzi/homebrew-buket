@@ -1,7 +1,7 @@
 class Orca < Formula
   desc "ADE for working with a fleet of parallel AI agents"
   homepage "https://github.com/stablyai/orca"
-  version "1.4.149"
+  version "1.4.180"
   license "MIT"
 
   livecheck do
@@ -10,12 +10,12 @@ class Orca < Formula
   end
 
   url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-ide_#{version}_amd64.deb"
-  sha256 "ecec2fe903e29afd8dea52db68f5a4db28eef077e9aa478061df5a2fdaead521"
+  sha256 "fc8b129e4deda381ed6f18e2cc8a970b81550bbe248b93cf8d04ee4e5bd252d8"
 
   on_linux do
     on_arm do
       url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-ide_#{version}_arm64.deb"
-      sha256 "fbd792c155064a64d3fe3b015b908e4fa367c7374f9a194f8eaddfe8fe82521d"
+      sha256 "c7f5b648f62b4e8d5b52cf990812d292c1efb22d115ab51a00153e0a673abacd"
     end
   end
 

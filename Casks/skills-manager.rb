@@ -1,5 +1,5 @@
 cask "skills-manager" do
-  version "1.3.3"
+  version "1.3.5"
   sha256 :no_check
 
   on_arm do

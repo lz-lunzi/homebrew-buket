@@ -1,9 +1,9 @@
 class Paseocli < Formula
   desc "Orchestrate multiple coding agents from desktop and mobile"
   homepage "https://paseo.sh"
-  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.2.5.tgz"
-  version "0.2.5"
-  sha256 "a5afabde237262b705b2921da7c23bab89a2f431ceda2472ee9cc19ca07ba54d"
+  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.3.1.tgz"
+  version "0.3.1"
+  sha256 "6b68f9cf9b891e75a8e1ede9ddb6ba87a11bfc95b47230dba22ed4ddb13b0fb6"
   license "AGPL-3.0-or-later"
 
   livecheck do
