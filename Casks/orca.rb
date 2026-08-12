@@ -1,13 +1,13 @@
 cask "orca" do
-  version "1.4.149"
+  version "1.4.180"
 
   on_arm do
-    sha256 "7a2442ca9207f520b69ebee3c94306639ed1bf162225452cf48ce50025d074e9"
+    sha256 "f8e0ed1299cb2f0af86fcbf318f5cddef35a6b530aacc27b6e264ebec7c3c51f"
 
     url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-arm64.dmg"
   end
   on_intel do
-    sha256 "ae7a58ce945e5ae5f7ff73c689a886e1631e4c0bfb5401ce0d6af232cf03884b"
+    sha256 "acc04573514ad85b9f85421fd54eb5f154e06cd27610d0c0985a6159670e8ba1"
 
     url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-macos-x64.dmg"
   end
@@ -21,8 +21,6 @@ cask "orca" do
     strategy :github_latest
   end
 
-  deprecate! date: "2026-07-22", because: "moved to homebrew/cask", replacement_cask: "orca"
-  disable! date: "2027-07-22", because: "moved to homebrew/cask", replacement_cask: "orca"
 
   depends_on macos: :big_sur
 
