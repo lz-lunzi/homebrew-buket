@@ -9,8 +9,7 @@ cask "xterminal" do
   homepage "https://www.terminal.icu/"
 
   livecheck do
-    url "https://www.terminal.icu/download"
-    regex(/XTerminal[._-]v?(\d+(?:\.\d+)+)[._-]mac[._-]arm64\.dmg/i)
+    skip "SPA website; no public version API"
   end
 
   depends_on macos: :monterey

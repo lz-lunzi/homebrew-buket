@@ -1,26 +1,25 @@
 class Qodercli < Formula
   desc "Qoder AI CLI - Terminal-based AI coding assistant"
   homepage "https://qoder.com"
-  version "1.0.2"
+  version "1.0.5"
   license "MIT"
 
   livecheck do
-    url :stable
-    regex(%r{releases/(\d+(?:\.\d+)+)/}i)
+    skip "No public version API; OSS bucket listing denied"
   end
 
   on_macos do
     on_arm do
-      url "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/releases/1.0.2/qodercli-darwin-arm64.tar.gz"
-      sha256 "ff2822a177df923cd0cd443dfc9fed7c2a219c04c31921c7b3436d8d7d975a1e"
+      url "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/releases/1.0.5/qodercli-darwin-arm64.tar.gz"
+      sha256 "e786a451169c83190813fb6b5680e2c481a4d7649459ca5944e5020853366c23"
     end
   end
 
   on_linux do
     on_intel do
       # Requires AVX2 support
-      url "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/releases/1.0.2/qodercli-linux-x64.tar.gz"
-      sha256 "5ab5024e1f5ccf8d418a118c4050aaf1b0261fe5e67b47df3d29253db54f2700"
+      url "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/releases/1.0.5/qodercli-linux-x64.tar.gz"
+      sha256 "cc0eea07226db1b0b01083d88e6a73bfb7412e8c693947b940789d2da2888b5f"
     end
   end
 

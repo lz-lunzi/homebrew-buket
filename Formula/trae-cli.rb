@@ -4,8 +4,7 @@ class TraeCli < Formula
   version "0.120.27"
 
   livecheck do
-    url :homepage
-    regex(/v?(\d+(?:\.\d+)+)/i)
+    skip "CDN version not publicly listed; manual update required"
   end
 
   on_macos do
