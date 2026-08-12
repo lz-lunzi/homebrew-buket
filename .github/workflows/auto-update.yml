@@ -35,6 +35,8 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Update multi-arch binary formulas
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ruby scripts/update_multiarch.rb Formula/omp.rb can1357/oh-my-pi
           ruby scripts/update_multiarch.rb Formula/octopus.rb bestruirui/octopus

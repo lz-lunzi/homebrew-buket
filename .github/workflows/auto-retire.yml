@@ -32,22 +32,33 @@ jobs:
           echo "Deprecate date: $DEPRECATE_DATE"
           echo "Disable date:  $DISABLE_DATE"
 
-          check_and_retire() {
-            local file="$1" kind="$2" name="$3"
-            # Skip if already marked (deprecate!/disable! present)
-            if grep -qE '^\s*(deprecate!|disable!)\s' "$file"; then
-              echo "  $name: already retired, skip"
+          # Names that collide with a different software in official repos.
+          # HTTP 200 means "name exists", NOT "same software" — verify manually before removing.
+          local EXEMPT=(
+            "cask:orca"   # stablyai/orca (AI Agent ADE) ≠ plotly/orca (chart renderer)
+          )
+          local key="$kind:$name"
+          for e in "${EXEMPT[@]}"; do
+            if [ "$e" = "$key" ]; then
+              echo "  $name: name collision with different software in official, skip"
               return 0
             fi
-            local url="$API_BASE/$kind/$name.json"
-            local code
-            code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
-            if [ "$code" = "200" ]; then
-              echo "  $name: DUPLICATE in official, adding deprecate/disable"
-              ruby scripts/add_retire.rb "$file" "$kind" "$name" "$DEPRECATE_DATE" "$DISABLE_DATE"
-            else
-              echo "  $name: not in official (HTTP $code), keep"
-            fi
+          done
+          local file="$1" kind="$2" name="$3"
+          # Skip if already marked (deprecate!/disable! present)
+          if grep -qE '^\s*(deprecate!|disable!)\s' "$file"; then
+            echo "  $name: already retired, skip"
+            return 0
+          fi
+          local url="$API_BASE/$kind/$name.json"
+          local code
+          code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+          if [ "$code" = "200" ]; then
+            echo "  $name: DUPLICATE in official, adding deprecate/disable"
+            ruby scripts/add_retire.rb "$file" "$kind" "$name" "$DEPRECATE_DATE" "$DISABLE_DATE"
+          else
+            echo "  $name: not in official (HTTP $code), keep"
+          fi
           }
 
           echo "==> Checking Formulae"

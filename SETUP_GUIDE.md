@@ -68,26 +68,36 @@ brew upgrade qodercli
 
 ## Formula 结构说明
 
+### 命名规则
+
+文件名必须是小写、无空格、无特殊字符（`-` 替换为 `_`）。
+类名是文件名首字母大写的驼峰形式：
+
+| 文件名 | 类名 |
+|--------|------|
+| `toolname.rb` | `Toolname` |
+| `trae-cli.rb` | `TraeCli` |
+| `nine_router.rb` | `NineRouter` |
+| `paseocli.rb` | `Paseocli` |
+
 ### Formula（命令行工具）
-```ruby
-class Toolname < Formula
-  desc "工具描述"
-  homepage "工具主页"
-  url "下载链接"
-  sha256 "校验码"
-  license "许可证"
-
-  depends_on "依赖项"
-
-  def install
-    # 安装逻辑
-  end
-
-  test do
-    # 测试逻辑
-  end
-end
-```
+ class Toolname < Formula
+   desc "工具描述"
+   homepage "工具主页"
+   url "下载链接"
+   sha256 "校验码"
+   license "许可证"
+ 
+   depends_on "依赖项"
+ 
+   def install
+     # 安装逻辑
+   end
+ 
+   test do
+     # 测试逻辑
+   end
+ end
 
 ### Cask（图形界面应用）
 ```ruby
