@@ -40,6 +40,7 @@ jobs:
         run: |
           ruby scripts/update_multiarch.rb Formula/omp.rb can1357/oh-my-pi
           ruby scripts/update_multiarch.rb Formula/octopus.rb bestruirui/octopus
+          ruby scripts/update_multiarch.rb Formula/multica.rb multica-ai/multica
 
       - name: Bump formulae
         env:
