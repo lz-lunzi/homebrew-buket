@@ -3,8 +3,8 @@ class Litellm < Formula
 
   desc "Library to easily interface with LLM API providers"
   homepage "https://github.com/BerriAI/litellm"
-  url "https://files.pythonhosted.org/packages/d0/92/1171e76f2a4204a65adb5c827475e4f1d30e7c6a89d3d3e944d58b6fd8a6/litellm-1.96.0.tar.gz"
-  sha256 "340a9b04e1bf8486b0b99f3f6a5556aa59c8f9c16b11b362c95eabea1bcf7a9d"
+  url "https://files.pythonhosted.org/packages/79/fe/d03be8a6be6914fabacef29457a2b3d02128c52c448cc6f3019b8e63488b/litellm-1.96.2.tar.gz"
+  sha256 "80d477ae092b05ce023b5084542cb3cb75999b52b1dd2e4d834fb348effc9399"
   license "MIT"
   head "https://github.com/BerriAI/litellm.git", branch: "main"
 
