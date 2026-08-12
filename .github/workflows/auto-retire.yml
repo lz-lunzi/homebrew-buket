@@ -46,6 +46,10 @@ jobs:
                 echo "  $name: name collision with different software in official, skip"
                 return 0
                 ;;
+              cask:codebuddy-cn|cask:otty)  # synced with identical official cask
+                echo "  $name: synced with official cask, skip retirement"
+                return 0
+                ;;
             esac
             local url="$API_BASE/$kind/$name.json"
             local code
