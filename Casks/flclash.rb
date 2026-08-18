@@ -1,5 +1,5 @@
 cask "flclash" do
-  version "0.8.94"
+  version "0.8.96"
   sha256 :no_check
 
   on_arm do
