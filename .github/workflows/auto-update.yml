@@ -77,7 +77,10 @@ jobs:
           done
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
           git add -A
           if git diff --staged --quiet; then
             echo "No changes to commit"
