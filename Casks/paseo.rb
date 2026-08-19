@@ -30,7 +30,7 @@ cask "paseo" do
   end
 
   on_macos do
-    depends_on macos: ">= :big_sur"
+    depends_on macos: :big_sur
     app "Paseo.app"
   end
 
