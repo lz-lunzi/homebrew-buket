@@ -29,6 +29,9 @@ cask "paseo" do
     strategy :github_latest
   end
 
+  deprecate! date: "2026-08-20", because: "moved to homebrew/cask", replacement_cask: "paseo"
+  disable! date: "2027-08-20", because: "moved to homebrew/cask", replacement_cask: "paseo"
+
   on_macos do
     depends_on macos: :big_sur
     app "Paseo.app"
