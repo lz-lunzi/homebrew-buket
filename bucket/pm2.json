@@ -1,0 +1,21 @@
+{
+  "version": "7.0.3",
+  "description": "Production process manager for Node.js",
+  "homepage": "https://pm2.keymetrics.io",
+  "license": "Apache-2.0",
+  "url": "https://registry.npmjs.org/pm2/-/pm2-7.0.3.tgz",
+  "hash": "daf790481179dbc51d495a3faf3724b6ea3c4375ba7652b16e9275a8e143eefa",
+  "bin": {
+    "pm2": "bin/pm2",
+    "pm2-dev": "bin/pm2-dev",
+    "pm2-docker": "bin/pm2-docker",
+    "pm2-runtime": "bin/pm2-runtime"
+  },
+  "checkver": {
+    "url": "https://registry.npmjs.org/pm2/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/pm2/-/pm2-$version.tgz"
+  }
+}

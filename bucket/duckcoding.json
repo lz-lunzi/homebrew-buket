@@ -1,0 +1,36 @@
+{
+    "version": "1.5.1",
+    "description": "AI 工具一键配置 - 支持 Claude Code、CodeX、Gemini CLI 的跨平台桌面应用",
+    "homepage": "https://duckcoding.com",
+    "license": "AGPL-3.0",
+    "url": "https://github.com/DuckCoding-dev/DuckCoding/releases/download/v1.5.1/DuckCoding_1.5.1_x64-setup.exe",
+    "hash": "bb6714293a3786b6411432615941e6ad290a93b281d18f699b62601a595a58de",
+    "installer": {
+        "script": "Start-Process \"$dir\\DuckCoding_1.5.1_x64-setup.exe\" \"/S /D=$dir\" -Wait"
+    },
+    "uninstaller": {
+        "script": "Start-Process \"$dir\\uninstall.exe\" \"/S\" -Wait"
+    },
+    "notes": [
+        "DuckCoding 安装成功！",
+        "",
+        "DuckCoding 是一个 AI 工具统一管理平台，支持 Claude Code、CodeX、Gemini CLI。",
+        "",
+        "核心功能：",
+        "  - 工具管理：自动检测/安装/更新；支持 Local/WSL/SSH",
+        "  - 配置管理（Profile）：多配置隔离；原生同步仅替换 API Key / Base URL",
+        "  - 透明代理：三工具独立端口（8787/8788/8789）",
+        "  - 余额监控：多供应商；预设模板（NewAPI、OpenAI）+ 自定义 JS 提取器",
+        "  - 供应商管理：统一 API 供应商配置，Dashboard 一键切换与校验",
+        "",
+        "更新: scoop update duckcoding",
+        "卸载: scoop uninstall duckcoding",
+        "",
+        "官网: https://duckcoding.com",
+        "控制台: https://duckcoding.com/console"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/DuckCoding-dev/DuckCoding/releases/download/v$version/DuckCoding_$version_x64-setup.exe"
+    }
+}

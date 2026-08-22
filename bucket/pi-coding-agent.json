@@ -1,0 +1,48 @@
+{
+    "version": "0.73.1",
+    "description": "AI 编码智能体 CLI，提供 read、bash、edit、write 工具和会话管理",
+    "homepage": "https://github.com/badlogic/pi-mono",
+    "license": "MIT",
+    "depends": "nodejs-lts",
+    "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.73.1.tgz",
+    "hash": "7bf5d492670c04fd7c599dee7e6eaabff964084affd216766107e6741df7a2e1",
+    "installer": {
+        "script": "npm install -g @mariozechner/pi-coding-agent"
+    },
+    "uninstaller": {
+        "script": "npm uninstall -g @mariozechner/pi-coding-agent -y"
+    },
+    "bin": "pi",
+    "notes": [
+        "Pi Coding Agent 安装成功！",
+        "",
+        "Pi 是一个终端 AI 编码智能体，提供代码读写、Bash 执行和会话管理功能。",
+        "",
+        "功能：",
+        "  - 代码读取和编辑",
+        "  - Shell 命令执行",
+        "  - 文件写入",
+        "  - 会话管理",
+        "  - 支持 Hooks 自定义集成",
+        "",
+        "快速开始：",
+        "  pi                       # 启动 Pi",
+        "  pi --version             # 检查版本",
+        "  pi /help                 # 显示帮助",
+        "",
+        "文档: https://github.com/badlogic/pi-mono",
+        "",
+        "更新: scoop update pi-coding-agent",
+        "卸载: scoop uninstall pi-coding-agent"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent",
+        "jsonpath": "$['dist-tags'].latest"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-$version.tgz",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

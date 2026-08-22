@@ -1,0 +1,36 @@
+{
+    "version": "5.2.0",
+    "description": "贝锐蒲公英客户端 - 异地组网，快速搭建虚拟局域网",
+    "homepage": "https://pgy.oray.com/download/",
+    "license": "Freeware",
+    "url": "https://pgy.oray.com/download/windows#/dl.7z",
+    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "installer": {
+        "script": [
+            "Write-Host '==========================================================' -ForegroundColor Cyan",
+            "Write-Host '  蒲公英客户端 - 手动下载安装' -ForegroundColor Cyan",
+            "Write-Host '==========================================================' -ForegroundColor Cyan",
+            "Write-Host ''",
+            "Write-Host '下载地址: https://pgy.oray.com/download/' -ForegroundColor Yellow",
+            "Write-Host ''",
+            "Write-Host '请执行以下步骤:' -ForegroundColor White",
+            "Write-Host '  1. 访问上述下载页面' -ForegroundColor White",
+            "Write-Host '  2. 选择 Windows 64位客户端' -ForegroundColor White",
+            "Write-Host '  3. 运行安装程序' -ForegroundColor White",
+            "Write-Host ''",
+            "Write-Host '==========================================================' -ForegroundColor Cyan"
+        ]
+    },
+    "bin": "PgyVpn.exe",
+    "shortcuts": [
+        [
+            "PgyVpn.exe",
+            "蒲公英"
+        ]
+    ],
+    "checkver": {
+        "url": "https://pgy.oray.com/download/",
+        "regex": "PgyVisitor_([\\d.]+(?:_\\d+)?)_x64\\.exe"
+    },
+    "notes": "下载说明:\n\n当前版本检测基于官网下载页面的文件名信息。\n\n由于官网下载链接需要JavaScript环境或特殊认证，无法实现完全自动化下载。\n\n手动下载步骤:\n1. 访问 https://pgy.oray.com/download/\n2. 选择 Windows 64位客户端下载\n3. 运行安装程序\n\n版本信息:\n- 当前检测到的版本: 5.2.0.54538\n- 完整文件名: PgyVisitor_5.2.0.54538_x64.exe\n- 软件ID: 33\n- 版本ID: 1903"
+}

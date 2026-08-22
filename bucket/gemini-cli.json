@@ -1,0 +1,73 @@
+{
+    "version": "0.56.0",
+    "description": "一个开源的 AI 智能体，将 Gemini 的强大功能直接引入您的终端。",
+    "homepage": "https://github.com/google-gemini/gemini-cli",
+    "license": "Apache-2.0",
+    "depends": "nodejs-lts",
+    "url": "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.56.0.tgz",
+    "hash": "e25443a59b22f0000d6418ce42c5c0710bc04d8f41b5567417e30e038a80120b",
+    "installer": {
+        "script": "npm install -g @google/gemini-cli@latest"
+    },
+    "uninstaller": {
+        "script": "npm uninstall -g @google/gemini-cli -y"
+    },
+    "env_set": {
+        "HTTP_PROXY": "http://127.0.0.1:10809",
+        "HTTPS_PROXY": "http://127.0.0.1:10809"
+    },
+    "notes": [
+        "Gemini CLI 安装成功！",
+        "",
+        "Gemini CLI 是一个开源的 AI 智能体，将 Gemini 的强大功能直接引入您的终端。",
+        "",
+        "代理配置：",
+        "  此安装已自动配置代理设置：",
+        "    HTTP_PROXY=http://127.0.0.1:10809",
+        "    HTTPS_PROXY=http://127.0.0.1:10809",
+        "",
+        "  要修改代理设置，更新您的 shell 配置文件或运行：",
+        "    $env:HTTP_PROXY='http://127.0.0.1:10809'",
+        "    $env:HTTPS_PROXY='http://127.0.0.1:10809'",
+        "",
+        "功能：",
+        "  - 免费层：60 请求/分钟和 1,000 请求/天",
+        "  - Gemini 2.5 Pro，具有 1M token 上下文窗口",
+        "  - 内置工具：Google 搜索、文件操作、shell 命令",
+        "  - MCP（模型上下文协议）支持",
+        "  - 代码理解、生成和调试",
+        "",
+        "快速开始：",
+        "  gemini                    # 启动 Gemini CLI",
+        "  gemini --version          # 检查版本",
+        "  gemini -p \"your prompt\"   # 非交互模式",
+        "",
+        "身份验证选项：",
+        "  1. Google 登录（推荐）",
+        "     - 可用免费层",
+        "     - 无需管理 API 密钥",
+        "",
+        "  2. Gemini API 密钥",
+        "     export GEMINI_API_KEY='your-api-key'",
+        "",
+        "  3. Vertex AI",
+        "     export GOOGLE_API_KEY='your-api-key'",
+        "     export GOOGLE_GENAI_USE_VERTEXAI=true",
+        "",
+        "文档: https://geminicli.com",
+        "GitHub: https://github.com/google-gemini/gemini-cli",
+        "",
+        "更新: scoop update gemini-cli",
+        "卸载: scoop uninstall gemini-cli"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/@google/gemini-cli",
+        "jsonpath": "$['dist-tags'].latest"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-$version.tgz",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

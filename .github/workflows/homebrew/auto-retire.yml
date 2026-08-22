@@ -56,7 +56,7 @@ jobs:
             code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
             if [ "$code" = "200" ]; then
               echo "  $name: DUPLICATE in official, adding deprecate/disable"
-              ruby scripts/add_retire.rb "$file" "$kind" "$name" "$DEPRECATE_DATE" "$DISABLE_DATE"
+              ruby homebrew/scripts/add_retire.rb "$file" "$kind" "$name" "$DEPRECATE_DATE" "$DISABLE_DATE"
             else
               echo "  $name: not in official (HTTP $code), keep"
             fi

@@ -1,0 +1,50 @@
+{
+    "version": "2026.817.0",
+    "description": "面向零人类公司的开源 AI 智能体编排平台",
+    "homepage": "https://paperclip.ing",
+    "license": "MIT",
+    "depends": "nodejs-lts",
+    "url": "https://registry.npmjs.org/paperclipai/-/paperclipai-2026.817.0.tgz",
+    "hash": "f4b41e5ad74e846c0f15a4272beda3f735c104d4449e29c1ceef130eafd638b7",
+    "installer": {
+        "script": "npm install -g paperclipai"
+    },
+    "uninstaller": {
+        "script": "npm uninstall -g paperclipai -y"
+    },
+    "bin": "paperclipai",
+    "notes": [
+        "Paperclip 安装成功！",
+        "",
+        "Paperclip 是一个开源的 AI 智能体编排平台，用于构建和管理自主运行的 AI 公司。",
+        "",
+        "功能：",
+        "  - 组织架构管理：创建层级、角色和汇报关系",
+        "  - 目标对齐：将每个任务追溯到公司使命",
+        "  - 心跳系统：智能体按计划自动唤醒和执行",
+        "  - 成本控制：按智能体设置月度预算上限",
+        "  - 治理层：用户作为董事会审批和管理智能体",
+        "  - 工单系统：完整的对话和决策追踪",
+        "  - 多公司支持：单次部署运行多个 AI 公司",
+        "  - 自带智能体：兼容 Claude、Codex、Cursor 等运行时",
+        "",
+        "快速开始：",
+        "  npx paperclipai onboard --yes    # 初始化设置",
+        "",
+        "文档: https://paperclip.ing",
+        "GitHub: https://github.com/paperclipai/paperclip",
+        "",
+        "更新: scoop update paperclip",
+        "卸载: scoop uninstall paperclip"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/paperclipai",
+        "jsonpath": "$['dist-tags'].latest"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/paperclipai/-/paperclipai-$version.tgz",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

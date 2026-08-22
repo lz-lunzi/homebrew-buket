@@ -1,0 +1,57 @@
+{
+    "version": "0.3.1",
+    "description": "GPU 加速的跨平台桌面 AI 代理工作台，支持多种 AI 代理的多会话管理、内置代码编辑器和终端集成",
+    "homepage": "https://github.com/sxhxliang/agent-studio",
+    "license": "Apache-2.0",
+    "url": "https://github.com/sxhxliang/agent-studio/releases/download/v0.3.1/agentx-windows.exe",
+    "hash": "a405107f67a5486244cf17847f711905ec2f12d1c1e14e8bb98f6e2377ac0b4b",
+    "bin": "agentx-windows.exe",
+    "shortcuts": [
+        [
+            "agentx-windows.exe",
+            "AgentX"
+        ]
+    ],
+    "persist": "config.json",
+    "notes": [
+        "AgentX 安装成功！",
+        "",
+        "AgentX 是一个 GPU 加速的跨平台桌面 AI 代理工作台，支持多种 AI 代理。",
+        "",
+        "核心功能：",
+        "  - 基于 Dock 的布局系统，支持持久化状态",
+        "  - 通过 ACP（Agent Client Protocol）实时与 AI 代理通信",
+        "  - 多会话管理，支持 JSONL 持久化",
+        "  - 内置代码编辑器，集成 LSP 和语法高亮",
+        "  - 集成终端，无需离开应用即可执行命令",
+        "  - 支持浅色/深色主题切换",
+        "  - 自动更新系统",
+        "  - 支持中英文界面",
+        "",
+        "支持的 AI 代理：",
+        "  - Codex, Claude, Kimi Code, Qwen, Qoder, OpenCode, Gemini, AugmentCode, Iflow",
+        "  - 以及其他 ACP 兼容的代理",
+        "",
+        "快速开始：",
+        "  1. 运行 AgentX",
+        "  2. 在设置中配置 AI 代理（需要配置 agent_servers）",
+        "  3. 开始与 AI 代理对话",
+        "",
+        "配置文件：",
+        "  - config.json 需要在可执行文件同级目录创建",
+        "  - 支持配置多个 AI 代理服务器",
+        "",
+        "更新: scoop update agentx",
+        "卸载: scoop uninstall agentx",
+        "文档: https://github.com/sxhxliang/agent-studio"
+    ],
+    "checkver": {
+        "github": "https://github.com/sxhxliang/agent-studio"
+    },
+    "autoupdate": {
+        "url": "https://github.com/sxhxliang/agent-studio/releases/download/v$version/agentx-windows.exe",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "2.5.5",
+  "description": "Terminal in Your Pocket - remote access tool for Mac, Linux, and Windows",
+  "homepage": "https://github.com/decolua/9remote",
+  "license": "MIT",
+  "url": "https://registry.npmjs.org/9remote/-/9remote-2.5.5.tgz",
+  "hash": "ef30aef88277784ca03faeea260faaa1c47aefd8e7b04f507b814ff1e04fbb23",
+  "bin": {
+    "9remote": "bin/9remote.js"
+  },
+  "checkver": {
+    "url": "https://registry.npmjs.org/9remote/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/9remote/-/9remote-$version.tgz"
+  }
+}

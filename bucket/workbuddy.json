@@ -1,0 +1,40 @@
+{
+    "version": "5.3.14.36279234",
+    "description": "腾讯 CodeBuddy WorkBuddy Desktop - AI Agent 桌面应用，提供智能编程、多模态生成、技能插件与沙箱执行环境",
+    "homepage": "https://www.codebuddy.cn/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.3.14.36279234-825709d4.exe#/dl.7z",
+            "hash": "3123073e33ae5cb689aebbeac2268314615d8a209d751ee09a4f3eb4ed94ea70",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+            ]
+        }
+    },
+    "bin": "WorkBuddy.exe",
+    "shortcuts": [
+        [
+            "WorkBuddy.exe",
+            "WorkBuddy"
+        ]
+    ],
+    "notes": [
+        "WorkBuddy Desktop 已安装!",
+        "",
+        "功能：",
+        "  - AI Agent 对话与代码生成",
+        "  - 多模态生成 (Ardot 设计/海报/幻灯片/UI)",
+        "  - 技能插件系统 (workbuddy-builtin)",
+        "  - 沙箱执行环境 (sandbox-cli)",
+        "  - 内置 Node.js / Python / Git 运行时",
+        "",
+        "首次启动会解压内置运行时到用户目录。",
+        "",
+        "更新：scoop update workbuddy",
+        "卸载：scoop uninstall workbuddy",
+        "",
+        "官网：https://www.codebuddy.cn/"
+    ]
+}

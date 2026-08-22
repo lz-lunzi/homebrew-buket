@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0-alpha.23",
+  "description": "Agent synchronization tool",
+  "homepage": "https://github.com/dallay/agentsync",
+  "license": "MIT",
+  "url": "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz",
+  "hash": "1b0ba5aabc21eaa6e86c8e4a5cbae1eb8a4ae0d204afbe958e76423f71cbb1db",
+  "bin": {
+    "agentsync": "bin/agentsync.js"
+  },
+  "checkver": {
+    "url": "https://registry.npmjs.org/agentsync/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/agentsync/-/agentsync-$version.tgz",
+    "hash": {
+      "url": "https://registry.npmjs.org/agentsync",
+      "jsonpath": "$.dist.tarball"
+    }
+  }
+}

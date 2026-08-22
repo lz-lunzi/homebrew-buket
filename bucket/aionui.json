@@ -1,0 +1,67 @@
+{
+    "version": "1.8.3",
+    "description": "免费、本地、开源的 AI 协作平台，支持 Gemini CLI、Claude Code、Codex、Qwen Code 等",
+    "homepage": "https://github.com/iOfficeAI/AionUi",
+    "license": "Apache-2.0",
+    "url": "https://github.com/iOfficeAI/AionUi/releases/download/v1.8.3/AionUi-1.8.3-win-x64.zip",
+    "hash": "bcebcd306882013f9eb6d1ee5bede465f0920946f6b91b6fabf1138c2b213a1f",
+    "extract_dir": "",
+    "bin": "AionUi.exe",
+    "shortcuts": [
+        [
+            "AionUi.exe",
+            "AionUi"
+        ]
+    ],
+    "persist": [
+        "data",
+        "config"
+    ],
+    "notes": [
+        "AionUi 安装成功！",
+        "",
+        "AionUi 是一个免费、本地、开源的 AI 协作平台（Cowork），为命令行 AI 工具提供统一图形界面。",
+        "",
+        "核心功能：",
+        "  - 统一平台：管理 Gemini CLI、Claude Code、Codex、Qwen Code 等命令行 AI 工具",
+        "  - 内置 Gemini CLI：开箱即用，无需额外安装",
+        "  - 跨平台：支持 Windows、macOS 和 Linux",
+        "  - 多模型支持：Gemini、OpenAI、Claude、Qwen 以及本地模型（Ollama、LM Studio）",
+        "  - 7x24 远程访问：通过 WebUI 或 Telegram 随时访问",
+        "  - 多会话独立上下文：并行聊天，互不干扰",
+        "  - 9+ 格式预览：PDF、Word、Excel、PPT、代码、Markdown、图片等",
+        "  - 智能文件管理：批量重命名、自动整理、智能分类",
+        "  - AI 图像生成与识别",
+        "",
+        "快速开始：",
+        "  1. 从开始菜单启动 AionUi",
+        "  2. 配置 AI 服务（支持 Google 账号登录或 API Key）",
+        "  3. 开始体验现代 AI 聊天界面",
+        "",
+        "WebUI 远程访问：",
+        "  - 在设置中启用 WebUI",
+        "  - 支持扫码或账号密码登录",
+        "  - 可从任何设备通过浏览器访问",
+        "",
+        "Telegram 机器人：",
+        "  - 在设置中配置 Bot Token",
+        "  - 通过 Telegram 与 AI 助手对话",
+        "",
+        "数据安全：",
+        "  - 所有对话和文件保存在本地 SQLite 数据库",
+        "  - 数据不会上传到任何服务器",
+        "",
+        "更新: scoop update aionui",
+        "卸载: scoop uninstall aionui",
+        "文档: https://github.com/iOfficeAI/AionUi"
+    ],
+    "checkver": {
+        "github": "https://github.com/iOfficeAI/AionUi"
+    },
+    "autoupdate": {
+        "url": "https://github.com/iOfficeAI/AionUi/releases/download/v$version/AionUi-$version-win-x64.zip",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

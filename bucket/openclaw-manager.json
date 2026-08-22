@@ -1,0 +1,50 @@
+{
+    "version": "0.0.7",
+    "description": "高性能跨平台 AI 助手管理工具，基于 Tauri 2.0 + React + TypeScript + Rust 构建",
+    "homepage": "https://github.com/miaoxworld/openclaw-manager",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/miaoxworld/openclaw-manager/releases/download/v0.0.7/OpenClaw.Manager_0.0.7_x64_en-US.msi",
+            "hash": "sha256:6a922512dd817a1cc2f95410206697e3ed5e7295c46513af5e5c00e9da2c6bf9"
+        }
+    },
+    "pre_install": [
+        "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }"
+    ],
+    "installer": {
+        "script": [
+            "Start-Process -Wait msiexec \"/i `\"$dir\\OpenClaw.Manager_$version_x64_en-US.msi`\" /qn /norestart\""
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$msi = Get-ChildItem \"$dir\\OpenClaw.Manager_*.msi\" | Select-Object -First 1",
+            "if ($msi) {",
+            "    Start-Process -Wait msiexec \"/x `\"$($msi.FullName)`\" /qn /norestart\"",
+            "}"
+        ]
+    },
+    "notes": [
+        "OpenClaw Manager 安装成功！",
+        "",
+        "功能特性：",
+        "  - 实时服务状态监控、进程内存统计、一键启动/停止/重启",
+        "  - 支持 14+ AI 提供商（Anthropic、OpenAI、DeepSeek、Moonshot、Gemini 等）",
+        "  - 消息渠道支持 Telegram、Discord、Slack、飞书、微信、iMessage、钉钉",
+        "  - 后台服务控制、实时日志、开机自启",
+        "",
+        "GitHub：https://github.com/miaoxworld/openclaw-manager",
+        "",
+        "更新：scoop update openclaw-manager",
+        "卸载：scoop uninstall openclaw-manager"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/miaoxworld/openclaw-manager/releases/download/v$version/OpenClaw.Manager_$version_x64_en-US.msi"
+            }
+        }
+    }
+}

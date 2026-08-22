@@ -1,0 +1,18 @@
+{
+  "version": "0.5.55",
+  "description": "Start and manage 9Router server",
+  "homepage": "https://github.com/decolua/9router",
+  "license": "MIT",
+  "url": "https://registry.npmjs.org/9router/-/9router-0.5.55.tgz",
+  "hash": "452c9ad34c40fd4bcb95323e1437862d0050e899dbe0a6a8aa336c8fa865ff2f",
+  "bin": {
+    "9router": "bin/9router.js"
+  },
+  "checkver": {
+    "url": "https://registry.npmjs.org/9router/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/9router/-/9router-$version.tgz"
+  }
+}

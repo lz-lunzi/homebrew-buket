@@ -1,0 +1,51 @@
+{
+    "version": "2.3.73734",
+    "description": "字节跳动 AI 办公平台 — 支持 Work/Design 双模式，集成自动生成 PPT、数据分析、深度研究、文档生成，接入豆包2.1、Kimi3、GLM5.2、DeepSeek V4 等模型",
+    "homepage": "https://www.trae.cn",
+    "license": "Freeware",
+    "depends": "innounp",
+    "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.73734/win32/TraeWork_CN-Setup-x64.exe",
+    "hash": "b515a7683c6975e36ea8f4e7a081d95c750b96fe76a3f3a21eec96b5cfa876f5",
+    "installer": {
+        "script": [
+            "Expand-InnoArchive -Path \"$dir\\$fname\" -ExtractDir '{code_GetDestDir}' -Removal"
+        ]
+    },
+    "shortcuts": [
+        [
+            "TRAE SOLO CN.exe",
+            "TraeWork"
+        ]
+    ],
+    "notes": [
+        "TraeWork 已安装！",
+        "",
+        "TraeWork 是字节跳动推出的 AI 办公平台，支持多种工作场景。",
+        "",
+        "核心功能：",
+        "  - Work 模式：自动生成 PPT、数据分析、深度研究、文档生成",
+        "  - Design 模式：图片编辑与设计",
+        "  - 电脑控制功能",
+        "  - 对话框最小化为悬浮窗",
+        "  - 多端同步（桌面端、移动端、网页端）",
+        "  - 插件集成（飞书、微信、钉钉等）",
+        "  - 接入豆包2.1、Kimi3、GLM5.2、DeepSeek V4、Seedance、Seedream 等模型",
+        "",
+        "更新: scoop update traework",
+        "卸载: scoop uninstall traework",
+        "",
+        "官网: https://www.trae.cn",
+        "更新日志: https://www.trae.cn/changelog"
+    ],
+    "checkver": {
+        "url": "https://api.trae.cn/icube/api/v1/native/version/trae/cn/latest",
+        "jsonpath": "$.data.solo.win32.download[0].x64",
+        "regex": "stable/([\\d.]+)/win32/TraeWork"
+    },
+    "autoupdate": {
+        "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/$version/win32/TraeWork_CN-Setup-x64.exe",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

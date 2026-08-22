@@ -82,7 +82,7 @@ brew upgrade --cask github-store
 - **检测流程**：
   1. 遍历 `Formula/*.rb` 和 `Casks/*.rb`
   2. 对每个包调用 `https://formulae.brew.sh/api/{formula|cask}/<name>.json`
-  3. HTTP 200 = 官方已有 → 调用 `scripts/add_retire.rb` 添加 `deprecate!` + `disable!`
+  3. HTTP 200 = 官方已有 → 调用 `homebrew/scripts/add_retire.rb` 添加 `deprecate!` + `disable!`
   4. HTTP 404 = 官方没有 → 跳过
   5. 有变更时创建 PR
 

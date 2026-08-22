@@ -1,0 +1,22 @@
+{
+    "version": "9.8.2",
+    "description": "Claude Code / GeminiCLI / CodexCLI 的强大功能 + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / 自定义模型 / 以上所有] 协同工作。",
+    "homepage": "https://github.com/BeehiveInnovations/pal-mcp-server",
+    "license": "Other",
+    "depends": "python",
+    "url": "https://github.com/BeehiveInnovations/pal-mcp-server/releases/download/v9.8.2/pal_mcp_server-9.8.2-py3-none-any.whl",
+    "hash": "ee1b2a666c553df3a4cf20b8e365b7603724601b13d63d19c93c1bbca4220c5e",
+    "installer": {
+        "script": "pip install \"$dir\\pal_mcp_server-$version-py3-none-any.whl\""
+    },
+    "uninstaller": {
+        "script": "pip uninstall pal-mcp-server -y"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/BeehiveInnovations/pal-mcp-server/releases/download/v$version/pal_mcp_server-$version-py3-none-any.whl",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

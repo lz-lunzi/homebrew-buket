@@ -1,0 +1,40 @@
+{
+    "version": "0.4.2.2",
+    "description": "AutoGen Studio：用于构建多智能体应用的无代码 GUI",
+    "homepage": "https://microsoft.github.io/autogen/docs/autogen-studio/getting-started",
+    "license": "MIT",
+    "depends": "python",
+    "url": "https://files.pythonhosted.org/packages/2d/83/93a2afac5a54107160a6186447f68ff0a2b9af26b94ed7efe18940574cdf/autogenstudio-0.4.2.2-py3-none-any.whl",
+    "hash": "2d8393a2afac5a54107160a6186447f68ff0a2b9af26b94ed7efe18940574cdf",
+    "installer": {
+        "script": "pip install \"$dir\\autogenstudio-$version-py3-none-any.whl\""
+    },
+    "uninstaller": {
+        "script": "pip uninstall autogenstudio -y"
+    },
+    "notes": [
+        "AutoGen Studio installed successfully!",
+        "",
+        "AutoGen Studio is an AutoGen-powered AI app (user interface) to help you rapidly prototype AI agents,",
+        "enhance them with skills, compose them into workflows and interact with them to accomplish tasks.",
+        "",
+        "Quick Start:",
+        "  Run the web UI:",
+        "    autogenstudio ui --port 8081",
+        "",
+        "  Or install via pip:",
+        "    pip install -U autogenstudio",
+        "    autogenstudio ui --port 8081",
+        "",
+        "Usage:",
+        "  Open your web browser and go to http://localhost:8081/ to use AutoGen Studio",
+        "",
+        "Documentation: https://microsoft.github.io/autogen/docs/autogen-studio/getting-started",
+        "Update: scoop update autogenstudio",
+        "Uninstall: scoop uninstall autogenstudio"
+    ],
+    "checkver": "autogenstudio",
+    "autoupdate": {
+        "url": "https://pypi.org/pypi/autogenstudio/json"
+    }
+}

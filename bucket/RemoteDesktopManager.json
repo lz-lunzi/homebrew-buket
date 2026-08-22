@@ -1,0 +1,72 @@
+{
+    "version": "2026.2.17.0",
+    "description": "面向个人、MSP 和 IT 专业人员的远程连接管理软件。",
+    "homepage": "https://devolutions.net/remote-desktop-manager/",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-x64.2026.2.17.0.msi",
+            "hash": "1cf7042ab9a46b1a3dfcffd57694f2dcea233ff27d030ec9139a21904dba8d1c"
+        },
+        "arm64": {
+            "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-arm64.2026.2.17.0.msi",
+            "hash": "2af0e54fea39f5d2c2e211b94864f213d6f61cd48738820b8aa583287ee15b76"
+        }
+    },
+    "pre_install": "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }",
+    "installer": {
+        "script": "Start-Process -Wait msiexec \"/i `\"$dir\\Setup.RemoteDesktopManager.win-$architecture.$version.msi`\" /qn /norestart INSTALLDIR=\\\"$dir\\\"\""
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"$app requires admin rights to uninstall\"; break }",
+            "$msi = Get-ChildItem \"$dir\\Setup.RemoteDesktopManager.win-*.msi\" | Select-Object -First 1",
+            "if ($msi) {",
+            "    Start-Process -Wait msiexec \"/x `\"$($msi.FullName)`\" /qn /norestart\"",
+            "}"
+        ]
+    },
+    "notes": [
+        "Remote Desktop Manager 已安装！",
+        "",
+        "特性：",
+        "  - 统一的远程连接管理",
+        "  - 凭据管理和安全存储",
+        "  - 支持多种连接协议（RDP, SSH, VNC, 等）",
+        "  - 团队协作和共享功能",
+        "",
+        "版本：2026.2.13.0",
+        "",
+        "注意：",
+        "  - 安装需要管理员权限",
+        "  - 首次安装时会自动计算 hash 并验证",
+        "  - 如果下载失败，请手动访问官网下载",
+        "",
+        "官网：https://devolutions.net/remote-desktop-manager/",
+        "文档：https://docs.devolutions.net/RDM/",
+        "论坛：https://forum.devolutions.net/",
+        "",
+        "更新：scoop update RemoteDesktopManager",
+        "卸载：scoop uninstall RemoteDesktopManager"
+    ],
+    "checkver": {
+        "url": "https://devolutions.net/remote-desktop-manager/download/",
+        "regex": "data-rosey=\"tab-latest-version\"[^>]*>([\\d.]+)<"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-x64.$version.msi",
+                "hash": {
+                    "mode": "download"
+                }
+            },
+            "arm64": {
+                "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-arm64.$version.msi",
+                "hash": {
+                    "mode": "download"
+                }
+            }
+        }
+    }
+}

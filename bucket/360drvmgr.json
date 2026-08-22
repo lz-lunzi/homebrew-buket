@@ -1,0 +1,15 @@
+{
+    "version": "6.0.0.1040",
+    "description": "360驱动大师 - 驱动管理、备份、还原",
+    "homepage": "https://www.360.cn/drvmgr/",
+    "license": "Freeware",
+    "url": "https://sfdl.360safe.com/drvmgr/guanwang__360DrvMgrInstaller_beta.exe#/dl.7z",
+    "hash": "3af3ef808eaa4d1b38f8f51abd0b8a6c6fcd00a6c9d1ff17cd74766b43681a4a",
+    "bin": "DrvMgr.exe",
+    "shortcuts": [
+        [
+            "DrvMgr.exe",
+            "360驱动大师"
+        ]
+    ]
+}

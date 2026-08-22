@@ -1,0 +1,60 @@
+{
+    "version": "1.5.1",
+    "description": "免费开源的 GitHub Releases 应用商店，一键浏览、发现和安装应用",
+    "homepage": "https://github.com/rainxchzed/Github-Store",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/GitHub.Store-1.5.1.msi",
+            "hash": "9cb6ba688f9bfdb52859069743536e169c84eb2064bd85b02ccdce18ae66a6fa"
+        }
+    },
+    "installer": {
+        "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GitHub.Store.$version.msi`\" /qn /norestart\""
+    },
+    "uninstaller": {
+        "script": "$msi = Get-ChildItem \"$dir\\GitHub.Store.*.msi\" | Select-Object -First 1; Start-Process -Wait msiexec \"/x `\"$($msi.FullName)`\" /qn /norestart\""
+    },
+    "bin": "GitHub-Store\\GitHub-Store.exe",
+    "shortcuts": [
+        [
+            "GitHub-Store\\GitHub-Store.exe",
+            "GitHub Store"
+        ]
+    ],
+    "notes": [
+        "GitHub Store 安装成功！",
+        "",
+        "GitHub Store 是一个免费开源的 GitHub Releases 应用商店。",
+        "",
+        "功能特性：",
+        "  - 自动发现 GitHub 上的开源软件",
+        "  - 一键安装 APK、EXE、DMG、AppImage、DEB、RPM 等格式",
+        "  - 追踪已安装应用的更新",
+        "  - 跨平台支持（Windows、macOS、Linux、Android）",
+        "",
+        "快速开始：",
+        "  1. 从开始菜单启动 GitHub Store",
+        "  2. 浏览或搜索感兴趣的项目",
+        "  3. 一键安装最新版本",
+        "",
+        "官网：https://www.github-store.org/",
+        "GitHub：https://github.com/rainxchzed/Github-Store",
+        "",
+        "更新：scoop update github-store",
+        "卸载：scoop uninstall github-store"
+    ],
+    "checkver": {
+        "github": "https://github.com/rainxchzed/Github-Store"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/rainxchzed/Github-Store/releases/download/$version/GitHub.Store-$version.msi",
+                "hash": {
+                    "mode": "download"
+                }
+            }
+        }
+    }
+}

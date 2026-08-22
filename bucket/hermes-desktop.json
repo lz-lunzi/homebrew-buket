@@ -1,0 +1,53 @@
+{
+    "version": "0.0.1",
+    "description": "Nous Research 官方桌面客户端 — Hermes Agent 原生 GUI，支持聊天、终端、文件管理、消息平台集成、子代理等功能",
+    "homepage": "https://hermes-agent.nousresearch.com/desktop",
+    "license": "MIT",
+    "url": "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=02a4d6695198",
+    "hash": "505dfb4c2c1052b055e3fc694a76cb7ce093a64962c7713aa294f5549c6734f5",
+    "installer": {
+        "script": [
+            "Start-Process \"$dir\\Hermes-Setup.exe\" -ArgumentList '/S' -Wait"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (Test-Path \"$env:LOCALAPPDATA\\hermes\") { Remove-Item -Recurse -Force \"$env:LOCALAPPDATA\\hermes\" -ErrorAction SilentlyContinue }"
+        ]
+    },
+    "notes": [
+        "Hermes Desktop 已安装!",
+        "",
+        "功能：",
+        "  - 原生聊天界面 (LaTeX/数学渲染, 流式输出)",
+        "  - 集成终端 (xterm + Solarized 主题)",
+        "  - 文件管理与预览",
+        "  - 消息平台集成 (Telegram, Discord, Slack, WhatsApp, Signal 等 20+)",
+        "  - 工具/MCP 服务器管理",
+        "  - 子代理实时监控",
+        "  - 定时任务与配置管理",
+        "",
+        "首次启动时会自动克隆 Hermes Agent 到:",
+        "  %LOCALAPPDATA%\\hermes\\hermes-agent\\",
+        "",
+        "可选依赖 (通过 scoop 安装):",
+        "  scoop install hermes-agent    # CLI 版本 (共享数据)",
+        "  scoop install ripgrep        # 更快的文件搜索",
+        "  scoop install ffmpeg         # TTS 语音消息",
+        "",
+        "更新：scoop update hermes-desktop",
+        "卸载：scoop uninstall hermes-desktop",
+        "",
+        "官网：https://hermes-agent.nousresearch.com/desktop"
+    ],
+    "checkver": {
+        "url": "https://hermes-agent.nousresearch.com/desktop",
+        "regex": "Hermes-Setup\\.exe\\?build=([a-f0-9]+)"
+    },
+    "autoupdate": {
+        "url": "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=$matchBuild",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

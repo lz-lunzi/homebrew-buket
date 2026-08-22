@@ -1,0 +1,104 @@
+{
+    "version": "17.4.1",
+    "description": "Oh My Pi (OMP) — 终端 AI 编程代理，支持 hash-anchored edits、LSP、Python、浏览器工具、子代理",
+    "homepage": "https://omp.sh",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/can1357/oh-my-pi/releases/download/v17.4.1/omp-windows-x64.exe",
+            "hash": "0df097cc7af44247d33bae32d2e5e5baf2911ef7888ca5583e83fdab59db7a25"
+        }
+    },
+    "bin": [
+        [
+            "omp-windows-x64.exe",
+            "omp"
+        ]
+    ],
+    "post_install": [
+        "# Configure bash shell for OMP",
+        "$bashPath = $null",
+        "$candidates = @(",
+        "    'C:\\Program Files\\Git\\bin\\bash.exe',",
+        "    'C:\\msys64\\usr\\bin\\bash.exe',",
+        "    'C:\\cygwin64\\bin\\bash.exe',",
+        "    'C:\\cygwin\\bin\\bash.exe'",
+        ")",
+        "foreach ($c in $candidates) { if (Test-Path $c) { $bashPath = $c; break } }",
+        "if (-not $bashPath) {",
+        "    try { $bashPath = (Get-Command bash.exe -ErrorAction Stop).Source } catch {",
+        "        try { $bashPath = (Get-Command bash -ErrorAction Stop).Source } catch {}",
+        "    }",
+        "}",
+        "if (-not $bashPath) { try { $bashPath = (Get-Command wsl.exe -ErrorAction Stop).Source } catch {} }",
+        "if ($bashPath) {",
+        "    $settingsDir = Join-Path $env:USERPROFILE '.omp\\agent'",
+        "    $settingsFile = Join-Path $settingsDir 'settings.json'",
+        "    if (-not (Test-Path $settingsDir)) { New-Item -ItemType Directory -Force -Path $settingsDir | Out-Null }",
+        "    $settings = @{}",
+        "    if (Test-Path $settingsFile) {",
+        "        try { $settings = Get-Content $settingsFile -Raw | ConvertFrom-Json -AsHashtable } catch { $settings = @{} }",
+        "    }",
+        "    if (-not $settings.shellPath) {",
+        "        $settings['shellPath'] = $bashPath",
+        "        $settings | ConvertTo-Json -Depth 10 | Set-Content $settingsFile -Encoding UTF8",
+        "        Write-Host \"OMP: Configured shell -> $bashPath\" -ForegroundColor Green",
+        "    }",
+        "} else {",
+        "    Write-Host 'OMP: No bash shell found. Install Git for Windows or set shellPath in ~/.omp/agent/settings.json' -ForegroundColor Yellow",
+        "}",
+        "",
+        "# Persist user config",
+        "$persistConfig = Join-Path $persist_dir 'config'",
+        "$userConfig = Join-Path $env:USERPROFILE '.omp'",
+        "if (-not (Test-Path $persistConfig)) { New-Item -ItemType Directory -Force -Path $persistConfig | Out-Null }",
+        "if ((Test-Path $userConfig) -and -not (Get-Item $userConfig -ErrorAction SilentlyContinue).LinkType) {",
+        "    Copy-Item \"$userConfig\\*\" $persistConfig -Force -Recurse -ErrorAction SilentlyContinue",
+        "    Remove-Item $userConfig -Recurse -Force -ErrorAction SilentlyContinue",
+        "}",
+        "New-Item -ItemType Junction -Path $userConfig -Target $persistConfig -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "pre_uninstall": [
+        "$userConfig = Join-Path $env:USERPROFILE '.omp'",
+        "if ((Test-Path $userConfig) -and (Get-Item $userConfig -ErrorAction SilentlyContinue).LinkType) {",
+        "    Remove-Item $userConfig -Force -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "persist": "config",
+    "notes": [
+        "OMP 已安装!",
+        "",
+        "快速开始:",
+        "  omp                # 开始对话",
+        "  omp init           # 初始化配置",
+        "  omp session        # 会话管理",
+        "",
+        "Bash Shell 配置:",
+        "  OMP 需要 bash shell (Git Bash / WSL / Cygwin / MSYS2)",
+        "  首次启动时会自动检测并配置，或手动编辑:",
+        "    ~/.omp/agent/settings.json  →  { \"shellPath\": \"C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe\" }",
+        "",
+        "可选依赖 (通过 scoop 安装):",
+        "  scoop install bun          # Source 模式安装所需",
+        "  scoop install git-lfs      # 拉取 LFS 资源",
+        "",
+        "更新: scoop update omp",
+        "卸载: scoop uninstall omp",
+        "",
+        "官网: https://omp.sh",
+        "官方安装脚本 (非 Scoop):",
+        "  iex (irm https://omp.sh/install.ps1)"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/can1357/oh-my-pi/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/can1357/oh-my-pi/releases/download/v$version/omp-windows-x64.exe"
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "version": "4.0.0",
+    "description": "ProxyBridge - 跨平台代理桥接工具",
+    "homepage": "https://github.com/InterceptSuite/ProxyBridge",
+    "license": "MIT",
+    "url": "https://github.com/InterceptSuite/ProxyBridge/releases/download/v4.0.0/ProxyBridge-Setup-4.0.0.exe",
+    "hash": "7f2465151b785c4e089cd0fed18465e4bd7ae6c922b4f645de9809441d64ef32",
+    "installer": {
+        "args": "/S"
+    },
+    "shortcuts": [
+        [
+            "ProxyBridge.exe",
+            "ProxyBridge"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/InterceptSuite/ProxyBridge"
+    },
+    "autoupdate": {
+        "url": "https://github.com/InterceptSuite/ProxyBridge/releases/download/v$version/ProxyBridge-Setup-$version.exe"
+    }
+}

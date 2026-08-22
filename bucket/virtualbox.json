@@ -1,0 +1,45 @@
+{
+    "version": "7.2.16",
+    "description": "功能强大的开源虚拟机软件",
+    "homepage": "https://www.virtualbox.org/",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/virtualbox/7.2.16/VirtualBox-7.2.16-174877-Win.exe",
+            "hash": "9383a42bffa5c0ac4bc5f1c7d820478d84380d3a17b65aa9b43e6778cbdb615a",
+            "extract_dir": "VirtualBox"
+        }
+    },
+    "pre_install": "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }",
+    "installer": {
+        "script": "Start-Process -Wait \"$dir\\VirtualBox-$version-Win.exe\" --silent --ignore-reboot --modifypath --installpath \"$dir\" -lp \"$dir\""
+    },
+    "uninstaller": {
+        "script": "Start-Process -Wait msiexec \"/x {2648F21C-85B3-4D71-9BC5-1D8B749842B5} /qn\""
+    },
+    "bin": [
+        "VirtualBox.exe",
+        "VBoxManage.exe",
+        "VBoxVRDP.exe"
+    ],
+    "shortcuts": [
+        [
+            "VirtualBox.exe",
+            "VirtualBox"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.virtualbox.org/wiki/Downloads",
+        "regex": "virtualbox/([\\d.]+)/VirtualBox-([\\w.-]+)-Win\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://mirrors.tuna.tsinghua.edu.cn/virtualbox/$match1/VirtualBox-$match2-Win.exe",
+                "hash": {
+                    "mode": "download"
+                }
+            }
+        }
+    }
+}

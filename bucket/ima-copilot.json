@@ -1,0 +1,37 @@
+{
+    "version": "2.4.7",
+    "description": "腾讯 IMA 智能工作台 - AI 驱动的智能办公助手",
+    "homepage": "https://ima.qq.com/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://ima.qq.com/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://app-dl.ima.qq.com/win_channel/ima.copilot_win_x64_10000030_2.4.7_4145.exe#/dl.7z",
+            "hash": "eca537d1a23439a4445c4243fe7af82baf6c227f1f05e0100e22bb9b6e79e8f8",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\chrome.7z\" \"$dir\"",
+                "Move-Item \"$dir\\Chrome-bin\\*\" \"$dir\" -Force",
+                "Remove-Item \"$dir\\chrome.7z\", \"$dir\\Chrome-bin\" -Force -Recurse"
+            ]
+        }
+    },
+    "shortcuts": [
+        [
+            "ima.copilot.exe",
+            "IMA Copilot"
+        ]
+    ],
+    "checkver": {
+        "url": "https://ima.qq.com/",
+        "regex": "ima\\.copilot_win_x64_\\d+_([\\d.]+)_(\\d+)\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://app-dl.ima.qq.com/win_channel/ima.copilot_win_x64_10000030_$version_$match2.exe#/dl.7z"
+            }
+        }
+    }
+}

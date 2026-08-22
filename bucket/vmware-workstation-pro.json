@@ -1,0 +1,51 @@
+{
+    "version": "25H2u1-25219725",
+    "description": "Application for creating and running virtual machines on your computer.",
+    "homepage": "https://www.vmware.com/products/desktop-hypervisor.html",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.broadcom.com/company/legal/terms-of-use"
+    },
+    "suggest": {
+        "vcredist": "extras/vcredist"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads2.broadcom.com/?file=VMware-Workstation-Full-25H2u1-25219725.exe&oid=45683389&id=B6dUpB1HGPWYFhqriMm9A0Xzqi2Im_Y2K9plH_8DGAJp7ZXHfBbwpb7emvm7wd7PKA==&verify=1776176346-TA3ida3eWY%2Fig49pdZ4xMFLbU6O%2BCYUlwlsTSrIZRCc%3D",
+            "hash": "b592c47756d47c932a3ce2c2b83ad3af1fa23ccc1dd1d3166a51bcc1d2bd58e0"
+        }
+    },
+    "pre_install": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process -Wait \"$dir\\VMware-Workstation-Full-$version.exe\" -ArgumentList '/s', ('/v\"/qn EULAS_AGREED=1 INSTALLDIR=' + $dir + ' ADDLOCAL=ALL ADDVKDTOPATH=0 AUTOSOFTWAREUPDATE=0 DATACOLLECTION=0 DESKTOP_SHORTCUT=0 STARTMENU_SHORTCUT=0\"')"
+    ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Set-Service VMAuthdService -StartupType Disabled",
+        "Stop-Service VMAuthdService",
+        "Get-Process vmware-tray -ErrorAction Ignore | Stop-Process",
+        "Start-Process -Wait \"$dir\\VMware-Workstation-Full-$version.exe\" -ArgumentList '/s', '/v\"/qn REMOVE=ALL\"'"
+    ],
+    "bin": [
+        "vmware.exe",
+        "bin/vctl.exe",
+        "bin/docker-machine-driver-vmware.exe",
+        "x64/vmware-vmx.exe",
+        "x64/vmware-vmx-debug.exe",
+        "x64/vmware-vmx-stats.exe",
+        "x64/mksSandbox.exe",
+        "x64/mksSandbox-debug.exe",
+        "x64/mksSandbox-stats.exe",
+        "x64/tpm2emu.exe"
+    ],
+    "shortcuts": [
+        [
+            "vmware.exe",
+            "VMware Workstation Pro"
+        ]
+    ],
+    "checkver": {
+        "url": "https://techdocs.broadcom.com/us/en/vmware-cis/desktop-hypervisors/workstation-pro/26H1/release-notes/vmware-workstation-pro-26h1-release-notes.html",
+        "regex": "Workstation Pro ([\\dH]+)[^|]*\\|[^|]*\\| Build (\\d+)"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "version": "0.7.5",
+    "description": "智能体 AI 的编程框架。使用 LLM 构建多智能体应用。",
+    "homepage": "https://microsoft.github.io/autogen",
+    "license": "MIT",
+    "depends": "python",
+    "url": "https://pypi.org/packages/source/a/autogen-agentchat/autogen-agentchat-0.7.5.tar.gz",
+    "hash": "8d9c718db52ef24a518806b3a0ef848f0e4c1902877675dc0abed73a8e6e7755",
+    "installer": {
+        "script": "pip install -U \"autogen-agentchat>=0.7.5\""
+    },
+    "uninstaller": {
+        "script": "pip uninstall autogen-agentchat -y"
+    },
+    "notes": [
+        "AutoGen 安装成功！",
+        "",
+        "AutoGen 是智能体 AI 的编程框架，支持使用 LLM 构建多智能体应用。",
+        "",
+        "安装包括：",
+        "  - autogen-agentchat: 用于构建多智能体应用的高级 API",
+        "",
+        "快速开始：",
+        "  pip install -U autogen-agentchat",
+        "",
+        "文档: https://microsoft.github.io/autogen",
+        "",
+        "更新: scoop update autogen",
+        "卸载: scoop uninstall autogen"
+    ],
+    "checkver": "autogen-agentchat",
+    "autoupdate": {
+        "url": "https://pypi.org/pypi/autogen-agentchat/json"
+    }
+}

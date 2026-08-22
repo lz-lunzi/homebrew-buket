@@ -1,0 +1,27 @@
+{
+    "version": "0.1.31",
+    "description": "Qoder CLI - AI-powered coding assistant",
+    "homepage": "https://qoder.com",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.qoder.com/qodercli/releases/0.1.31/qodercli_0.1.31_windows_amd64.zip",
+            "hash": "1c4e36dbf035dd2b00a3beb2b6a9dfad1e2e0e68741c83415624b881fe2590b8"
+        }
+    },
+    "bin": "qodercli.exe",
+    "checkver": {
+        "url": "https://download.qoder.com/qodercli/releases/latest/version.txt",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.qoder.com/qodercli/releases/$version/qodercli_$version_windows_amd64.zip"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

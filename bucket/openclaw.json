@@ -1,0 +1,43 @@
+{
+    "version": "2026.7.1",
+    "description": "OpenClaw Companion — 跨平台个人 AI 助手桌面客户端，集成多模型、多平台消息、技能系统与插件扩展",
+    "homepage": "https://github.com/openclaw/openclaw",
+    "license": "MIT",
+    "url": "https://github.com/openclaw/openclaw/releases/download/v2026.7.1/OpenClawCompanion-Setup-x64.exe",
+    "hash": "b5e18b9210d606b921d94cea4e695a56ebae9862038e77e0483b552585d4d42b",
+    "installer": {
+        "script": "Start-Process \"$dir\\OpenClawCompanion-Setup-x64.exe\" -ArgumentList '/S' -Wait"
+    },
+    "uninstaller": {
+        "script": [
+            "$app = Get-ItemProperty 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*' 2>$null | Where-Object { $_.DisplayName -like '*OpenClaw*' }",
+            "if ($app) {",
+            "    Start-Process -Wait \"$($app.UninstallString)\" -ArgumentList '/S'",
+            "}"
+        ]
+    },
+    "notes": [
+        "OpenClaw Companion 已安装!",
+        "",
+        "功能：",
+        "  - 多模型 AI 对话 (Anthropic Claude, OpenAI, xAI, Vertex, Bedrock 等)",
+        "  - 跨平台消息集成 (Telegram, Discord, Slack, WhatsApp, Teams 等)",
+        "  - 技能系统与插件扩展",
+        "  - Web 搜索与浏览器工具",
+        "  - 定时任务 (Cron)",
+        "  - 简体中文支持",
+        "",
+        "更新：scoop update openclaw",
+        "卸载：scoop uninstall openclaw",
+        "",
+        "GitHub：https://github.com/openclaw/openclaw"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/openclaw/openclaw/releases/latest",
+        "jsonpath": "$.name",
+        "regex": "openclaw ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/openclaw/openclaw/releases/download/v$version/OpenClawCompanion-Setup-x64.exe"
+    }
+}

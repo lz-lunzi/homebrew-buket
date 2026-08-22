@@ -1,0 +1,46 @@
+{
+    "version": "0.",
+    "description": "Windows process priority, CPU affinity, and process automation utility.",
+    "homepage": "https://bitsum.com/processlasso/",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.bitsum.com/files/processlassosetup64.exe",
+            "hash": "d9216e1491aa130a3595a688da9a5ffaca67a3bb7609cb069e86e000baba041b"
+        }
+    },
+    "pre_install": "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+    "installer": {
+        "script": "Start-Process -Wait \"$dir\\processlassosetup64.exe\" -ArgumentList '/S', \"/D=$dir\""
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+            "Stop-Process -Name 'ProcessLasso' -Force -ErrorAction Ignore",
+            "Stop-Process -Name 'ProcessGovernor' -Force -ErrorAction Ignore",
+            "Stop-Process -Name 'bitsumsessionagent' -Force -ErrorAction Ignore",
+            "Start-Process -Wait \"$dir\\uninstall.exe\" -ArgumentList '/S'"
+        ]
+    },
+    "bin": "ProcessLasso.exe",
+    "shortcuts": [
+        [
+            "ProcessLasso.exe",
+            "Process Lasso"
+        ]
+    ],
+    "checkver": {
+        "url": "https://bitsum.com/processlasso/",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.bitsum.com/files/processlassosetup64.exe",
+                "hash": {
+                    "mode": "download"
+                }
+            }
+        }
+    }
+}

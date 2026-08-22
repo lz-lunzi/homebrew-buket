@@ -1,0 +1,41 @@
+{
+    "version": "3.3.10",
+    "description": "Antigravity 的现代跨平台账户管理器，支持一键切换账户、自动备份，使用 Flet 构建的精美 GUI",
+    "homepage": "https://github.com/lbjlaq/Antigravity-Manager",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/lbjlaq/Antigravity-Manager/releases/download/v3.3.10/Antigravity.Tools_3.3.10_x64_en-US.msi",
+            "hash": "sha256:3057228776f44f84604f706efbb6aa2eee7ab63938bd38d10275a9e4eb3550e2"
+        }
+    },
+    "bin": [
+        [
+            "antigravity_tools.exe",
+            "antigravity-manager"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "antigravity_tools.exe",
+            "Antigravity Manager"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "Write-Host 'Moving Antigravity Tools executable to root directory...' -ForegroundColor Green",
+            "Copy-Item \"$dir\\PFiles\\Antigravity Tools\\antigravity_tools.exe\" \"$dir\\antigravity_tools.exe\" -Force",
+            "Write-Host 'Installation completed successfully!' -ForegroundColor Green"
+        ]
+    },
+    "checkver": {
+        "github": "https://github.com/lbjlaq/Antigravity-Manager/releases"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/lbjlaq/Antigravity-Manager/releases/download/v$version/Antigravity.Tools_$version_x64_en-US.msi"
+            }
+        }
+    }
+}

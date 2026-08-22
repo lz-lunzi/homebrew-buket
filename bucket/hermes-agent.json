@@ -1,0 +1,72 @@
+{
+    "version": "0.20.5",
+    "description": "Nous Research 开源 AI 智能体 — 自我进化、技能学习、多平台网关",
+    "homepage": "https://github.com/NousResearch/hermes-agent",
+    "license": "MIT",
+    "depends": [
+        "uv",
+        "git"
+    ],
+    "url": "https://hermes-agent.nousresearch.com/install.ps1",
+    "hash": "74225bf244253bfa5bc2b1d16fa3bb8618e199a53d1c0344b37ab9930696d3ba",
+    "installer": {
+        "script": [
+            "# Run upstream install.ps1 with Scoop-compatible paths",
+            "# -HermesHome: data dir in persist (survives updates)",
+            "# -InstallDir: source code in $dir\\hermes-agent",
+            "& ([scriptblock]::Create((Get-Content \"$dir\\install.ps1\" -Raw))) -HermesHome \"$persist_dir\\data\" -InstallDir \"$dir\\hermes-agent\" -SkipSetup",
+            "",
+            "# Upstream script adds hermes to User PATH, but Scoop manages PATH via shim.",
+            "# The env_set below ensures HERMES_HOME points to persist dir (not version dir)."
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (Test-Path \"$dir\\hermes-agent\\venv\") { Remove-Item -Recurse -Force \"$dir\\hermes-agent\\venv\" -ErrorAction SilentlyContinue }",
+            "# User data in persist dir is preserved by Scoop"
+        ]
+    },
+    "env_set": {
+        "HERMES_HOME": "$persist_dir\\data"
+    },
+    "bin": "hermes-agent\\venv\\Scripts\\hermes.exe",
+    "persist": "data",
+    "notes": [
+        "Hermes Agent 已安装!",
+        "",
+        "数据目录: $persist_dir\\data",
+        "  (配置、会话、技能等持久化存储，卸载不会丢失)",
+        "",
+        "快速开始:",
+        "  hermes              # 开始对话",
+        "  hermes setup        # 配置 API 密钥",
+        "  hermes config       # 查看/编辑配置",
+        "  hermes gateway      # 启动消息网关 (Telegram/Discord 等)",
+        "",
+        "配置 API 密钥:",
+        "  编辑 $persist_dir\\data\\.env",
+        "  或运行: hermes setup",
+        "",
+        "自定义人格:",
+        "  编辑 $persist_dir\\data\\SOUL.md",
+        "",
+        "可选依赖 (通过 scoop 安装):",
+        "  scoop install ripgrep      # 更快的文件搜索",
+        "  scoop install ffmpeg       # TTS 语音消息",
+        "  scoop install nodejs-lts   # 浏览器工具 (Playwright/agent-browser)",
+        "",
+        "更新: scoop update hermes-agent",
+        "卸载: scoop uninstall hermes-agent",
+        "",
+        "官方安装脚本 (非 Scoop，自动安装所有依赖):",
+        "  iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/NousResearch/hermes-agent/releases/latest",
+        "jsonpath": "$.name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://hermes-agent.nousresearch.com/install.ps1"
+    }
+}

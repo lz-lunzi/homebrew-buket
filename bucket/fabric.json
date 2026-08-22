@@ -1,0 +1,86 @@
+{
+    "version": "1.4.470",
+    "description": "Fabric 是一个开源的 AI 增强人类框架。它提供模块化系统，使用众包的 AI 提示词集解决特定问题，可在任何地方使用。",
+    "homepage": "https://github.com/danielmiessler/Fabric",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.470/fabric_Windows_x86_64.zip",
+            "hash": "742f953c1a9837f0a820097200e6bbf2847dc52834743214e7fe1a1815cc2f2b"
+        },
+        "arm64": {
+            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.470/fabric_Windows_arm64.zip",
+            "hash": "50b8c09791d8ac4af1b37033cacfc125c5f88cd965cfef985f6d423b3a29b3eb"
+        },
+        "32bit": {
+            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.470/fabric_Windows_i386.zip",
+            "hash": "af5c06ae3043a67971c2871ae209ac2cbd7afdd4e30a430bff498866eab62486"
+        }
+    },
+    "extract_dir": "fabric",
+    "bin": [
+        "fabric.exe",
+        "fabric.bat"
+    ],
+    "env_add_path": ".",
+    "notes": [
+        "Fabric 安装成功！",
+        "",
+        "Fabric 是一个 AI 增强的开源框架，提供模块化系统，使用 AI 提示词解决特定问题。",
+        "",
+        "使用：",
+        "  fabric -p <pattern>  # 对您的输入应用特定模式",
+        "  fabric --pattern <pattern>  # -p 的简写",
+        "  fabric --list  # 列出所有可用模式",
+        "  fabric -s <pattern>  # 保存新模式",
+        "  fabric -d <pattern>  # 删除模式",
+        "",
+        "常用模式：",
+        "  extract_wisdom         # 从 URL 内容中提取要点",
+        "  extract_code_context    # 从选定文本中提取代码",
+        "  summarize_code          # 总结选定的代码",
+        "  extract_key_points      # 从内容中提取关键点",
+        "  ask_claude             # 向 Claude 提问",
+        "  write_micro_essay       # 写一篇微论文",
+        "  write_tweet             # 写一条推文",
+        "  write_email             # 写一封电子邮件",
+        "  create_html_page       # 创建 HTML 页面",
+        "  create_react_component  # 创建 React 组件",
+        "  create_shell_command     # 创建 shell 命令",
+        "  convert_to_bash         # 将自然语言转换为 bash 命令",
+        "  convert_to_javascript    # 转换为 JavaScript",
+        "  improve_code            # 改进代码（Claude 推荐）",
+        "  improve_syntax          # 改进代码语法",
+        "  create_openai_call      # 创建 OpenAI 函数调用",
+        "  create_azure_openai_call # 创建 Azure OpenAI 函数调用",
+        "  translate_code          # 翻译代码",
+        "  convert_to_php          # 转换为 PHP",
+        "  convert_to_ruby         # 转换为 Ruby",
+        "  create_sql_query        # 创建 SQL 查询",
+        "  create_pytest          # 创建 pytest",
+        "",
+        "配置：",
+        "  编辑 ~/.config/fabric/config.yaml 设置您的默认模型和 API 密钥。",
+        "  支持的模型：OpenAI、Azure OpenAI、Claude、Bedrock、Google、HuggingFace、Ollama、本地 LLM",
+        "",
+        "文档: https://github.com/danielmiessler/Fabric",
+        "更新: scoop update fabric",
+        "卸载: scoop uninstall fabric"
+    ],
+    "checkver": {
+        "github": "https://github.com/danielmiessler/Fabric"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/danielmiessler/Fabric/releases/download/v$version/fabric_Windows_x86_64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/danielmiessler/Fabric/releases/download/v$version/fabric_Windows_arm64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/danielmiessler/Fabric/releases/download/v$version/fabric_Windows_i386.zip"
+            }
+        }
+    }
+}

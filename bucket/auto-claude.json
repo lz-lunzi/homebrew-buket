@@ -1,0 +1,56 @@
+{
+    "version": "2.7.6",
+    "description": "自主多会话 AI 编程框架，带桌面 UI",
+    "homepage": "https://github.com/AndyMik90/Auto-Claude",
+    "license": "AGPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AndyMik90/Auto-Claude/releases/download/v2.7.6/Auto-Claude-2.7.6-win32-x64.exe#/dl.7z",
+            "hash": "c00f4126dbfccd88cdfe82aee8d5bc2c0b11be07fde7783150edd937a6c3d374",
+            "installer": {
+                "script": [
+                    "Write-Host 'Installing Auto-Claude to Scoop directory...' -ForegroundColor Green",
+                    "Write-Host 'Checking directory structure...' -ForegroundColor Yellow",
+                    "Get-ChildItem -Path $dir -Recurse -Force -ErrorAction SilentlyContinue | Format-Table -Property FullName",
+                    "Write-Host 'Extracting app-64.7z...' -ForegroundColor Yellow",
+                    "$app7z = Get-ChildItem -Path $dir -Filter 'app-64.7z' -Recurse -Force | Select-Object -First 1",
+                    "if ($app7z) {",
+                    "    Write-Host \"Found app-64.7z: $($app7z.FullName)\" -ForegroundColor Green",
+                    "    Push-Location $dir",
+                    "    & '7z' x -y \"$($app7z.FullName)\" -o\"$dir\"",
+                    "    Pop-Location",
+                    "    Write-Host 'Extraction completed' -ForegroundColor Green",
+                    "    Remove-Item $app7z.FullName -Force -ErrorAction SilentlyContinue",
+                    "} else {",
+                    "    Write-Host 'app-64.7z not found!' -ForegroundColor Red",
+                    "}",
+                    "Write-Host 'Moving DLL dependencies...' -ForegroundColor Yellow",
+                    "Get-ChildItem -Path $dir -Filter '*.dll' -Recurse -Force | Move-Item -Destination \"$dir\" -Force -ErrorAction SilentlyContinue",
+                    "Write-Host 'Cleaning up NSIS temporary directories...' -ForegroundColor Yellow",
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force -ErrorAction SilentlyContinue",
+                    "Write-Host 'Verifying Auto-Claude.exe exists...' -ForegroundColor Yellow",
+                    "if (Test-Path \"$dir\\Auto-Claude.exe\") { Write-Host 'Auto-Claude.exe found!' -ForegroundColor Green } else { Write-Host 'Auto-Claude.exe NOT found!' -ForegroundColor Red; Get-ChildItem -Path $dir -Recurse -Force | Format-Table -Property Name, Extension, FullName }",
+                    "Write-Host 'Installation completed to Scoop directory!' -ForegroundColor Green"
+                ]
+            }
+        }
+    },
+    "bin": "Auto-Claude.exe",
+    "shortcuts": [
+        [
+            "Auto-Claude.exe",
+            "Auto Claude"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/AndyMik90/Auto-Claude/releases/download/v$version/Auto-Claude-$version-win32-x64.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}
