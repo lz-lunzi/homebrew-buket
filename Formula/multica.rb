@@ -5,7 +5,7 @@
 class Multica < Formula
   desc "Multica CLI — local agent runtime and management tool for the Multica platform"
   homepage "https://github.com/multica-ai/multica"
-  version "0.4.31"
+  version "0.4.32"
 
   on_macos do
     if Hardware::CPU.intel?
