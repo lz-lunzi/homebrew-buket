@@ -40,11 +40,11 @@
         "卸载: scoop uninstall ui-ux-pro-max-skill"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/uipro-cli",
+        "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-2.2.3.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-$version.tgz",
+        "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-2.2.3.tgz",
         "hash": {
             "mode": "download"
         }

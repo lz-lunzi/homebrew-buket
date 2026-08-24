@@ -6,7 +6,7 @@ class OhMyOpenagent < Formula
   license "SUL-1.0"
 
   livecheck do
-    url "https://registry.npmjs.org/oh-my-openagent/latest"
+    url "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-4.19.4.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

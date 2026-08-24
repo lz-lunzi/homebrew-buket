@@ -1,5 +1,5 @@
 {
-    "version": "0.19.2",
+    "version": "0.20.1",
     "description": "ClawPanel - 跨平台 AI 助手桌面客户端，基于 Tauri + React + TypeScript 构建",
     "homepage": "https://github.com/qingchencloud/clawpanel",
     "license": "MIT",

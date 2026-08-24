@@ -1,8 +1,8 @@
 class Crush < Formula
   desc "The glamourous config manager for your app"
   homepage "https://github.com/charmbracelet/crush"
-  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "7744af6521b078c20a1b8e9bcd869236691295896fe70864e584b30c42e07448"
+  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.91.0.tar.gz"
+  sha256 "3e558af212a740516187aa851a086b2b0b56ee4f2a726c342d9099a13bbd677e"
   license "MIT"
   head "https://github.com/charmbracelet/crush.git", branch: "main"
 

@@ -38,11 +38,11 @@
         "卸载: scoop uninstall paperclip"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/paperclipai",
+        "url": "https://registry.npmjs.org/paperclipai/-/paperclipai-2026.817.0.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/paperclipai/-/paperclipai-$version.tgz",
+        "url": "https://registry.npmjs.org/paperclipai/-/paperclipai-2026.817.0.tgz",
         "hash": {
             "mode": "download"
         }

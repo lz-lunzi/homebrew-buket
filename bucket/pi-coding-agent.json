@@ -36,11 +36,11 @@
         "卸载: scoop uninstall pi-coding-agent"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent",
+        "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.73.1.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-$version.tgz",
+        "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.73.1.tgz",
         "hash": {
             "mode": "download"
         }

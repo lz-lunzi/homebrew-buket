@@ -54,11 +54,11 @@
         "卸载: scoop uninstall zcf"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/zcf",
+        "url": "https://registry.npmjs.org/zcf/-/zcf-3.7.2.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/zcf/-/zcf-$version.tgz",
+        "url": "https://registry.npmjs.org/zcf/-/zcf-3.7.2.tgz",
         "hash": {
             "mode": "download"
         }

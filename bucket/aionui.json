@@ -1,5 +1,5 @@
 {
-    "version": "1.8.3",
+    "version": "2.1.60",
     "description": "免费、本地、开源的 AI 协作平台，支持 Gemini CLI、Claude Code、Codex、Qwen Code 等",
     "homepage": "https://github.com/iOfficeAI/AionUi",
     "license": "Apache-2.0",

@@ -9,10 +9,10 @@
     "9router": "bin/9router.js"
   },
   "checkver": {
-    "url": "https://registry.npmjs.org/9router/latest",
+    "url": "https://registry.npmjs.org/9router/-/9router-0.5.55.tgz",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/9router/-/9router-$version.tgz"
+    "url": "https://registry.npmjs.org/9router/-/9router-0.5.55.tgz"
   }
 }

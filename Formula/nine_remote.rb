@@ -6,7 +6,7 @@ class NineRemote < Formula
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/9remote/latest"
+    url "https://registry.npmjs.org/9remote/-/9remote-2.5.8.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

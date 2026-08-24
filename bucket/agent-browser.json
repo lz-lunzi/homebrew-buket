@@ -50,10 +50,10 @@
         "卸载：scoop uninstall agent-browser"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/agent-browser",
+        "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-$version.tgz"
+        "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz"
     }
 }

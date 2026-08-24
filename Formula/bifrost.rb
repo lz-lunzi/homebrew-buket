@@ -6,7 +6,7 @@ class Bifrost < Formula
   license "Apache-2.0"
 
   livecheck do
-    url "https://registry.npmjs.org/@maximhq/bifrost/latest"
+    url "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

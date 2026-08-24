@@ -60,11 +60,11 @@
         "卸载：scoop uninstall skills"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/skills",
+        "url": "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/skills/-/skills-$version.tgz",
+        "url": "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz",
         "hash": {
             "mode": "download"
         }

@@ -22,11 +22,11 @@
         "卸载: scoop uninstall oh-my-opencode"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/oh-my-opencode",
+        "url": "https://registry.npmjs.org/oh-my-opencode/-/oh-my-opencode-4.19.4.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/oh-my-opencode/-/oh-my-opencode-$version.tgz",
+        "url": "https://registry.npmjs.org/oh-my-opencode/-/oh-my-opencode-4.19.4.tgz",
         "hash": {
             "mode": "download"
         }

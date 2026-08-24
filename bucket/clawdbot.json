@@ -55,11 +55,11 @@
         "卸载：scoop uninstall clawdbot"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/clawdbot",
+        "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-2026.1.24-3.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-$version.tgz",
+        "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-2026.1.24-3.tgz",
         "hash": {
             "mode": "download"
         }

@@ -38,10 +38,10 @@
         "卸载：scoop uninstall add-skill"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/add-skill",
+        "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/add-skill/-/add-skill-$version.tgz"
+        "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz"
     }
 }

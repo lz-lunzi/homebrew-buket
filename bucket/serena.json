@@ -1,5 +1,5 @@
 {
-    "version": "1.3.0",
+    "version": "1.7.0",
     "description": "一个强大的编程智能体工具包，提供语义检索和编辑功能（MCP 服务器和其他集成）",
     "homepage": "https://oraios.github.io/serena",
     "license": "MIT",

@@ -40,11 +40,11 @@
         "卸载: scoop uninstall iflow-cli"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli",
+        "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-$version.tgz",
+        "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz",
         "hash": {
             "mode": "download"
         }

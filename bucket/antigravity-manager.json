@@ -1,5 +1,5 @@
 {
-    "version": "3.3.10",
+    "version": "4.5.9",
     "description": "Antigravity 的现代跨平台账户管理器，支持一键切换账户、自动备份，使用 Flet 构建的精美 GUI",
     "homepage": "https://github.com/lbjlaq/Antigravity-Manager",
     "license": "MIT",

@@ -6,7 +6,7 @@ class Relayplane < Formula
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@relayplane/proxy/latest"
+    url "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.46.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

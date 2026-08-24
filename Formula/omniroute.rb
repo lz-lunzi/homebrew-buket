@@ -6,7 +6,7 @@ class Omniroute < Formula
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/omniroute/latest"
+    url "https://registry.npmjs.org/omniroute/-/omniroute-3.8.49.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

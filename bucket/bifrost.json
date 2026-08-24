@@ -9,10 +9,10 @@
     "bifrost": "bin/bifrost.js"
   },
   "checkver": {
-    "url": "https://registry.npmjs.org/@maximhq/bifrost/latest",
+    "url": "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-$version.tgz"
+    "url": "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz"
   }
 }

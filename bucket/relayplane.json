@@ -9,10 +9,10 @@
     "relayplane": "bin/relayplane.js"
   },
   "checkver": {
-    "url": "https://registry.npmjs.org/@relayplane/proxy/latest",
+    "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.46.tgz",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-$version.tgz"
+    "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.46.tgz"
   }
 }

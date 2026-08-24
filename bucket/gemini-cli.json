@@ -61,11 +61,11 @@
         "卸载: scoop uninstall gemini-cli"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/@google/gemini-cli",
+        "url": "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.56.0.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-$version.tgz",
+        "url": "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.56.0.tgz",
         "hash": {
             "mode": "download"
         }

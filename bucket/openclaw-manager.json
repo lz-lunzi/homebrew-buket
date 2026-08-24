@@ -1,5 +1,5 @@
 {
-    "version": "0.0.7",
+    "version": "0.0.12",
     "description": "高性能跨平台 AI 助手管理工具，基于 Tauri 2.0 + React + TypeScript + Rust 构建",
     "homepage": "https://github.com/miaoxworld/openclaw-manager",
     "license": "MIT",

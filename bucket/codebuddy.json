@@ -46,11 +46,11 @@
         "Uninstall: scoop uninstall codebuddy-cli"
     ],
     "checkver": {
-        "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code",
+        "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.137.1.tgz",
         "jsonpath": "$['dist-tags'].latest"
     },
     "autoupdate": {
-        "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-$version.tgz",
+        "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.137.1.tgz",
         "hash": {
             "mode": "download"
         }

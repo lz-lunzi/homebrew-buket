@@ -6,7 +6,7 @@ class Agentsync < Formula
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/agentsync/latest"
+    url "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz"
     regex(/"version"\s*:\s*"([\d.]+(?:-[\w.]+)?)"/i)
   end
 

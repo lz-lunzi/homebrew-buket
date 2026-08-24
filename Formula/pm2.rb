@@ -6,7 +6,7 @@ class Pm2 < Formula
   license "AGPL-3.0-or-later"
 
   livecheck do
-    url "https://registry.npmjs.org/pm2/latest"
+    url "https://registry.npmjs.org/pm2/-/pm2-7.0.3.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

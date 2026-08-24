@@ -1,5 +1,5 @@
 {
-    "version": "1.80.13",
+    "version": "1.98.0",
     "description": "统一接口支持 100+ LLM 提供商 - AI 网关/代理服务器，带管理界面",
     "homepage": "https://docs.litellm.ai",
     "license": "MIT",
