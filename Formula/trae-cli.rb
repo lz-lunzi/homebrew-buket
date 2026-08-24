@@ -1,7 +1,7 @@
 class TraeCli < Formula
   desc "AI-powered coding assistant for terminal"
   homepage "https://trae.cn"
-  version "0.120.27"
+  license "MIT"
 
   livecheck do
     skip "CDN version not publicly listed; manual update required"
