@@ -4,20 +4,21 @@ class TraeCli < Formula
   license "MIT"
 
   livecheck do
-    skip "CDN version not publicly listed; manual update required"
+    url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/trae-cli/trae-cli_latest_version.txt"
+    regex(/v?(\d+(?:\.\d+)+)/i)
   end
 
   on_macos do
     on_arm do
-      url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/trae-cli/trae-cli_0.120.27_darwin_arm64.tar.gz"
-      sha256 "f056aa8f47a2c81174d6dacc0d57ae1bf0873d95aacf0afb58213b49c1ecb279"
+      url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/trae-cli/trae-cli_0.120.52_darwin_arm64.tar.gz"
+      sha256 "3bd7f60b68c38b847120ab63955f81907f34dab5f34377a9faf0c1fb04b055fd"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/trae-cli/trae-cli_0.120.27_linux_amd64.tar.gz"
-      sha256 "a83dfefe71c8ba63af82abdc1513d49a053bdeae6932ac76bb11da87594f3580"
+      url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/trae-cli/trae-cli_0.120.52_linux_amd64.tar.gz"
+      sha256 "b92505d7ebfe1956387f4c9368bc66cfbdeb3b5e81ce773e2b0cbca2fb3e4c39"
     end
   end
 
