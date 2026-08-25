@@ -1,30 +1,40 @@
 class Bifrost < Formula
-  desc "High-performance AI gateway CLI - connect to 12+ providers"
-  homepage "https://github.com/maximhq/bifrost"
-  url "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz"
-  sha256 "b1f95e5c95af44f9b424f4f6e5ea194ff7965351f6e9a9ab70ce4eaa3714c0e6"
-  license "Apache-2.0"
+  desc "High-performance HTTP/HTTPS/SOCKS5 proxy server written in Rust"
+  homepage "https://github.com/bifrost-proxy/bifrost"
+  license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz"
-    regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
+    url :stable
+    strategy :github_latest
   end
 
-  depends_on "node"
+  on_macos do
+    on_arm do
+      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.187/bifrost-v0.0.187-aarch64-apple-darwin.tar.xz"
+      sha256 "070e65b5556641498fb1d77115c9a7aa408748f5d670f0fa1bcc07ffd0ea1140"
+    end
+  end
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install Dir.glob("*/bifrost").first
   end
 
   def caveats
     <<~EOS
-      Bifrost - High-performance AI gateway CLI.
+      Bifrost is a high-performance proxy server written in Rust.
 
-      Get started:
-        bifrost --help
+      Start the proxy:
+        bifrost start
 
-      Visit https://github.com/maximhq/bifrost for more information.
+      Start on a specific port:
+        bifrost -p 9900 start
+
+      For HTTPS interception, export and trust the CA certificate:
+        bifrost ca export
+
+      Web UI: http://127.0.0.1:<port>/_bifrost/
+
+      Visit https://github.com/bifrost-proxy/bifrost for documentation.
     EOS
   end
 
