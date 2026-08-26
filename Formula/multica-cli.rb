@@ -1,4 +1,4 @@
-class Multica < Formula
+class MulticaCli < Formula
   desc "Multica CLI — local agent runtime and management tool for the Multica platform"
   homepage "https://github.com/multica-ai/multica"
   license "Apache-2.0"
