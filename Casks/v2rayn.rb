@@ -1,5 +1,5 @@
 cask "v2rayn" do
-  version "7.24.4"
+  version "7.24.8"
   sha256 :no_check
 
   on_arm do

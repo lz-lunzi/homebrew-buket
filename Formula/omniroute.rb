@@ -1,8 +1,8 @@
 class Omniroute < Formula
   desc "Free AI gateway: one endpoint, 160+ providers, RTK+Caveman compression"
   homepage "https://github.com/diegosouzapw/OmniRoute"
-  url "https://registry.npmjs.org/omniroute/-/omniroute-3.8.49.tgz"
-  sha256 "7dc1ac03139dbf5652c2ddb878726ef7b9724404ca070f2b61e16f193461c58b"
+  url "https://registry.npmjs.org/omniroute/-/omniroute-3.8.50.tgz"
+  sha256 "738c58af1faae8c57eb643a939d1191f8d7e083d9295ef61687d2bff04878c29"
   license "MIT"
 
   livecheck do

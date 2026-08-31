@@ -1,8 +1,8 @@
 class Paperclip < Formula
   desc "面向零人类公司的开源 AI 智能体编排平台"
   homepage "https://paperclip.ing"
-  url "https://registry.npmjs.org/paperclipai/-/paperclipai-2026.817.0.tgz"
-  sha256 "f4b41e5ad74e846c0f15a4272beda3f735c104d4449e29c1ceef130eafd638b7"
+  url "https://registry.npmjs.org/paperclipai/-/paperclipai-2026.824.1.tgz"
+  sha256 "b9f5d634e584c77607202d6644d53b9ad131a11811f01f1474f68b1e4da8d8cf"
   license "MIT"
 
   depends_on "node"

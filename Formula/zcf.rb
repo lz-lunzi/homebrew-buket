@@ -1,8 +1,8 @@
 class Zcf < Formula
   desc "Claude Code & Codex 的零配置代码流 - 一键设置，支持双语、智能智能体系统和个性化 AI 助手"
   homepage "https://github.com/UfoMiao/zcf"
-  url "https://registry.npmjs.org/zcf/-/zcf-3.7.2.tgz"
-  sha256 "48a7234ed7e40a06e508d5c5aa439b67965beb04cb78cc47f17af56ead985360"
+  url "https://registry.npmjs.org/zcf/-/zcf-3.7.3.tgz"
+  sha256 "cbadc3e97a4ba781911837c05ff62f4ce57842a6e5666b4abbc6a5f7cd93d232"
   license "MIT"
 
   depends_on "node"

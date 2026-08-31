@@ -1,7 +1,7 @@
 class Octopus < Formula
   desc "LLM API aggregation & load balancing service for individuals"
   homepage "https://github.com/bestruirui/octopus"
-  version "0.11.0"
+  version "0.12.1"
   license "AGPL-3.0-or-later"
   head "https://github.com/bestruirui/octopus.git", branch: "dev"
 
@@ -12,8 +12,8 @@ class Octopus < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/bestruirui/octopus/releases/download/v0.11.0/octopus-darwin-arm64.zip"
-      sha256 "6bf849acad70749b84eac728355c9d470d9fd2fdf23f6cfc0d96546a2cf34b48"
+      url "https://github.com/bestruirui/octopus/releases/download/v0.12.1/octopus-darwin-arm64.zip"
+      sha256 "1f56056d345a5c56b3851c9cca08e54708b137ea8e4ac676bc0a40dc7b52fb09"
     end
   end
 
