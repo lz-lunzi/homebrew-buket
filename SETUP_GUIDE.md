@@ -87,13 +87,13 @@ brew upgrade qodercli
    url "下载链接"
    sha256 "校验码"
    license "许可证"
- 
+
    depends_on "依赖项"
- 
+
    def install
      # 安装逻辑
    end
- 
+
    test do
      # 测试逻辑
    end
