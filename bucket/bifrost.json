@@ -5,9 +5,10 @@
   "license": "MIT",
   "url": "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz",
   "hash": "b1f95e5c95af44f9b424f4f6e5ea194ff7965351f6e9a9ab70ce4eaa3714c0e6",
-  "bin": {
-    "bifrost": "bin/bifrost.js"
-  },
+  "bin": [
+    "bifrost",
+    "bin/bifrost.js"
+  ],
   "checkver": {
     "url": "https://registry.npmjs.org/@maximhq/bifrost/-/bifrost-1.6.3.tgz",
     "jsonpath": "$.version"

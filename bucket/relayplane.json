@@ -5,9 +5,10 @@
   "license": "MIT",
   "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.46.tgz",
   "hash": "217b8e7c1dac7a10094f669e16287c64f6cc806cfa3fc302a974229bcf946d73",
-  "bin": {
-    "relayplane": "bin/relayplane.js"
-  },
+  "bin": [
+    "relayplane",
+    "bin/relayplane.js"
+  ],
   "checkver": {
     "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.46.tgz",
     "jsonpath": "$.version"

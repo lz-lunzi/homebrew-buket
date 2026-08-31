@@ -5,9 +5,10 @@
   "license": "MIT",
   "url": "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz",
   "hash": "1b0ba5aabc21eaa6e86c8e4a5cbae1eb8a4ae0d204afbe958e76423f71cbb1db",
-  "bin": {
-    "agentsync": "bin/agentsync.js"
-  },
+  "bin": [
+    "agentsync",
+    "bin/agentsync.js"
+  ],
   "checkver": {
     "url": "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz",
     "jsonpath": "$.version"
