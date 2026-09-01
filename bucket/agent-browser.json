@@ -1,11 +1,11 @@
 {
-    "version": "0.35.2",
+    "version": "0.36.0",
     "description": "AI 代理的无头浏览器自动化 CLI 工具",
     "homepage": "https://github.com/vercel-labs/agent-browser",
     "license": "Apache-2.0",
     "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.35.2.tgz",
-    "hash": "d85b67427e7513b1b30fbf8d6b7e0ab2da37b2c12662134e4e07f12e6d928ef5",
+    "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.36.0.tgz",
+    "hash": "858a753760034d73c6bc17dd895f91141ef03c3fcca978348b378e26d2d617e4",
     "installer": {
         "script": "npm install --production --prefix $dir $dir\\agent-browser-0.7.6.tgz"
     },
