@@ -10,10 +10,10 @@
     "bin/omniroute.js"
   ],
   "checkver": {
-    "url": "https://registry.npmjs.org/omniroute/-/omniroute-3.8.49.tgz",
+    "url": "https://registry.npmjs.org/omniroute/latest",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/omniroute/-/omniroute-3.8.49.tgz"
+    "url": "https://registry.npmjs.org/omniroute/-/omniroute-$version.tgz"
   }
 }

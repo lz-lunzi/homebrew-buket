@@ -1,52 +1,52 @@
 {
-    "version": "0.5.19",
-    "description": "一个终端 AI 助手，可以分析代码、执行编程任务和处理文件操作。",
-    "homepage": "https://platform.iflow.cn/cli/quickstart",
-    "license": "Proprietary",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz",
-    "hash": "4ac4ec1d6e52362c5794bb07213886bafb554d4036752b8af8c8ca08462ab365",
-    "installer": {
-        "script": "npm install -g @iflow-ai/iflow-cli@latest"
-    },
-    "uninstaller": {
-        "script": "npm uninstall -g @iflow-ai/iflow-cli -y"
-    },
-    "notes": [
-        "iFlow CLI 安装成功！",
-        "",
-        "iFlow CLI 是一个终端 AI 助手，帮助进行代码分析、编程任务和文件操作。",
-        "",
-        "功能：",
-        "  - 代码理解和生成",
-        "  - Shell 命令执行",
-        "  - 文件操作",
-        "  - Web 搜索和获取",
-        "  - MCP（模型上下文协议）支持自定义集成",
-        "",
-        "快速开始：",
-        "  iflow                    # 启动 iFlow CLI",
-        "  iflow --version          # 检查版本",
-        "  iflow /help              # 显示帮助",
-        "",
-        "身份验证：",
-        "  - 使用 iFlow 登录（推荐）：完整功能支持",
-        "  - API 密钥：有效期 7 天",
-        "  - OpenAI 兼容 API：用于自定义模型服务",
-        "",
-        "文档: https://platform.iflow.cn/cli/quickstart",
-        "",
-        "更新: scoop update iflow-cli",
-        "卸载: scoop uninstall iflow-cli"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz",
-        "hash": {
-            "mode": "download"
-        }
+  "version": "0.5.19",
+  "description": "一个终端 AI 助手，可以分析代码、执行编程任务和处理文件操作。",
+  "homepage": "https://platform.iflow.cn/cli/quickstart",
+  "license": "Proprietary",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz",
+  "hash": "4ac4ec1d6e52362c5794bb07213886bafb554d4036752b8af8c8ca08462ab365",
+  "installer": {
+    "script": "npm install -g @iflow-ai/iflow-cli@latest"
+  },
+  "uninstaller": {
+    "script": "npm uninstall -g @iflow-ai/iflow-cli -y"
+  },
+  "notes": [
+    "iFlow CLI 安装成功！",
+    "",
+    "iFlow CLI 是一个终端 AI 助手，帮助进行代码分析、编程任务和文件操作。",
+    "",
+    "功能：",
+    "  - 代码理解和生成",
+    "  - Shell 命令执行",
+    "  - 文件操作",
+    "  - Web 搜索和获取",
+    "  - MCP（模型上下文协议）支持自定义集成",
+    "",
+    "快速开始：",
+    "  iflow                    # 启动 iFlow CLI",
+    "  iflow --version          # 检查版本",
+    "  iflow /help              # 显示帮助",
+    "",
+    "身份验证：",
+    "  - 使用 iFlow 登录（推荐）：完整功能支持",
+    "  - API 密钥：有效期 7 天",
+    "  - OpenAI 兼容 API：用于自定义模型服务",
+    "",
+    "文档: https://platform.iflow.cn/cli/quickstart",
+    "",
+    "更新: scoop update iflow-cli",
+    "卸载: scoop uninstall iflow-cli"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-$version.tgz",
+    "hash": {
+      "mode": "download"
     }
+  }
 }

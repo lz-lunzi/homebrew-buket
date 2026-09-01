@@ -1,25 +1,25 @@
 {
-    "version": "7.4.23",
-    "description": "Kilo Code CLI - 终端 AI 编程助手",
-    "homepage": "https://github.com/Kilo-Org/kilo",
-    "license": "MIT",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/@kilocode/cli/-/cli-7.4.23.tgz",
-    "hash": "7ada12bcc1082b66ce34880f2111989bf6ba6cb58325997f0d2e4339d29b9f9d",
-    "installer": {
-        "script": "npm install --global --prefix $dir $dir\\cli-$version.tgz"
-    },
-    "uninstaller": {
-        "script": "npm uninstall --global --prefix $dir @kilocode/cli"
-    },
-    "checkver": {
-        "url": "https://registry.npmjs.org/@kilocode/cli/-/cli-7.4.23.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/@kilocode/cli/-/cli-7.4.23.tgz",
-        "hash": {
-            "mode": "download"
-        }
+  "version": "7.4.23",
+  "description": "Kilo Code CLI - 终端 AI 编程助手",
+  "homepage": "https://github.com/Kilo-Org/kilo",
+  "license": "MIT",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/@kilocode/cli/-/cli-7.4.23.tgz",
+  "hash": "7ada12bcc1082b66ce34880f2111989bf6ba6cb58325997f0d2e4339d29b9f9d",
+  "installer": {
+    "script": "npm install --global --prefix $dir $dir\\cli-$version.tgz"
+  },
+  "uninstaller": {
+    "script": "npm uninstall --global --prefix $dir @kilocode/cli"
+  },
+  "checkver": {
+    "url": "https://registry.npmjs.org/@kilocode/cli/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/@kilocode/cli/-/cli-$version.tgz",
+    "hash": {
+      "mode": "download"
     }
+  }
 }

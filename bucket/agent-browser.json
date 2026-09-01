@@ -1,59 +1,59 @@
 {
-    "version": "0.34.0",
-    "description": "AI 代理的无头浏览器自动化 CLI 工具",
-    "homepage": "https://github.com/vercel-labs/agent-browser",
-    "license": "Apache-2.0",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz",
-    "hash": "",
-    "installer": {
-        "script": "npm install --production --prefix $dir $dir\\agent-browser-0.7.6.tgz"
-    },
-    "uninstaller": {
-        "script": "npm uninstall --prefix $dir agent-browser"
-    },
-    "notes": [
-        "agent-browser 安装成功！",
-        "",
-        "这是一个为 AI 代理设计的无头浏览器自动化 CLI 工具，",
-        "由 Vercel Labs 开发，使用 Rust 和 Node.js 构建。",
-        "",
-        "快速开始：",
-        "  安装浏览器:",
-        "    agent-browser install",
-        "",
-        "  打开网页:",
-        "    agent-browser open example.com",
-        "",
-        "  获取快照（AI 推荐）:",
-        "    agent-browser snapshot",
-        "",
-        "  截图:",
-        "    agent-browser screenshot screenshot.png",
-        "",
-        "  获取文本:",
-        "    agent-browser get text @e1",
-        "",
-        "主要特性：",
-        "  - 快速的原生二进制文件（Rust）",
-        "  - 支持语义定位器和 refs（AI 友好）",
-        "  - 多会话支持",
-        "  - 持久化配置文件",
-        "  - WebSocket 流式传输",
-        "  - 支持远程浏览器服务（Browserbase、Browser Use）",
-        "",
-        "更多信息：",
-        "  - 文档：https://agent-browser.dev",
-        "  - GitHub：https://github.com/vercel-labs/agent-browser",
-        "",
-        "更新：scoop update agent-browser",
-        "卸载：scoop uninstall agent-browser"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz"
-    }
+  "version": "0.34.0",
+  "description": "AI 代理的无头浏览器自动化 CLI 工具",
+  "homepage": "https://github.com/vercel-labs/agent-browser",
+  "license": "Apache-2.0",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz",
+  "hash": "",
+  "installer": {
+    "script": "npm install --production --prefix $dir $dir\\agent-browser-0.7.6.tgz"
+  },
+  "uninstaller": {
+    "script": "npm uninstall --prefix $dir agent-browser"
+  },
+  "notes": [
+    "agent-browser 安装成功！",
+    "",
+    "这是一个为 AI 代理设计的无头浏览器自动化 CLI 工具，",
+    "由 Vercel Labs 开发，使用 Rust 和 Node.js 构建。",
+    "",
+    "快速开始：",
+    "  安装浏览器:",
+    "    agent-browser install",
+    "",
+    "  打开网页:",
+    "    agent-browser open example.com",
+    "",
+    "  获取快照（AI 推荐）:",
+    "    agent-browser snapshot",
+    "",
+    "  截图:",
+    "    agent-browser screenshot screenshot.png",
+    "",
+    "  获取文本:",
+    "    agent-browser get text @e1",
+    "",
+    "主要特性：",
+    "  - 快速的原生二进制文件（Rust）",
+    "  - 支持语义定位器和 refs（AI 友好）",
+    "  - 多会话支持",
+    "  - 持久化配置文件",
+    "  - WebSocket 流式传输",
+    "  - 支持远程浏览器服务（Browserbase、Browser Use）",
+    "",
+    "更多信息：",
+    "  - 文档：https://agent-browser.dev",
+    "  - GitHub：https://github.com/vercel-labs/agent-browser",
+    "",
+    "更新：scoop update agent-browser",
+    "卸载：scoop uninstall agent-browser"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/agent-browser/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-$version.tgz"
+  }
 }

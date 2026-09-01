@@ -1,47 +1,47 @@
 {
-    "version": "2.0.0",
-    "description": "为 AI 编码代理安装技能包（OpenCode, Claude Code, Codex, Cursor 等）",
-    "homepage": "https://github.com/vercel-labs/add-skill",
-    "license": "MIT",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz",
-    "hash": "",
-    "installer": {
-        "script": "npm install --production --prefix $dir $dir\\add-skill-$version.tgz"
-    },
-    "uninstaller": {
-        "script": "npm uninstall --prefix $dir add-skill"
-    },
-    "notes": [
-        "add-skill 安装成功！",
-        "",
-        "这是一个 AI 编码代理的技能包管理工具，支持多个平台：",
-        "  - Claude Code",
-        "  - Cursor",
-        "  - Codex",
-        "  - OpenCode",
-        "  - 以及其他 21+ 平台",
-        "",
-        "快速开始：",
-        "  列出可用技能:",
-        "    add-skill vercel-labs/agent-skills --list",
-        "",
-        "  安装技能:",
-        "    add-skill vercel-labs/agent-skills -a claude-code",
-        "",
-        "  全局安装:",
-        "    add-skill vercel-labs/agent-skills -g",
-        "",
-        "更多信息：https://github.com/vercel-labs/add-skill",
-        "",
-        "更新：scoop update add-skill",
-        "卸载：scoop uninstall add-skill"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz"
-    }
+  "version": "2.0.0",
+  "description": "为 AI 编码代理安装技能包（OpenCode, Claude Code, Codex, Cursor 等）",
+  "homepage": "https://github.com/vercel-labs/add-skill",
+  "license": "MIT",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz",
+  "hash": "",
+  "installer": {
+    "script": "npm install --production --prefix $dir $dir\\add-skill-$version.tgz"
+  },
+  "uninstaller": {
+    "script": "npm uninstall --prefix $dir add-skill"
+  },
+  "notes": [
+    "add-skill 安装成功！",
+    "",
+    "这是一个 AI 编码代理的技能包管理工具，支持多个平台：",
+    "  - Claude Code",
+    "  - Cursor",
+    "  - Codex",
+    "  - OpenCode",
+    "  - 以及其他 21+ 平台",
+    "",
+    "快速开始：",
+    "  列出可用技能:",
+    "    add-skill vercel-labs/agent-skills --list",
+    "",
+    "  安装技能:",
+    "    add-skill vercel-labs/agent-skills -a claude-code",
+    "",
+    "  全局安装:",
+    "    add-skill vercel-labs/agent-skills -g",
+    "",
+    "更多信息：https://github.com/vercel-labs/add-skill",
+    "",
+    "更新：scoop update add-skill",
+    "卸载：scoop uninstall add-skill"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/add-skill/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/add-skill/-/add-skill-$version.tgz"
+  }
 }

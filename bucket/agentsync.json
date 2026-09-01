@@ -10,14 +10,15 @@
     "bin/agentsync.js"
   ],
   "checkver": {
-    "url": "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz",
+    "url": "https://registry.npmjs.org/agentsync/latest",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz",
+    "url": "https://registry.npmjs.org/agentsync/-/agentsync-$version.tgz",
     "hash": {
       "url": "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz",
-      "jsonpath": "$.dist.tarball"
+      "jsonpath": "$.dist.tarball",
+      "mode": "download"
     }
   }
 }

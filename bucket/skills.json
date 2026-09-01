@@ -1,72 +1,72 @@
 {
-    "version": "1.5.23",
-    "description": "Vercel Skills CLI - 开放代理技能工具，支持 OpenCode、Claude Code、Codex、Cursor 等 35+ 平台",
-    "homepage": "https://github.com/vercel-labs/skills",
-    "license": "MIT",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz",
-    "hash": "a4ddbadeedfd7aee5e1823c2037b0a313ce4017a8ff1f23b9f7fe30d52a1c963",
-    "installer": {
-        "script": "npm install --global --prefix $dir $dir/skills-$version.tgz"
-    },
-    "uninstaller": {
-        "script": "npm uninstall --global --prefix $dir skills"
-    },
-    "bin": [
-        [
-            "skills.cmd",
-            "skills"
-        ]
-    ],
-    "notes": [
-        "Vercel Skills CLI 安装成功！",
-        "",
-        "Skills CLI 是开放代理技能生态系统工具，支持多个 AI 编码代理：",
-        "  - Claude Code, Codex, Cursor, OpenCode",
-        "  - Cline, CodeBuddy, Gemini CLI, Augment",
-        "  - 以及 35+ 其他平台",
-        "",
-        "快速开始：",
-        "  # 查看帮助",
-        "  skills --help",
-        "",
-        "  # 列出仓库中的技能",
-        "  skills add vercel-labs/agent-skills --list",
-        "",
-        "  # 安装技能到指定代理",
-        "  skills add vercel-labs/agent-skills -a claude-code",
-        "",
-        "  # 安装特定技能",
-        "  skills add vercel-labs/agent-skills --skill frontend-design",
-        "",
-        "  # 全局安装技能",
-        "  skills add vercel-labs/agent-skills -g",
-        "",
-        "其他命令：",
-        "  skills list            # 列出已安装的技能",
-        "  skills find [query]    # 搜索技能",
-        "  skills check           # 检查技能更新",
-        "  skills update          # 更新所有技能",
-        "  skills remove [skill]  # 移除技能",
-        "  skills init [name]     # 创建 SKILL.md 模板",
-        "",
-        "技能发现：",
-        "  - https://skills.sh - 技能目录",
-        "  - https://github.com/vercel-labs/agent-skills - 官方技能库",
-        "",
-        "更多信息：https://github.com/vercel-labs/skills",
-        "",
-        "更新：scoop update skills",
-        "卸载：scoop uninstall skills"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz",
-        "hash": {
-            "mode": "download"
-        }
+  "version": "1.5.23",
+  "description": "Vercel Skills CLI - 开放代理技能工具，支持 OpenCode、Claude Code、Codex、Cursor 等 35+ 平台",
+  "homepage": "https://github.com/vercel-labs/skills",
+  "license": "MIT",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz",
+  "hash": "a4ddbadeedfd7aee5e1823c2037b0a313ce4017a8ff1f23b9f7fe30d52a1c963",
+  "installer": {
+    "script": "npm install --global --prefix $dir $dir/skills-$version.tgz"
+  },
+  "uninstaller": {
+    "script": "npm uninstall --global --prefix $dir skills"
+  },
+  "bin": [
+    [
+      "skills.cmd",
+      "skills"
+    ]
+  ],
+  "notes": [
+    "Vercel Skills CLI 安装成功！",
+    "",
+    "Skills CLI 是开放代理技能生态系统工具，支持多个 AI 编码代理：",
+    "  - Claude Code, Codex, Cursor, OpenCode",
+    "  - Cline, CodeBuddy, Gemini CLI, Augment",
+    "  - 以及 35+ 其他平台",
+    "",
+    "快速开始：",
+    "  # 查看帮助",
+    "  skills --help",
+    "",
+    "  # 列出仓库中的技能",
+    "  skills add vercel-labs/agent-skills --list",
+    "",
+    "  # 安装技能到指定代理",
+    "  skills add vercel-labs/agent-skills -a claude-code",
+    "",
+    "  # 安装特定技能",
+    "  skills add vercel-labs/agent-skills --skill frontend-design",
+    "",
+    "  # 全局安装技能",
+    "  skills add vercel-labs/agent-skills -g",
+    "",
+    "其他命令：",
+    "  skills list            # 列出已安装的技能",
+    "  skills find [query]    # 搜索技能",
+    "  skills check           # 检查技能更新",
+    "  skills update          # 更新所有技能",
+    "  skills remove [skill]  # 移除技能",
+    "  skills init [name]     # 创建 SKILL.md 模板",
+    "",
+    "技能发现：",
+    "  - https://skills.sh - 技能目录",
+    "  - https://github.com/vercel-labs/agent-skills - 官方技能库",
+    "",
+    "更多信息：https://github.com/vercel-labs/skills",
+    "",
+    "更新：scoop update skills",
+    "卸载：scoop uninstall skills"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/skills/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/skills/-/skills-$version.tgz",
+    "hash": {
+      "mode": "download"
     }
+  }
 }

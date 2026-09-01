@@ -10,10 +10,10 @@
     "bin/oh-my-openagent.js"
   ],
   "checkver": {
-    "url": "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-4.19.4.tgz",
+    "url": "https://registry.npmjs.org/oh-my-openagent/latest",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-4.19.4.tgz"
+    "url": "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-$version.tgz"
   }
 }

@@ -16,10 +16,10 @@
     "bin/pm2-runtime"
   ],
   "checkver": {
-    "url": "https://registry.npmjs.org/pm2/-/pm2-7.0.3.tgz",
+    "url": "https://registry.npmjs.org/pm2/latest",
     "jsonpath": "$.version"
   },
   "autoupdate": {
-    "url": "https://registry.npmjs.org/pm2/-/pm2-7.0.3.tgz"
+    "url": "https://registry.npmjs.org/pm2/-/pm2-$version.tgz"
   }
 }

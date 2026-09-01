@@ -1,50 +1,50 @@
 {
-    "version": "0.22.0",
-    "description": "一个在您的终端中运行的开源 AI 智能体",
-    "homepage": "https://github.com/QwenLM/qwen-code",
-    "license": "Apache-2.0",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.22.0.tgz",
-    "hash": "c0ae0ad006c4dd8b69ebe1705d13bb57d37d1c808dcb891c5bfcde91e66670c2",
-    "installer": {
-        "script": [
-            "Write-Host 'Installing qwen-code globally via npm...' -ForegroundColor Green",
-            "npm install -g @qwen-code/qwen-code",
-            "if ($LASTEXITCODE -eq 0) {",
-            "  Write-Host 'qwen-code installed successfully!' -ForegroundColor Green",
-            "  Write-Host 'Testing qwen command...' -ForegroundColor Yellow",
-            "  qwen --version",
-            "  if ($LASTEXITCODE -ne 0) {",
-            "    Write-Warning 'qwen command test failed, but installation succeeded'",
-            "  }",
-            "} else {",
-            "  Write-Error 'Failed to install qwen-code via npm'",
-            "  exit 1",
-            "}"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "Write-Host 'Uninstalling qwen-code globally...' -ForegroundColor Yellow",
-            "npm uninstall -g @qwen-code/qwen-code",
-            "Write-Host 'qwen-code uninstalled successfully!' -ForegroundColor Green"
-        ]
-    },
-    "bin": "qwen",
-    "notes": [
-        "此软件包通过 npm 全局安装 qwen-code。",
-        "安装后直接使用 'qwen' 命令。",
-        "更新: scoop update qwen-code",
-        "卸载: scoop uninstall qwen-code"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.22.0.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.22.0.tgz",
-        "hash": {
-            "mode": "download"
-        }
+  "version": "0.22.0",
+  "description": "一个在您的终端中运行的开源 AI 智能体",
+  "homepage": "https://github.com/QwenLM/qwen-code",
+  "license": "Apache-2.0",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.22.0.tgz",
+  "hash": "c0ae0ad006c4dd8b69ebe1705d13bb57d37d1c808dcb891c5bfcde91e66670c2",
+  "installer": {
+    "script": [
+      "Write-Host 'Installing qwen-code globally via npm...' -ForegroundColor Green",
+      "npm install -g @qwen-code/qwen-code",
+      "if ($LASTEXITCODE -eq 0) {",
+      "  Write-Host 'qwen-code installed successfully!' -ForegroundColor Green",
+      "  Write-Host 'Testing qwen command...' -ForegroundColor Yellow",
+      "  qwen --version",
+      "  if ($LASTEXITCODE -ne 0) {",
+      "    Write-Warning 'qwen command test failed, but installation succeeded'",
+      "  }",
+      "} else {",
+      "  Write-Error 'Failed to install qwen-code via npm'",
+      "  exit 1",
+      "}"
+    ]
+  },
+  "uninstaller": {
+    "script": [
+      "Write-Host 'Uninstalling qwen-code globally...' -ForegroundColor Yellow",
+      "npm uninstall -g @qwen-code/qwen-code",
+      "Write-Host 'qwen-code uninstalled successfully!' -ForegroundColor Green"
+    ]
+  },
+  "bin": "qwen",
+  "notes": [
+    "此软件包通过 npm 全局安装 qwen-code。",
+    "安装后直接使用 'qwen' 命令。",
+    "更新: scoop update qwen-code",
+    "卸载: scoop uninstall qwen-code"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/@qwen-code/qwen-code/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-$version.tgz",
+    "hash": {
+      "mode": "download"
     }
+  }
 }

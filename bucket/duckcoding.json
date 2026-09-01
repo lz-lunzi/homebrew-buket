@@ -3,8 +3,10 @@
     "description": "AI 工具一键配置 - 支持 Claude Code、CodeX、Gemini CLI 的跨平台桌面应用",
     "homepage": "https://duckcoding.com",
     "license": "AGPL-3.0",
-    "url": "https://github.com/DuckCoding-dev/DuckCoding/releases/download/v1.5.1/DuckCoding_1.5.1_x64-setup.exe",
-    "hash": "bb6714293a3786b6411432615941e6ad290a93b281d18f699b62601a595a58de",
+    "url": "https://github.com/DuckCoding-dev/DuckCoding/releases/download/v1.5.7/DuckCoding_1.5.7_x64-setup.exe",
+    "hash": {
+        "mode": "download"
+    },
     "installer": {
         "script": "Start-Process \"$dir\\DuckCoding_1.5.1_x64-setup.exe\" \"/S /D=$dir\" -Wait"
     },
@@ -29,8 +31,13 @@
         "官网: https://duckcoding.com",
         "控制台: https://duckcoding.com/console"
     ],
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/DuckCoding-dev/DuckCoding"
+    },
     "autoupdate": {
-        "url": "https://github.com/DuckCoding-dev/DuckCoding/releases/download/v$version/DuckCoding_$version_x64-setup.exe"
+        "url": "https://github.com/DuckCoding-dev/DuckCoding/releases/download/v$version/DuckCoding_$version_x64-setup.exe",
+        "hash": {
+            "mode": "download"
+        }
     }
 }

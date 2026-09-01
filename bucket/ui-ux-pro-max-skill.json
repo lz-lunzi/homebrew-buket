@@ -1,52 +1,52 @@
 {
-    "version": "2.2.3",
-    "description": "用于为 AI 编程助手安装 UI/UX Pro Max 技能的 CLI。提供设计智能，用于跨多个平台和框架构建专业的 UI/UX",
-    "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-    "license": "MIT",
-    "depends": [
-        "nodejs-lts",
-        "python"
-    ],
-    "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-2.2.3.tgz",
-    "hash": "4e69eec78aeafb96e02fb253a0c5524d69667e2c542fe37957ed010ebb66c5d5",
-    "installer": {
-        "script": "npm install -g uipro-cli"
-    },
-    "uninstaller": {
-        "script": "npm uninstall -g uipro-cli"
-    },
-    "bin": "uipro",
-    "notes": [
-        "UI/UX Pro Max 技能安装成功！",
-        "使用：uipro init --ai <assistant>",
-        "",
-        "可用的助手：",
-        "  claude    - Claude Code",
-        "  cursor    - Cursor",
-        "  windsurf  - Windsurf",
-        "  antigravity - Antigravity (.agent + .shared)",
-        "  copilot   - GitHub Copilot",
-        "  kiro      - Kiro",
-        "  codex     - Codex (Skills)",
-        "  all       - 所有助手",
-        "",
-        "其他命令：",
-        "  uipro versions  - 列出可用版本",
-        "  uipro update    - 更新到最新版本",
-        "  uipro init --version v1.0.0 - 安装特定版本",
-        "",
-        "文档: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-        "更新: scoop update ui-ux-pro-max-skill",
-        "卸载: scoop uninstall ui-ux-pro-max-skill"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-2.2.3.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-2.2.3.tgz",
-        "hash": {
-            "mode": "download"
-        }
+  "version": "2.2.3",
+  "description": "用于为 AI 编程助手安装 UI/UX Pro Max 技能的 CLI。提供设计智能，用于跨多个平台和框架构建专业的 UI/UX",
+  "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "license": "MIT",
+  "depends": [
+    "nodejs-lts",
+    "python"
+  ],
+  "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-2.2.3.tgz",
+  "hash": "4e69eec78aeafb96e02fb253a0c5524d69667e2c542fe37957ed010ebb66c5d5",
+  "installer": {
+    "script": "npm install -g uipro-cli"
+  },
+  "uninstaller": {
+    "script": "npm uninstall -g uipro-cli"
+  },
+  "bin": "uipro",
+  "notes": [
+    "UI/UX Pro Max 技能安装成功！",
+    "使用：uipro init --ai <assistant>",
+    "",
+    "可用的助手：",
+    "  claude    - Claude Code",
+    "  cursor    - Cursor",
+    "  windsurf  - Windsurf",
+    "  antigravity - Antigravity (.agent + .shared)",
+    "  copilot   - GitHub Copilot",
+    "  kiro      - Kiro",
+    "  codex     - Codex (Skills)",
+    "  all       - 所有助手",
+    "",
+    "其他命令：",
+    "  uipro versions  - 列出可用版本",
+    "  uipro update    - 更新到最新版本",
+    "  uipro init --version v1.0.0 - 安装特定版本",
+    "",
+    "文档: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "更新: scoop update ui-ux-pro-max-skill",
+    "卸载: scoop uninstall ui-ux-pro-max-skill"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/uipro-cli/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/uipro-cli/-/uipro-cli-$version.tgz",
+    "hash": {
+      "mode": "download"
     }
+  }
 }

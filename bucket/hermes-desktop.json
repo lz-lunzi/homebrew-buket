@@ -1,9 +1,9 @@
 {
-    "version": "0.0.1",
+    "version": "29112bef09",
     "description": "Nous Research 官方桌面客户端 — Hermes Agent 原生 GUI，支持聊天、终端、文件管理、消息平台集成、子代理等功能",
     "homepage": "https://hermes-agent.nousresearch.com/desktop",
     "license": "MIT",
-    "url": "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=02a4d6695198",
+    "url": "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=29112bef0992#/Hermes-Setup.exe",
     "hash": "505dfb4c2c1052b055e3fc694a76cb7ce093a64962c7713aa294f5549c6734f5",
     "installer": {
         "script": [
@@ -45,7 +45,7 @@
         "regex": "Hermes-Setup\\.exe\\?build=([a-f0-9]+)"
     },
     "autoupdate": {
-        "url": "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=$matchBuild",
+        "url": "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=$matchBuild#/Hermes-Setup.exe",
         "hash": {
             "mode": "download"
         }

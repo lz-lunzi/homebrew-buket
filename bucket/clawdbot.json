@@ -1,67 +1,67 @@
 {
-    "version": "2026.1.24-3",
-    "description": "个人 AI 助手 - 任何操作系统，任何平台",
-    "homepage": "https://github.com/clawdbot/clawdbot",
-    "license": "MIT",
-    "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-2026.1.24-3.tgz",
-    "installer": {
-        "script": "npm install --global --prefix $dir $dir\\clawdbot-$version.tgz"
-    },
-    "uninstaller": {
-        "script": "npm uninstall --global --prefix $dir clawdbot"
-    },
-    "notes": [
-        "Clawdbot 安装成功！",
-        "",
-        "Clawdbot 是一个您在自己的设备上运行的个人 AI 助手。",
-        "它通过您已经使用的渠道回答您：",
-        "  - WhatsApp, Telegram, Slack, Discord",
-        "  - Google Chat, Signal, iMessage, Microsoft Teams",
-        "  - WebChat, BlueBubbles, Matrix, Zalo, Zalo Personal",
-        "",
-        "功能特性：",
-        "  - Gateway WebSocket 控制平面（会话、配置、工具、事件）",
-        "  - 多渠道收件箱",
-        "  - 多代理路由",
-        "  - Voice Wake + Talk Mode（语音唤醒和对话模式）",
-        "  - Live Canvas（AI 驱动的视觉工作区）",
-        "  - 浏览器控制、Canvas、节点、Cron、Discord/Slack 操作",
-        "  - macOS/iOS/Android 节点",
-        "",
-        "快速开始：",
-        "  运行入门向导：",
-        "    clawdbot onboard --install-daemon",
-        "",
-        "  启动 Gateway：",
-        "    clawdbot gateway --port 18789 --verbose",
-        "",
-        "  发送消息：",
-        "    clawdbot message send --to +1234567890 --message \"Hello from Clawdbot\"",
-        "",
-        "  与助手对话：",
-        "    clawdbot agent --message \"Ship checklist\" --thinking high",
-        "",
-        "模型推荐：",
-        "  强烈推荐 Anthropic Pro/Max (100/200) + Opus 4.5",
-        "  支持长上下文和更好的提示注入防护",
-        "",
-        "更多信息：",
-        "  官网：https://clawd.bot",
-        "  文档：https://docs.clawd.bot",
-        "  Discord：https://github.com/clawdbot/clawdbot",
-        "",
-        "更新：scoop update clawdbot",
-        "卸载：scoop uninstall clawdbot"
-    ],
-    "checkver": {
-        "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-2026.1.24-3.tgz",
-        "jsonpath": "$['dist-tags'].latest"
-    },
-    "autoupdate": {
-        "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-2026.1.24-3.tgz",
-        "hash": {
-            "mode": "download"
-        }
+  "version": "2026.1.24-3",
+  "description": "个人 AI 助手 - 任何操作系统，任何平台",
+  "homepage": "https://github.com/clawdbot/clawdbot",
+  "license": "MIT",
+  "depends": "nodejs-lts",
+  "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-2026.1.24-3.tgz",
+  "installer": {
+    "script": "npm install --global --prefix $dir $dir\\clawdbot-$version.tgz"
+  },
+  "uninstaller": {
+    "script": "npm uninstall --global --prefix $dir clawdbot"
+  },
+  "notes": [
+    "Clawdbot 安装成功！",
+    "",
+    "Clawdbot 是一个您在自己的设备上运行的个人 AI 助手。",
+    "它通过您已经使用的渠道回答您：",
+    "  - WhatsApp, Telegram, Slack, Discord",
+    "  - Google Chat, Signal, iMessage, Microsoft Teams",
+    "  - WebChat, BlueBubbles, Matrix, Zalo, Zalo Personal",
+    "",
+    "功能特性：",
+    "  - Gateway WebSocket 控制平面（会话、配置、工具、事件）",
+    "  - 多渠道收件箱",
+    "  - 多代理路由",
+    "  - Voice Wake + Talk Mode（语音唤醒和对话模式）",
+    "  - Live Canvas（AI 驱动的视觉工作区）",
+    "  - 浏览器控制、Canvas、节点、Cron、Discord/Slack 操作",
+    "  - macOS/iOS/Android 节点",
+    "",
+    "快速开始：",
+    "  运行入门向导：",
+    "    clawdbot onboard --install-daemon",
+    "",
+    "  启动 Gateway：",
+    "    clawdbot gateway --port 18789 --verbose",
+    "",
+    "  发送消息：",
+    "    clawdbot message send --to +1234567890 --message \"Hello from Clawdbot\"",
+    "",
+    "  与助手对话：",
+    "    clawdbot agent --message \"Ship checklist\" --thinking high",
+    "",
+    "模型推荐：",
+    "  强烈推荐 Anthropic Pro/Max (100/200) + Opus 4.5",
+    "  支持长上下文和更好的提示注入防护",
+    "",
+    "更多信息：",
+    "  官网：https://clawd.bot",
+    "  文档：https://docs.clawd.bot",
+    "  Discord：https://github.com/clawdbot/clawdbot",
+    "",
+    "更新：scoop update clawdbot",
+    "卸载：scoop uninstall clawdbot"
+  ],
+  "checkver": {
+    "url": "https://registry.npmjs.org/clawdbot/latest",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "url": "https://registry.npmjs.org/clawdbot/-/clawdbot-$version.tgz",
+    "hash": {
+      "mode": "download"
     }
+  }
 }
