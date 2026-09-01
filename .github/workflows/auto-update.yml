@@ -52,6 +52,7 @@ jobs:
             echo "==> $name"
             if grep -qE '^\s*disable!\s' "$f"; then echo "  retired (moved to homebrew/core), skip"; continue; fi
             if grep -qE '^\s*on_macos\s+do' "$f"; then echo "  multi-arch binary (handled by update_multiarch.rb), skip"; continue; fi
+            if grep -q 'Virtualenv' "$f"; then echo "  virtualenv formula (resources must match), skip"; continue; fi
             ver=$(brew livecheck "$name" 2>/dev/null | sed $'s/\x1b\\[[0-9;]*m//g' | awk -F'==> ' '{print $2}' | tr -d '[:space:]')
             if [ -z "$ver" ]; then echo "  no livecheck result"; continue; fi
             cur=$(brew info --json=v2 "$name" 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['formulae'][0]['versions']['stable'])" 2>/dev/null)
