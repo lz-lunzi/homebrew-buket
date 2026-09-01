@@ -1,58 +1,58 @@
 {
-  "version": "2.137.1",
-  "description": "Tencent CodeBuddy CLI - Terminal AI coding assistant",
-  "homepage": "https://cnb.cool/codebuddy/codebuddy-code",
-  "license": "SEE LICENSE IN README.md",
-  "depends": "nodejs-lts",
-  "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.137.1.tgz",
-  "installer": {
-    "script": "npm install --global --prefix $dir $dir\\codebuddy-code-$version.tgz"
-  },
-  "uninstaller": {
-    "script": "npm uninstall --global --prefix $dir @tencent-ai/codebuddy-code"
-  },
-  "notes": [
-    "Tencent CodeBuddy CLI installed successfully!",
-    "",
-    "CodeBuddy is Tencent's AI coding assistant based on Hunyuan code model, providing:",
-    "  - Technical dialogue - Code-related technical discussions with AI",
-    "  - Code completion - Intelligent code completion suggestions",
-    "  - Code diagnosis - Automatic code issue detection",
-    "  - Code optimization - Optimize code quality and performance",
-    "",
-    "CLI Features:",
-    "  - Understand codebases",
-    "  - Edit files",
-    "  - Run terminal commands",
-    "  - Handle complete workflows",
-    "  - Interactive AI assistant",
-    "",
-    "Quick Start:",
-    "  # Run CodeBuddy",
-    "  codebuddy",
-    "",
-    "  # Show help",
-    "  codebuddy --help",
-    "",
-    "  # Basic usage",
-    "  codebuddy \"Please help me analyze this file\" < filename>",
-    "",
-    "Related Links:",
-    "  - Official site: https://www.codebuddy.cn/",
-    "  - CLI docs: https://www.codebuddy.cn/cli/",
-    "  - npm package: https://www.npmjs.com/package/@tencent-ai/codebuddy-code",
-    "",
-    "Update: scoop update codebuddy-cli",
-    "Uninstall: scoop uninstall codebuddy-cli"
-  ],
-  "checkver": {
-    "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/latest",
-    "jsonpath": "$.version"
-  },
-  "autoupdate": {
-    "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-$version.tgz",
-    "hash": {
-      "mode": "download"
+    "version": "2.143.0",
+    "description": "Tencent CodeBuddy CLI - Terminal AI coding assistant",
+    "homepage": "https://cnb.cool/codebuddy/codebuddy-code",
+    "license": "SEE LICENSE IN README.md",
+    "depends": "nodejs-lts",
+    "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.143.0.tgz",
+    "installer": {
+        "script": "npm install --global --prefix $dir $dir\\codebuddy-code-$version.tgz"
+    },
+    "uninstaller": {
+        "script": "npm uninstall --global --prefix $dir @tencent-ai/codebuddy-code"
+    },
+    "notes": [
+        "Tencent CodeBuddy CLI installed successfully!",
+        "",
+        "CodeBuddy is Tencent's AI coding assistant based on Hunyuan code model, providing:",
+        "  - Technical dialogue - Code-related technical discussions with AI",
+        "  - Code completion - Intelligent code completion suggestions",
+        "  - Code diagnosis - Automatic code issue detection",
+        "  - Code optimization - Optimize code quality and performance",
+        "",
+        "CLI Features:",
+        "  - Understand codebases",
+        "  - Edit files",
+        "  - Run terminal commands",
+        "  - Handle complete workflows",
+        "  - Interactive AI assistant",
+        "",
+        "Quick Start:",
+        "  # Run CodeBuddy",
+        "  codebuddy",
+        "",
+        "  # Show help",
+        "  codebuddy --help",
+        "",
+        "  # Basic usage",
+        "  codebuddy \"Please help me analyze this file\" < filename>",
+        "",
+        "Related Links:",
+        "  - Official site: https://www.codebuddy.cn/",
+        "  - CLI docs: https://www.codebuddy.cn/cli/",
+        "  - npm package: https://www.npmjs.com/package/@tencent-ai/codebuddy-code",
+        "",
+        "Update: scoop update codebuddy-cli",
+        "Uninstall: scoop uninstall codebuddy-cli"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/latest",
+        "jsonpath": "$.version"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-$version.tgz",
+        "hash": {
+            "mode": "download"
+        }
     }
-  }
 }
