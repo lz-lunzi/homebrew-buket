@@ -2,11 +2,22 @@ class Orca < Formula
   desc "IDE for orchestrating AI coding agents across terminals and worktrees"
   homepage "https://onorca.dev/"
   license "MIT"
-  version "1.4.188"
+  version "1.4.194"
 
   livecheck do
     url :stable
     strategy :github_latest
+  end
+
+  on_macos do
+    on_arm do
+      url "https://github.com/stablyai/orca/releases/download/v#{version}/Orca-#{version}-arm64-mac.zip"
+      sha256 "87dee962eaaa40e567b27b914611ce57525354abaf64af381c6a6983afe30c21"
+    end
+    on_intel do
+      url "https://github.com/stablyai/orca/releases/download/v#{version}/Orca-#{version}-mac.zip"
+      sha256 "c3dd5237c195ea02eac3c423e5555b4a75a252125b4b0df0e6b5c99fdb1aefe0"
+    end
   end
 
   on_linux do
@@ -21,8 +32,12 @@ class Orca < Formula
   end
 
   def install
-    # AppImage is a single self-contained executable; install as-is.
-    bin.install Dir.glob("orca-linux*.AppImage").first => "orca"
+    if OS.mac?
+      prefix.install Dir["*.app"]
+      bin.install_symlink prefix/"Orca.app/Contents/MacOS/Orca" => "orca"
+    else
+      bin.install Dir.glob("orca-linux*.AppImage").first => "orca"
+    end
   end
 
   def caveats
