@@ -1,19 +1,19 @@
 {
-  "version": "0.5.1",
-  "description": "Orchestrate multiple coding agents from desktop and mobile",
-  "homepage": "https://paseo.sh",
-  "license": "AGPL-3.0-or-later",
-  "url": "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.5.1.tgz",
-  "hash": "61d544a0082d92a1870a17de822e141d2b765773ee8e24c01866ed120fcdd9bf",
-  "bin": [
-    "paseo-cli",
-    "bin/paseo-cli.js"
-  ],
-  "checkver": {
-    "url": "https://registry.npmjs.org/@getpaseo/cli/latest",
-    "jsonpath": "$.version"
-  },
-  "autoupdate": {
-    "url": "https://registry.npmjs.org/@getpaseo/cli/-/cli-$version.tgz"
-  }
+    "version": "0.7.0",
+    "description": "Orchestrate multiple coding agents from desktop and mobile",
+    "homepage": "https://paseo.sh",
+    "license": "AGPL-3.0-or-later",
+    "url": "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.7.0.tgz",
+    "hash": "b3329fbae6e2da87b1feb36fa8c9a07367ee967d40239544c8f7c52af8ebe0c1",
+    "bin": [
+        "paseo-cli",
+        "bin/paseo-cli.js"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/@getpaseo/cli/latest",
+        "jsonpath": "$.version"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/@getpaseo/cli/-/cli-$version.tgz"
+    }
 }
