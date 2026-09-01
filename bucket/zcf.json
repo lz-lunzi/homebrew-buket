@@ -1,66 +1,66 @@
 {
-  "version": "3.7.2",
-  "description": "Claude Code & Codex 的零配置代码流 - 一键设置，支持双语、智能智能体系统和个性化 AI 助手",
-  "homepage": "https://github.com/UfoMiao/zcf",
-  "license": "MIT",
-  "depends": "nodejs-lts",
-  "url": "https://registry.npmjs.org/zcf/-/zcf-3.7.2.tgz",
-  "hash": "48a7234ed7e40a06e508d5c5aa439b67965beb04cb78cc47f17af56ead985360",
-  "installer": {
-    "script": "npm install -g zcf@latest"
-  },
-  "uninstaller": {
-    "script": "npm uninstall -g zcf -y"
-  },
-  "notes": [
-    "ZCF 安装成功！",
-    "",
-    "ZCF（零配置代码流）是 Claude Code & Codex 的一键配置工具，支持双语（中文/英文）。",
-    "",
-    "功能：",
-    "  - 零配置，为 Claude Code & Codex 一键设置",
-    "  - 双语支持（英语 | 中文 | 日本語）",
-    "  - 智能智能体系统",
-    "  - 个性化 AI 助手",
-    "  - MCP（模型上下文协议）支持",
-    "  - 多个工作流程，包括 sixStep 工作流程",
-    "  - CCR 代理集成",
-    "  - BMAD 方法支持",
-    "",
-    "快速开始：",
-    "  zcf                      # 打开交互式菜单",
-    "  zcf i                    # 完整初始化：安装 + 工作流程 + API/CCR + MCP",
-    "  zcf u                    # 仅更新工作流程",
-    "  zcf --lang zh-CN         # 切换界面语言",
-    "  zcf --version            # 检查版本",
-    "  zcf --help               # 显示帮助",
-    "",
-    "非交互式示例（提供商预设）：",
-    "  zcf i -s -p 302ai -k \"sk-xxx\"",
-    "",
-    "身份验证和配置：",
-    "  - 支持多个提供商：302.AI、OpenAI、Anthropic 等",
-    "  - Google 登录（可用免费层）",
-    "  - API 密钥配置",
-    "  - Vertex AI 支持",
-    "  - CCR 代理设置",
-    "",
-    "文档：",
-    "  - 完整文档：https://zcf.ufomiao.com/",
-    "  - GitHub: https://github.com/UfoMiao/zcf",
-    "  - 社区：https://t.me/ufomiao_zcf",
-    "",
-    "更新: scoop update zcf",
-    "卸载: scoop uninstall zcf"
-  ],
-  "checkver": {
-    "url": "https://registry.npmjs.org/zcf/latest",
-    "jsonpath": "$.version"
-  },
-  "autoupdate": {
-    "url": "https://registry.npmjs.org/zcf/-/zcf-$version.tgz",
-    "hash": {
-      "mode": "download"
+    "version": "3.7.3",
+    "description": "Claude Code & Codex 的零配置代码流 - 一键设置，支持双语、智能智能体系统和个性化 AI 助手",
+    "homepage": "https://github.com/UfoMiao/zcf",
+    "license": "MIT",
+    "depends": "nodejs-lts",
+    "url": "https://registry.npmjs.org/zcf/-/zcf-3.7.3.tgz",
+    "hash": "cbadc3e97a4ba781911837c05ff62f4ce57842a6e5666b4abbc6a5f7cd93d232",
+    "installer": {
+        "script": "npm install -g zcf@latest"
+    },
+    "uninstaller": {
+        "script": "npm uninstall -g zcf -y"
+    },
+    "notes": [
+        "ZCF 安装成功！",
+        "",
+        "ZCF（零配置代码流）是 Claude Code & Codex 的一键配置工具，支持双语（中文/英文）。",
+        "",
+        "功能：",
+        "  - 零配置，为 Claude Code & Codex 一键设置",
+        "  - 双语支持（英语 | 中文 | 日本語）",
+        "  - 智能智能体系统",
+        "  - 个性化 AI 助手",
+        "  - MCP（模型上下文协议）支持",
+        "  - 多个工作流程，包括 sixStep 工作流程",
+        "  - CCR 代理集成",
+        "  - BMAD 方法支持",
+        "",
+        "快速开始：",
+        "  zcf                      # 打开交互式菜单",
+        "  zcf i                    # 完整初始化：安装 + 工作流程 + API/CCR + MCP",
+        "  zcf u                    # 仅更新工作流程",
+        "  zcf --lang zh-CN         # 切换界面语言",
+        "  zcf --version            # 检查版本",
+        "  zcf --help               # 显示帮助",
+        "",
+        "非交互式示例（提供商预设）：",
+        "  zcf i -s -p 302ai -k \"sk-xxx\"",
+        "",
+        "身份验证和配置：",
+        "  - 支持多个提供商：302.AI、OpenAI、Anthropic 等",
+        "  - Google 登录（可用免费层）",
+        "  - API 密钥配置",
+        "  - Vertex AI 支持",
+        "  - CCR 代理设置",
+        "",
+        "文档：",
+        "  - 完整文档：https://zcf.ufomiao.com/",
+        "  - GitHub: https://github.com/UfoMiao/zcf",
+        "  - 社区：https://t.me/ufomiao_zcf",
+        "",
+        "更新: scoop update zcf",
+        "卸载: scoop uninstall zcf"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/zcf/latest",
+        "jsonpath": "$.version"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/zcf/-/zcf-$version.tgz",
+        "hash": {
+            "mode": "download"
+        }
     }
-  }
 }
