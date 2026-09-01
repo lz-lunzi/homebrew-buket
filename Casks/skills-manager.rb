@@ -18,6 +18,9 @@ cask "skills-manager" do
     strategy :github_latest
   end
 
+  deprecate! date: "2026-09-01", because: "moved to homebrew/cask", replacement_cask: "skills-manager"
+  disable! date: "2027-09-01", because: "moved to homebrew/cask", replacement_cask: "skills-manager"
+
   depends_on macos: :big_sur
 
   app "Skills Manager.app"
