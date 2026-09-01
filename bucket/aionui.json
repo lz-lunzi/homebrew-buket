@@ -4,9 +4,7 @@
     "homepage": "https://github.com/iOfficeAI/AionUi",
     "license": "Apache-2.0",
     "url": "https://github.com/iOfficeAI/AionUi/releases/download/v2.1.47-final/AionUi-2.1.47-win-x64.exe",
-    "hash": {
-        "mode": "download"
-    },
+    "hash": "sha512:7913921712f03ff17746800269dbc1b55e598eb16bc5f75dff8fb9b59e40a5c500eb3fd0d8e92e15c3e6d820f71e157e921d76e21750401725043664509ae33c",
     "bin": "AionUi.exe",
     "shortcuts": [
         [
