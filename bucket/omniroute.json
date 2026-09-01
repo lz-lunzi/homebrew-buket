@@ -1,19 +1,19 @@
 {
-  "version": "3.8.49",
-  "description": "Free AI gateway: one endpoint, 160+ providers, RTK+Caveman compression",
-  "homepage": "https://github.com/diegosouzapw/OmniRoute",
-  "license": "MIT",
-  "url": "https://registry.npmjs.org/omniroute/-/omniroute-3.8.49.tgz",
-  "hash": "a76af79a1ed2645aa6dca96105c1fee3160e30fc619e68ff18342187678c9848",
-  "bin": [
-    "omniroute",
-    "bin/omniroute.js"
-  ],
-  "checkver": {
-    "url": "https://registry.npmjs.org/omniroute/latest",
-    "jsonpath": "$.version"
-  },
-  "autoupdate": {
-    "url": "https://registry.npmjs.org/omniroute/-/omniroute-$version.tgz"
-  }
+    "version": "3.8.50",
+    "description": "Free AI gateway: one endpoint, 160+ providers, RTK+Caveman compression",
+    "homepage": "https://github.com/diegosouzapw/OmniRoute",
+    "license": "MIT",
+    "url": "https://registry.npmjs.org/omniroute/-/omniroute-3.8.50.tgz",
+    "hash": "738c58af1faae8c57eb643a939d1191f8d7e083d9295ef61687d2bff04878c29",
+    "bin": [
+        "omniroute",
+        "bin/omniroute.js"
+    ],
+    "checkver": {
+        "url": "https://registry.npmjs.org/omniroute/latest",
+        "jsonpath": "$.version"
+    },
+    "autoupdate": {
+        "url": "https://registry.npmjs.org/omniroute/-/omniroute-$version.tgz"
+    }
 }
