@@ -1,24 +1,13 @@
 {
-    "version": "5.2.0",
+    "version": "5.2.0.54538",
     "description": "贝锐蒲公英客户端 - 异地组网，快速搭建虚拟局域网",
     "homepage": "https://pgy.oray.com/download/",
     "license": "Freeware",
-    "url": "https://pgy.oray.com/download/windows#/dl.7z",
-    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "url": "https://pgy.oray.com/softwares/33/download/1903/PgyVisitor_5.2.0.54538_x64.exe",
+    "hash": "5def016899d9ffa7276162e0727e45e8152d9e54ca42214dd6c04cc21825d366",
     "installer": {
         "script": [
-            "Write-Host '==========================================================' -ForegroundColor Cyan",
-            "Write-Host '  蒲公英客户端 - 手动下载安装' -ForegroundColor Cyan",
-            "Write-Host '==========================================================' -ForegroundColor Cyan",
-            "Write-Host ''",
-            "Write-Host '下载地址: https://pgy.oray.com/download/' -ForegroundColor Yellow",
-            "Write-Host ''",
-            "Write-Host '请执行以下步骤:' -ForegroundColor White",
-            "Write-Host '  1. 访问上述下载页面' -ForegroundColor White",
-            "Write-Host '  2. 选择 Windows 64位客户端' -ForegroundColor White",
-            "Write-Host '  3. 运行安装程序' -ForegroundColor White",
-            "Write-Host ''",
-            "Write-Host '==========================================================' -ForegroundColor Cyan"
+            "Start-Process \"$dir\\PgyVisitor_5.2.0.54538_x64.exe\" \"/S /D=$dir\" -Wait"
         ]
     },
     "bin": "PgyVpn.exe",

@@ -5,7 +5,7 @@
   "license": "MIT",
   "depends": "nodejs-lts",
   "url": "https://registry.npmjs.org/add-skill/-/add-skill-2.0.0.tgz",
-  "hash": "",
+  "hash": "3f63cf90141c5908d20c275f8d16dca6aebb0ad6c2972ba07c637fd93f21be32",
   "installer": {
     "script": "npm install --production --prefix $dir $dir\\add-skill-$version.tgz"
   },

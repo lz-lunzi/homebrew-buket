@@ -32,7 +32,7 @@
     ],
     "checkver": {
         "url": "https://pypi.org/pypi/gui-agents/json",
-        "regex": "\"filename\":\\s*\"gui_agents-([\\d.]+)-py3-none-any\\.whl\""
+        "regex": "\"url\":\\s*\"(https://files\\.pythonhosted\\.org/packages/[^\"]+gui_agents-([\\d.]+)-py3-none-any\\.whl)\""
     },
     "autoupdate": {
         "url": "$matchUrl",

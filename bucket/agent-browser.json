@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "depends": "nodejs-lts",
   "url": "https://registry.npmjs.org/agent-browser/-/agent-browser-0.34.0.tgz",
-  "hash": "",
+  "hash": "a4744fb189e598467abcfb3acdde07118d9e5cb43dc3b31727f869af4eb9d598",
   "installer": {
     "script": "npm install --production --prefix $dir $dir\\agent-browser-0.7.6.tgz"
   },

@@ -56,15 +56,8 @@
         "卸载: scoop uninstall aionui",
         "文档: https://github.com/iOfficeAI/AionUi"
     ],
-    "checkver": {
-        "url": "https://api.github.com/repos/iOfficeAI/AionUi/releases/latest",
-        "jsonpath": "$.tag_name"
-    },
     "autoupdate": {
-        "url": "https://github.com/iOfficeAI/AionUi/releases/download/v$version/AionUi-$version-win-x64.exe",
-        "hash": {
-            "mode": "download"
-        }
+        "url": "https://github.com/iOfficeAI/AionUi/releases/download/v$version/AionUi-$version-win-x64.exe"
     },
     "installer": {
         "script": "Start-Process \"$dir\\AionUi-2.1.47-win-x64.exe\" \"/S /D=$dir\" -Wait"
