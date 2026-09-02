@@ -1,12 +1,12 @@
 {
-    "version": "0.13.0",
+    "version": "0.13.2",
     "description": "Octopus - AI 模型代理服务",
     "homepage": "https://github.com/bestruirui/octopus",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/bestruirui/octopus/releases/download/v0.13.0/octopus-windows-amd64.zip",
-            "hash": "dd0c6b8f17246cf6a7b719c7dbbc8dc61d59d56151b66e816c59b09b9a43b573"
+            "url": "https://github.com/bestruirui/octopus/releases/download/v0.13.2/octopus-windows-amd64.zip",
+            "hash": "f635c6b4c1369400c9d201fd43b1b327b777c17563944b4dbf7e8efd5ae4a0bc"
         }
     },
     "bin": "octopus.exe",
