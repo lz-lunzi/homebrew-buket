@@ -11,23 +11,23 @@ class MulticaCli < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/multica-ai/multica/releases/download/v#{version}/multica-cli-#{version}-darwin-arm64.tar.gz"
-      sha256 "65e16595e3b3c45fb57424cb76b7b35e22f0e1a63a205b02cedb8a2473539250"
+      url "https://github.com/multica-ai/multica/releases/download/v0.4.38/multica-cli-0.4.38-darwin-arm64.tar.gz"
+      sha256 "be6cbbdcfaf3b6a0544625f9f96127230d81b54ae973d4582429a36aea8a26a1"
     end
     on_intel do
-      url "https://github.com/multica-ai/multica/releases/download/v#{version}/multica-cli-#{version}-darwin-amd64.tar.gz"
-      sha256 "513b7cd2dc348358c7205e5b4d031f70029503a9b786c893c81086c9105168fe"
+      url "https://github.com/multica-ai/multica/releases/download/v0.4.38/multica-cli-0.4.38-darwin-amd64.tar.gz"
+      sha256 "257cd81e44938689b47934d3b0c3bed2fe8327d9e0928470106daaf0c59e3877"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/multica-ai/multica/releases/download/v#{version}/multica-cli-#{version}-linux-arm64.tar.gz"
-      sha256 "7a3d27441e2e964a30e3768fd7e61afdb84f815b61f2a98ef22cd2cfb83fffe7"
+      url "https://github.com/multica-ai/multica/releases/download/v0.4.38/multica-cli-0.4.38-linux-arm64.tar.gz"
+      sha256 "c40e84facfc371390072335b682c697ee32b0ecd949da70e0b2d0943250cf064"
     end
     on_intel do
-      url "https://github.com/multica-ai/multica/releases/download/v#{version}/multica-cli-#{version}-linux-amd64.tar.gz"
-      sha256 "14f8f463cdf2b2adbad5cc7cbe3902a03cecf605f2f52b8f148cc0dc502e98db"
+      url "https://github.com/multica-ai/multica/releases/download/v0.4.38/multica-cli-0.4.38-linux-amd64.tar.gz"
+      sha256 "55f494ba058108f0fc3d684d711484fda9e0abafc61ceab06666dcbb5d4c6062"
     end
   end
 
