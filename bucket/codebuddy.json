@@ -1,10 +1,10 @@
 {
-    "version": "2.143.0",
+    "version": "2.143.1",
     "description": "Tencent CodeBuddy CLI - Terminal AI coding assistant",
     "homepage": "https://cnb.cool/codebuddy/codebuddy-code",
     "license": "SEE LICENSE IN README.md",
     "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.143.0.tgz",
+    "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.143.1.tgz",
     "installer": {
         "script": "npm install --global --prefix $dir $dir\\codebuddy-code-$version.tgz"
     },
