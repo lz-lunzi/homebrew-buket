@@ -1,8 +1,8 @@
 class NineRouter < Formula
   desc "Start and manage 9Router server"
   homepage "https://github.com/decolua/9router"
-  url "https://registry.npmjs.org/9router/-/9router-0.5.59.tgz"
-  sha256 "b729ebe8e94f2a1e0dba38aec0a0f3c609887a4840e2d7bbabee267f81df7458"
+  url "https://registry.npmjs.org/9router/-/9router-0.5.65.tgz"
+  sha256 "b80cb60f4c42be19d16c2901ece9cbb12467434e8cb05c63b5f645523be6774f"
   license "MIT"
 
   livecheck do

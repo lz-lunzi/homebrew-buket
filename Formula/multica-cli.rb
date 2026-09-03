@@ -2,7 +2,7 @@ class MulticaCli < Formula
   desc "Multica CLI — local agent runtime and management tool for the Multica platform"
   homepage "https://github.com/multica-ai/multica"
   license "Apache-2.0"
-  version "0.4.37"
+  version "0.4.38"
 
   livecheck do
     url :stable

@@ -1,8 +1,8 @@
 class Agentsync < Formula
   desc "Infrastructure layer for AI coding agent configuration management"
   homepage "https://github.com/dallay/agentsync"
-  url "https://registry.npmjs.org/agentsync/-/agentsync-0.2.0-alpha.23.tgz"
-  sha256 "1b0ba5aabc21eaa6e86c8e4a5cbae1eb8a4ae0d204afbe958e76423f71cbb1db"
+  url "https://registry.npmjs.org/agentsync/-/agentsync-1.0.0.tgz"
+  sha256 "17474fbd3bf45ecbe560ebe91cef209b8637bd5bece429f0d45268dc8cc61c0a"
   license "MIT"
 
   livecheck do
