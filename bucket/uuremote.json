@@ -1,13 +1,13 @@
 {
-    "version": "4.39.1.1375",
+    "version": "4.39.2.1561",
     "description": "网易UU远程，提供低延迟远程连接与云游戏体验。",
     "homepage": "https://uuyc.163.com/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://uuyc.163.com/"
     },
-    "url": "https://a56.gdl.netease.com/UURemote_Setup_4.39.1.1375_0902062520_gwqd.exe?key1=5be6505f0593a80e7bba9f1e7a426a3f&key2=6a9a6e69&n=uuyc_4.39.1.exe",
-    "hash": "b6df0026dcedc2a900a07b4efde748b8c4d6e940067a9854e00c3be236c260eb",
+    "url": "https://a56.gdl.netease.com/UURemote_Setup_4.39.2.1561_0904121034_gwqd.exe?key1=f462141032c714ba5aa6881d3f254117&key2=6a9bbbc7&n=uuyc_4.39.2.exe",
+    "hash": "cf06187be7b1382eab9d53afa129e4dc0dc07b0c7526d1e7a849475e0ca046f5",
     "installer": {
         "script": [
             "$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)",
