@@ -40,7 +40,7 @@ jobs:
         run: |
           ruby homebrew/scripts/update_multiarch.rb Formula/omp.rb can1357/oh-my-pi
           ruby homebrew/scripts/update_multiarch.rb Formula/octopus.rb bestruirui/octopus
-          ruby homebrew/scripts/update_multiarch.rb Formula/multica-cli.rb multica-ai/multica
+          ruby homebrew/scripts/update_multiarch.rb Formula/bifrost.rb bifrost-proxy/bifrost
           ruby homebrew/scripts/update_ima.rb Casks/ima.rb
 
       - name: Bump formulae
