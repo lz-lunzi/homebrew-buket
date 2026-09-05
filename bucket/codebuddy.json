@@ -5,11 +5,18 @@
     "license": "SEE LICENSE IN README.md",
     "depends": "nodejs-lts",
     "url": "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.144.0.tgz",
+    "pre_install": "Get-ChildItem \"$dir\" -Exclude 'package' | Remove-Item -Recurse -Force",
     "installer": {
-        "script": "npm install --global --prefix $dir $dir\\codebuddy-code-$version.tgz"
+        "script": "npm install --global --prefix \"$dir\\app\" \"$dir\\package\""
     },
+    "bin": [
+        "app\\codebuddy.cmd",
+        "app\\codebuddy-code.cmd",
+        "app\\cbc.cmd",
+        "app\\cbc-prewarm.cmd"
+    ],
     "uninstaller": {
-        "script": "npm uninstall --global --prefix $dir @tencent-ai/codebuddy-code"
+        "script": "npm uninstall --global --prefix \"$dir\\app\" @tencent-ai/codebuddy-code"
     },
     "notes": [
         "Tencent CodeBuddy CLI installed successfully!",
