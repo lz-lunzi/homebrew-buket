@@ -1,11 +1,11 @@
 {
-    "version": "2.3.79943",
+    "version": "2.3.81345",
     "description": "字节跳动 AI 办公平台 — 支持 Work/Design 双模式，集成自动生成 PPT、数据分析、深度研究、文档生成，接入豆包2.1、Kimi3、GLM5.2、DeepSeek V4 等模型",
     "homepage": "https://www.trae.cn",
     "license": "Freeware",
     "depends": "innounp",
-    "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.79943/win32/TraeWork_CN-Setup-x64.exe",
-    "hash": "f22e74a82d88842c943c789cd664fef32dd7f1182c927562126bd55e3cbad340",
+    "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.81345/win32/TraeWork_CN-Setup-x64.exe",
+    "hash": "bb91351db68d4cf3faa0c3192cd121d91878a82cd93dfb1b23c4078d960fea2e",
     "installer": {
         "script": "Expand-InnoArchive -Path \"$dir\\$fname\" -ExtractDir '{code_GetDestDir}' -Removal"
     },
