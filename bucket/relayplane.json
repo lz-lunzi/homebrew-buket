@@ -1,10 +1,10 @@
 {
-    "version": "1.9.56",
+    "version": "1.9.58",
     "description": "Cost intelligence proxy for AI agents with smart model routing",
     "homepage": "https://relayplane.com",
     "license": "MIT",
-    "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.56.tgz",
-    "hash": "8cbd02c27ca7b6788aa2354f4655ac7e1d3417391f6a30b25076c60892639ab7",
+    "url": "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.58.tgz",
+    "hash": "44095f61e9dbc45ec886847bb961949df30a6a3f78077a30b92fc02cf8d9cbd8",
     "bin": [
         "relayplane",
         "bin/relayplane.js"
