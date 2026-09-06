@@ -1,8 +1,8 @@
 class Kilocode < Formula
   desc "Kilo Code CLI - 终端 AI 编程助手"
   homepage "https://github.com/Kilo-Org/kilo"
-  url "https://registry.npmjs.org/@kilocode/cli/-/cli-7.5.14.tgz"
-  sha256 "32b8621e7ab44df18b5832a2d8ff81a2836f7a375c98ae9e53ccb7937c80031e"
+  url "https://registry.npmjs.org/@kilocode/cli/-/cli-7.5.15.tgz"
+  sha256 "76f2e6f9dd588def94155730607af1b80667422b71c7a958aece12b19af81ed0"
   license "MIT"
 
   depends_on "node"
