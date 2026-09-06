@@ -1,11 +1,11 @@
 {
-    "version": "1.99.0",
+    "version": "1.100.0",
     "description": "统一接口支持 100+ LLM 提供商 - AI 网关/代理服务器，带管理界面",
     "homepage": "https://docs.litellm.ai",
     "license": "MIT",
     "depends": "python",
-    "url": "https://pypi.org/packages/source/l/litellm/litellm-1.80.13.tar.gz",
-    "hash": "61ed22dfad633ada3b97dd8a50d8e8d804da0115105006d2f9d77ba3fb247a0b",
+    "url": "https://pypi.org/packages/source/l/litellm/litellm-1.100.0.tar.gz",
+    "hash": "ece94e817a453a5b3a9517c03547c428d501cea719edb728c1b260e53f78ea35",
     "installer": {
         "script": "pip install \"litellm[proxy]\""
     },
