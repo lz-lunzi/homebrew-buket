@@ -2,7 +2,7 @@ class Bifrost < Formula
   desc "High-performance HTTP/HTTPS/SOCKS5 proxy server written in Rust"
   homepage "https://github.com/bifrost-proxy/bifrost"
   license "MIT"
-  version "0.0.191"
+  version "0.0.192"
 
   livecheck do
     url :stable
@@ -11,23 +11,23 @@ class Bifrost < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.191/bifrost-v0.0.191-aarch64-apple-darwin.tar.xz"
-      sha256 "1816c9777e6cada1079a86c411eedfc3dcc3627e31a399a217293a0fa33c8b69"
+      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.192/bifrost-v0.0.192-aarch64-apple-darwin.tar.xz"
+      sha256 "c51391a81ff63449d11c5e76fbc14f9276aaef283bf453f4e5e4902cdc9040c7"
     end
     on_intel do
-      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.191/bifrost-v0.0.191-x86_64-apple-darwin.tar.xz"
-      sha256 "c2a1fca54412fa911e50f7788fce08deb04e69c1029e2eeb0e43f67c8aa57a69"
+      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.192/bifrost-v0.0.192-x86_64-apple-darwin.tar.xz"
+      sha256 "1014c8cdde025ff337e1b9d72b8a4507719e31a1a51eb426c0cc96c2d2c580af"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.191/bifrost-v0.0.191-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3f45fd7e1a2c15390dd3a012094dd9253b41e95a448e3a89e974aad27b0c3c80"
+      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.192/bifrost-v0.0.192-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d884d0164ed27ca3f86c156bd9c967fba5ff0ebb1da1bdad7e2d63ff7c8a9b2b"
     end
     on_intel do
-      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.191/bifrost-v0.0.191-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "f7f1af114e3b972a8515916d31ffadd1c0dddf4d89a59aefb7b27f0bb41b0731"
+      url "https://github.com/bifrost-proxy/bifrost/releases/download/v0.0.192/bifrost-v0.0.192-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a134af538cbfd22df68ae87df5f4cfaebd7739f26cb6d910691090f712e03f3a"
     end
   end
 
