@@ -13,16 +13,23 @@ cask "paseo" do
       url "https://github.com/getpaseo/paseo/releases/download/v#{version}/Paseo-#{version}-x64.dmg"
     end
   end
+  on_macos do
+    depends_on macos: :big_sur
 
+    app "Paseo.app"
+  end
   on_linux do
     sha256 "73bffb4644f6eb957c1050e8436a442e6cae1b44e556fc7f6983bec49ba11075"
 
     url "https://github.com/getpaseo/paseo/releases/download/v#{version}/Paseo-x86_64.AppImage"
   end
+  on_linux do
+    app_image "Paseo-x86_64.AppImage"
+  end
 
   name "Paseo"
   desc "Orchestrate multiple coding agents from desktop and mobile"
-  homepage "https://paseo.sh"
+  homepage "https://paseo.sh/"
 
   livecheck do
     url :url
@@ -31,13 +38,4 @@ cask "paseo" do
 
   deprecate! date: "2026-08-20", because: "moved to homebrew/cask", replacement_cask: "paseo"
   disable! date: "2027-08-20", because: "moved to homebrew/cask", replacement_cask: "paseo"
-
-  on_macos do
-    depends_on macos: :big_sur
-    app "Paseo.app"
-  end
-
-  on_linux do
-    app_image "Paseo-x86_64.AppImage"
-  end
 end

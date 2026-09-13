@@ -5,8 +5,7 @@ cask "codebuddy-cn" do
   sha256 arm:   "b917146b4e8ca20456c06ef5d0b9d7e0c410464019608c5f851a809c33e9b718",
          intel: "099e0d7c63c29682a5e100ff6b006a0f4617d9f888953acde502d463073c191a"
 
-  url "https://acc-1258344699.cos.accelerate.myqcloud.com/aiide/darwin-#{arch}/CodeBuddy-darwin-#{arch}-#{version.csv.first}-#{version.csv.second}-cn.zip",
-      verified: "acc-1258344699.cos.accelerate.myqcloud.com/aiide/"
+  url "https://acc-1258344699.cos.accelerate.myqcloud.com/aiide/darwin-#{arch}/CodeBuddy-darwin-#{arch}-#{version.csv.first}-#{version.csv.second}-cn.zip"
   name "CodeBuddy CN"
   desc "AI-powered adaptive IDE (Chinese version)"
   homepage "https://copilot.tencent.com/ide/"

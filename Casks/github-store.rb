@@ -3,12 +3,10 @@ cask "github-store" do
   sha256 :no_check
 
   on_arm do
-    url "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/GitHub.Store-1.5.1_arm64.dmg",
-        verified: "github.com/rainxchzed/Github-Store/"
+    url "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/GitHub.Store-1.5.1_arm64.dmg"
   end
   on_intel do
-    url "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/Github.Store-1.5.1_x64.dmg",
-        verified: "github.com/rainxchzed/Github-Store/"
+    url "https://github.com/rainxchzed/Github-Store/releases/download/1.5.1/Github.Store-1.5.1_x64.dmg"
   end
 
   name "GitHub Store"

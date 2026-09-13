@@ -2,8 +2,8 @@ name: Auto Retire Duplicated Packages
 
 on:
   schedule:
-    # Every day at China time 10:00 (UTC 02:00)
-    - cron: '0 2 * * *'
+    # Every day at China time 07:00 (UTC 23:00 previous day)
+    - cron: '0 23 * * *'
   workflow_dispatch:
 
 permissions:

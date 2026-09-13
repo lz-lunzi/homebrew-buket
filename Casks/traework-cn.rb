@@ -5,8 +5,7 @@ cask "traework-cn" do
   sha256 arm:   "5b683886b3d1f0464912c93033ccf90d880adf242bb0020c27db1a5dfb67e322",
          intel: "fb0278252510a13eed4ced63f960e85ea77ca66c6880625d149c4109210484c7"
 
-  url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/#{version}/darwin/TraeWork_CN-darwin-#{arch}.dmg",
-      verified: "lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/"
+  url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/#{version}/darwin/TraeWork_CN-darwin-#{arch}.dmg"
   name "TraeWork CN"
   desc "AI-powered work platform by ByteDance (Chinese version)"
   homepage "https://www.trae.cn/work"

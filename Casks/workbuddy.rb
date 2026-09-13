@@ -5,8 +5,7 @@ cask "workbuddy" do
   sha256 arm:   "02cad11bf47a9db8bc0ea3bddd7661b52bb83b809509d11a3400dcfad602880b",
          intel: "25fe856763ff917e3086135f445c1016085ef7130433661994840e7a4c0a09ce"
 
-  url "https://download.codebuddy.cn/workbuddy/saas/darwin-#{arch}/WorkBuddy-darwin-#{arch}-#{version.csv.first}-#{version.csv.second}.zip",
-      verified: "download.codebuddy.cn/workbuddy/"
+  url "https://download.codebuddy.cn/workbuddy/saas/darwin-#{arch}/WorkBuddy-darwin-#{arch}-#{version.csv.first}-#{version.csv.second}.zip"
   name "WorkBuddy"
   desc "AI-powered work assistant from Tencent"
   homepage "https://www.codebuddy.cn/"
