@@ -5,8 +5,8 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/miaoxworld/openclaw-manager/releases/download/v0.0.7/OpenClaw.Manager_0.0.7_x64_en-US.msi",
-            "hash": "sha256:6a922512dd817a1cc2f95410206697e3ed5e7295c46513af5e5c00e9da2c6bf9"
+            "url": "https://github.com/miaoxworld/openclaw-manager/releases/download/v0.0.12/OpenClaw.Manager_0.0.11_x64_en-US.msi",
+            "hash": "sha256:5ef15caafe53c7e2b42e630f34ce00d0fefc2d440f6776faade4cedd9a84551a"
         }
     },
     "pre_install": [
