@@ -24,9 +24,17 @@ uv run tools/malecns.py api "..." --sql "SELECT target, sum(w) FROM q GROUP BY 1
 
 ## Resource profile
 
-- SQL mode: RAM ≤ 512 MB (DuckDB limit + temp spill to data dir), CPU 2 threads
-- sync: peak RAM ≈ one Arrow record batch; downloads resume on flaky links
-- Data dir: `~/.local/share/malecns` (override with `MALECNS_DIR`)
+ - SQL mode: measured peak RSS **78 MB** on a 210k×1.7M-row JOIN; hard cap 512 MB
+   (DuckDB limit + disk spill to data dir), 2 threads
+ - sync: peak RAM ≈ one Arrow record batch; downloads resume on flaky links
+   (GCS throttles idle connections to ~1 KB/s; short timeouts force reconnects)
+ - Data dir: `~/.local/share/malecns` (override with `MALECNS_DIR`)
+ - uv users with a corrupted `~/.cache/uv` (root-owned): `export UV_CACHE_DIR=/tmp/uvcache`
+
+## Schema gotchas
+
+ - Join key: `annotations.bodyId` = `neurotransmitters.body` (not `bodyId`)
+ - NT columns: `predicted_nt`, `consensus_nt` (in `neurotransmitters`)
 
 ## Table sizes (feather source → parquet on disk)
 
