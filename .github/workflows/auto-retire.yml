@@ -50,6 +50,10 @@ jobs:
                 echo "  $name: synced with official cask, skip retirement"
                 return 0
                 ;;
+              formula:cline)  # homebrew/core/cline frozen at 3.0.3 (deprecated, non-FOSS SDK); tap tracks latest
+                echo "  $name: intentionally newer than official, skip retirement"
+                return 0
+                ;;
             esac
             local url="$API_BASE/$kind/$name.json"
             local code
