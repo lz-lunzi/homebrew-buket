@@ -2,7 +2,6 @@ class PrimeAgent < Formula
   desc "Self-improving RLM agent for coding workflows and long-running autonomous tasks"
   homepage "https://github.com/PrimeIntellect-ai/prime-agent"
   license "MIT"
-  version "0.9.5"
 
   livecheck do
     url :stable
