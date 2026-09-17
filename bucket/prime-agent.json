@@ -1,0 +1,25 @@
+{
+    "version": "0.9.5",
+    "description": "Prime Agent - Self-improving RLM agent for coding workflows and long-running autonomous tasks",
+    "homepage": "https://github.com/PrimeIntellect-ai/prime-agent",
+    "license": "MIT",
+    "depends": "nodejs",
+    "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.5/prime-agent-0.9.5.tgz",
+    "hash": "349f1682c7909550842f1b04a71ba95814341b136474ade736df93f8ec006876",
+    "installer": {
+        "script": "npm install --global --prefix $dir $dir\\prime-agent-$version.tgz"
+    },
+    "uninstaller": {
+        "script": "npm uninstall --global --prefix $dir prime-agent"
+    },
+    "checkver": {
+        "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/releases/latest",
+        "jsonpath": "$.tag_name"
+    },
+    "autoupdate": {
+        "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v$version/prime-agent-$version.tgz",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}
