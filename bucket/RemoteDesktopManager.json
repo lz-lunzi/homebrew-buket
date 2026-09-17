@@ -1,16 +1,16 @@
 {
-    "version": "2026.3.5.0",
+    "version": "2026.3.8.0",
     "description": "面向个人、MSP 和 IT 专业人员的远程连接管理软件。",
     "homepage": "https://devolutions.net/remote-desktop-manager/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-x64.2026.3.5.0.msi",
-            "hash": "0cb01cdfad6e5dc3e44a38a597323887a003ad125f6edeab0ae08bd127401ca6"
+            "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-x64.2026.3.8.0.msi",
+            "hash": "cd8334d448542eed0739e124a4e5ec4d3f3b6bf1a05597e9df9fa5b34698eb0d"
         },
         "arm64": {
-            "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-arm64.2026.3.5.0.msi",
-            "hash": "0e24b5f2da9154afd24541fbd5562758c98258f2e77620118ea6b59be3382320"
+            "url": "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.win-arm64.2026.3.8.0.msi",
+            "hash": "a05adfcd6f39fcd74d5e72719c0d19808d3af571a5f146c3e17f18fe012f2669"
         }
     },
     "pre_install": "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }",
