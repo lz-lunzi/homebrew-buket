@@ -1,12 +1,12 @@
 {
-    "version": "18.2.4",
+    "version": "18.2.6",
     "description": "Oh My Pi (OMP) — 终端 AI 编程代理，支持 hash-anchored edits、LSP、Python、浏览器工具、子代理",
     "homepage": "https://omp.sh",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/can1357/oh-my-pi/releases/download/v18.2.4/omp-windows-x64.exe",
-            "hash": "2ca8f2e142ede392dc3c3aadf2a5d179f4169a181ce91f78ee70ddaf96455741"
+            "url": "https://github.com/can1357/oh-my-pi/releases/download/v18.2.6/omp-windows-x64.exe",
+            "hash": "1fbff31df4bba1ec8a48d74b392e4b4c8c12de0a7f53cf62c6e5436fdfebda28"
         }
     },
     "bin": [
