@@ -1,8 +1,8 @@
 class Relayplane < Formula
   desc "Cost intelligence proxy for AI agents with smart model routing"
   homepage "https://relayplane.com"
-  url "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.59.tgz"
-  sha256 "e6cfadf287c2396f39b0624bb32c203041344144bbc6c5c26deddbfe8fdca845"
+  url "https://registry.npmjs.org/@relayplane/proxy/-/proxy-1.9.61.tgz"
+  sha256 "ac32677f31782fc1fb44cac7dd13d38cdd20516b4d228a38662a211741cd9c3f"
   license "MIT"
 
   livecheck do
