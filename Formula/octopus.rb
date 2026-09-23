@@ -1,7 +1,7 @@
 class Octopus < Formula
   desc "LLM API aggregation & load balancing service for individuals"
   homepage "https://github.com/bestruirui/octopus"
-  version "0.13.6"
+  version "0.13.8"
   license "AGPL-3.0-or-later"
   head "https://github.com/bestruirui/octopus.git", branch: "dev"
 
@@ -12,23 +12,23 @@ class Octopus < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/bestruirui/octopus/releases/download/v0.13.6/octopus-darwin-arm64.zip"
-      sha256 "7f094b4be0e82c33d2ad21e76aa1a54a20352d832b7db8855f2cebb43d365bb1"
+      url "https://github.com/bestruirui/octopus/releases/download/v0.13.8/octopus-darwin-arm64.zip"
+      sha256 "424349d59e69993b1b9611f11e962369e1905a93ad1f63c6d849a7307888e44b"
     end
     on_intel do
-      url "https://github.com/bestruirui/octopus/releases/download/v0.13.6/octopus-darwin-amd64.zip"
-      sha256 "a9dd8df8ee92227441b05766a5c6fdf2a7f606c2f9ddf2291bcd11f19a1226cb"
+      url "https://github.com/bestruirui/octopus/releases/download/v0.13.8/octopus-darwin-amd64.zip"
+      sha256 "fa0540794c2f29df25da1141697feb9ca69e570525dd911fbf2d3a01e2ced224"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bestruirui/octopus/releases/download/v0.13.6/octopus-linux-arm64.zip"
-      sha256 "bb25a6645a913a9d8267e8e6cc840cb574ffb02454ec4ebb574e016c858e5c0c"
+      url "https://github.com/bestruirui/octopus/releases/download/v0.13.8/octopus-linux-arm64.zip"
+      sha256 "43005de46a78db5eb4f7693090ea9a9abf6eb23af21baac3f3a0fe3f1ea18097"
     end
     on_intel do
-      url "https://github.com/bestruirui/octopus/releases/download/v0.13.6/octopus-linux-amd64.zip"
-      sha256 "0d86ed3239083281f8529183fc51304bb526d85d622d40484dbd3402942e42cb"
+      url "https://github.com/bestruirui/octopus/releases/download/v0.13.8/octopus-linux-amd64.zip"
+      sha256 "5cbaafc035dbee86724df83e431d0f06c32180a80718d50d8bdaf964e7734a14"
     end
   end
 

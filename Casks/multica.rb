@@ -1,13 +1,13 @@
 cask "multica" do
-  version "0.5.1"
+  version "0.5.2"
 
   on_arm do
-    sha256 "4e6e8f3177b39473e9ca839961ad48e37f78b714f1e22fa330eb818b42ab0722"
+    sha256 "b90b83183b9e368bb7b61cb886e2d0785aae284097e35fe512e35c0c1e0aa933"
 
     url "https://github.com/multica-ai/multica/releases/download/v#{version}/multica-desktop-#{version}-mac-arm64.dmg"
   end
   on_intel do
-    sha256 "a116910c2f8877a310e95bb26b695f4d7bcc93baecffd9238c02e4bf5b03e8ea"
+    sha256 "b7a3d66e0f1858843b3c6d2687464e3b27cf1850d994bcefd24526b34b22f5f8"
 
     url "https://github.com/multica-ai/multica/releases/download/v#{version}/multica-desktop-#{version}-mac-x64.dmg"
   end
