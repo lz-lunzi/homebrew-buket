@@ -1,5 +1,5 @@
 {
-    "version": "0.21.4",
+    "version": "0.21.5",
     "description": "Nous Research 开源 AI 智能体 — 自我进化、技能学习、多平台网关",
     "homepage": "https://github.com/NousResearch/hermes-agent",
     "license": "MIT",
@@ -8,7 +8,7 @@
         "git"
     ],
     "url": "https://hermes-agent.nousresearch.com/install.ps1",
-    "hash": "e57d49271c45205e8faae964e59453a2279481d85eadae7d8495df2e31f91ccd",
+    "hash": "0a80dfeb7434229933bac32e73140d10086dff81bd84b156e71be9abc87cddf2",
     "installer": {
         "script": [
             "# Run upstream install.ps1 with Scoop-compatible paths",
