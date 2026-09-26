@@ -1,12 +1,12 @@
 {
-    "version": "4.8.1",
+    "version": "4.8.3",
     "description": "Antigravity 的现代跨平台账户管理器，支持一键切换账户、自动备份，使用 Flet 构建的精美 GUI",
     "homepage": "https://github.com/lbjlaq/Antigravity-Manager",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/lbjlaq/Antigravity-Manager/releases/download/v4.8.1/Antigravity.Tools_4.8.1_x64_en-US.msi",
-            "hash": "8f59404264ea86c8c8de83ac38c849ad0deac7360526d632f294f387fbfcff67"
+            "url": "https://github.com/lbjlaq/Antigravity-Manager/releases/download/v4.8.3/Antigravity.Tools_4.8.3_x64_en-US.msi",
+            "hash": "7e28dd0cb7a7ef3dec753d7dc6f4d3497c15c5e77e0a8b647353cc838d845bdc"
         }
     },
     "bin": [
