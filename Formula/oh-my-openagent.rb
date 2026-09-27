@@ -1,8 +1,8 @@
 class OhMyOpenagent < Formula
   desc "AI Agent Harness with Multi-Model Orchestration and LSP/AST Tools"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-5.0.0.tgz"
-  sha256 "03a282046616a631c2cca84f2170b1fa33e782694f5bf75cd32f9b72650e83c6"
+  url "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-5.0.1.tgz"
+  sha256 "b8e7dfd92ea3562493660de59b383e663d580e5b549d4f330d065d8c92322035"
   license "SUL-1.0"
 
   livecheck do
