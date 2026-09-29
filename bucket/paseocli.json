@@ -1,10 +1,10 @@
 {
-    "version": "0.10.1",
+    "version": "0.10.2",
     "description": "Orchestrate multiple coding agents from desktop and mobile",
     "homepage": "https://paseo.sh",
     "license": "AGPL-3.0-or-later",
-    "url": "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.10.1.tgz",
-    "hash": "a2d2dc976ac5634540aa84d37370db5e6e568f01a02b6a98c62c88a5bac3bf4d",
+    "url": "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.10.2.tgz",
+    "hash": "ab158fb4e2f989563837e7583fffeb0e88e8d090548fa60d6f2d9db13073080f",
     "bin": [
         "paseo-cli",
         "bin/paseo-cli.js"
