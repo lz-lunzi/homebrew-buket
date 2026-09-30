@@ -6,7 +6,7 @@ class NineRouter < Formula
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/9router/-/9router-0.5.55.tgz"
+    url "https://registry.npmjs.org/9router/-/9router-0.5.91.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

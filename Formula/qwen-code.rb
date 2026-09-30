@@ -5,8 +5,8 @@ class QwenCode < Formula
   deprecate! date: "2026-09-01", because: "moved to homebrew/core", replacement_formula: "qwen-code"
   disable! date: "2027-09-01", because: "moved to homebrew/core", replacement_formula: "qwen-code"
 
-  url "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.22.0.tgz"
-  sha256 "c0ae0ad006c4dd8b69ebe1705d13bb57d37d1c808dcb891c5bfcde91e66670c2"
+  url "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.24.7.tgz"
+  sha256 "64430248ab6e996fc0c6b9a0789361f868c3b97f83d16210e0424e51dffc5fa9"
   license "Apache-2.0"
 
   depends_on "node"

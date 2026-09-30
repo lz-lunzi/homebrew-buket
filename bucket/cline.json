@@ -1,12 +1,12 @@
 {
-    "version": "3.0.65",
+    "version": "3.0.66",
     "description": "Autonomous coding agent CLI by Cline — creates/edits files, runs commands, uses the browser",
     "homepage": "https://cline.bot",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.65.tgz",
-            "hash": "cac516f12a48a5cdbe52a660215909696291f761f6e38af68a483773678f4788"
+            "url": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.66.tgz",
+            "hash": "9b2e6e4549e6d9610005ce6ec1997e225d7b4395771ef483f270107253b2434c"
         }
     },
     "bin": "bin\\cline.exe",

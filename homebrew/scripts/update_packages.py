@@ -10,6 +10,7 @@ Dry-run by default. Use --apply to write files.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -68,6 +69,10 @@ def github_release(repo: str) -> tuple[str, dict[str, str]]:
     return version, {name: checksums[name] for name in assets if name in checksums}
 
 
+def sha256_hex(url: str, timeout: int = 300) -> str:
+    return hashlib.sha256(get(url, timeout=timeout)).hexdigest()
+
+
 def npm_latest(package: str) -> tuple[str, str, str]:
     encoded = urllib.parse.quote(package, safe="@/")
     data = json.loads(get(f"https://registry.npmjs.org/{encoded}/latest"))
@@ -104,8 +109,37 @@ def update_formula(path: Path, apply: bool) -> str:
             version, tarball, _ = npm_latest(npm_pkg)
         except Exception as error:
             return f"ERROR {rel} {error!r:.60}"
+        old_match = re.search(r'(?m)^\s*version "([^"]+)"', text)
+        old_version = old_match.group(1) if old_match else None
         new = re.sub(r'(?m)^(\s*version ")[^"]+("\s*)$', lambda m: f'{m.group(1)}{version}{m.group(2)}', text)
-        new = re.sub(r'(?m)^(\s*url ")[^"]+("\s*)$', lambda m: f'{m.group(1)}{tarball}{m.group(2)}', new)
+        # refresh concrete tarball url lines (main url + livecheck); #{version} templates untouched
+        new = re.sub(
+            r'(?m)^(\s*url ")https://registry\.npmjs\.org/[^"#{]+\.tgz("\s*)$',
+            lambda m: f'{m.group(1)}{tarball}{m.group(2)}',
+            new,
+        )
+        if version != old_version:
+            try:
+                sha = sha256_hex(tarball)
+            except Exception as error:
+                return f"ERROR {rel} {error!r:.60}"
+            new, n = re.subn(
+                r'(?m)^(\s*url ")https://registry\.npmjs\.org/[^"]+("\s*\n\s*sha256 ")[^"]+(")',
+                lambda m: f'{m.group(1)}{tarball}{m.group(2)}{sha}{m.group(3)}',
+                new,
+            )
+
+            def _tpl(m):
+                concrete = m.group(2).replace("#{version}", version)
+                return f"{m.group(1)}{m.group(2)}{m.group(3)}{sha256_hex(concrete)}{m.group(4)}"
+
+            new, t = re.subn(
+                r'(?m)^(\s*url ")([^"\n]*#\{version\}[^"\n]*)("\s*,?\s*\n(?:\s*using: [^\n]*\n)?\s*sha256 ")[^"]+(")',
+                _tpl,
+                new,
+            )
+            if n == 0 and t == 0:
+                return f"ERROR {rel} no npm url+sha256 pair found"
         if new != text:
             if apply:
                 path.write_text(new)
@@ -119,15 +153,21 @@ def update_formula(path: Path, apply: bool) -> str:
     except Exception as error:
         return f"ERROR {rel} {error!r:.60}"
     assets = set(re.findall(r"/releases/download/[^/]+/([^\"/]+)", text))
+    old_match = re.search(r'(?m)^\s*version "([^"]+)"', text)
+    old_version = old_match.group(1) if old_match else None
     new = re.sub(r'(?m)^(\s*version ")[^"]+("\s*)$', lambda m: f'{m.group(1)}{version}{m.group(2)}', text)
+    subs = 0
     for asset in assets:
         if asset not in checksums:
             continue
-        new = re.sub(
+        new, k = re.subn(
             rf'(?m)(^\s*url "[^"]*/releases/download/)[^/]+(/[^"]*{re.escape(asset)}[^"]*"\s*\n\s*sha256 ")[^"]+(")',
-            rf"\g<1>v{version}\g<2>{checksums[asset]}\g<3>",
+            lambda m, a=asset: f'{m.group(1)}v{version}{m.group(2)}{checksums[a]}{m.group(3)}',
             new,
         )
+        subs += k
+    if version != old_version and subs == 0:
+        return f"SKIP  {rel} (v{version} has no matching release assets)"
     if new != text:
         if apply:
             path.write_text(new)
@@ -144,8 +184,34 @@ def update_bucket(path: Path, apply: bool) -> str:
             version, tarball, _ = npm_latest(npm_pkg)
         except Exception as error:
             return f"ERROR {rel} {error!r:.60}"
+        old_match = re.search(r'"version"\s*:\s*"([^"]+)"', text)
+        old_version = old_match.group(1) if old_match else None
         new = re.sub(r'("version"\s*:\s*")[^"]+(")', lambda m: f'{m.group(1)}{version}{m.group(2)}', text)
-        new = re.sub(r'("url"\s*:\s*")[^"]+(")', lambda m: f'{m.group(1)}{tarball}{m.group(2)}', new)
+        if version != old_version:
+            try:
+                sha = sha256_hex(tarball)
+            except Exception as error:
+                return f"ERROR {rel} {error!r:.60}"
+
+            def _pair(m, tarball=tarball, sha=sha):
+                return f"{m.group(1)}{tarball}{m.group(2)}{sha}{m.group(3)}"
+
+            new, n = re.subn(
+                r'("url"\s*:\s*")https://registry\.npmjs\.org/[^"$]+?\.tgz("\s*,\s*\n\s*"hash"\s*:\s*")[^"]+(")',
+                _pair,
+                new,
+                count=1,
+            )
+            if n == 0:
+                # manifest without a hash field
+                new, m_ct = re.subn(
+                    r'("url"\s*:\s*")https://registry\.npmjs\.org/[^"$]+?\.tgz(")',
+                    lambda m: f"{m.group(1)}{tarball}{m.group(2)}",
+                    new,
+                    count=1,
+                )
+                if m_ct == 0:
+                    return f"ERROR {rel} no main npm url found"
         if new != text:
             if apply:
                 path.write_text(new)
@@ -158,15 +224,27 @@ def update_bucket(path: Path, apply: bool) -> str:
         version, checksums = github_release(repo)
     except Exception as error:
         return f"ERROR {rel} {error!r:.60}"
+    old_match = re.search(r'"version"\s*:\s*"([^"]+)"', text)
+    old_version = old_match.group(1) if old_match else None
     new = re.sub(r'("version"\s*:\s*")[^"]+(")', lambda m: f'{m.group(1)}{version}{m.group(2)}', text)
+    subs = 0
     for asset, checksum in checksums.items():
         if asset not in new:
             continue
-        new = re.sub(
+
+        def _repl(m, version=version, checksum=checksum):
+            if "$version" in m.group(0):
+                return m.group(0)
+            return f"{m.group(1)}v{version}{m.group(2)}{checksum}{m.group(3)}"
+
+        new, k = re.subn(
             rf'("url"\s*:\s*"[^"]*/releases/download/)[^/]+(/[^"]*{re.escape(asset)}[^"]*"\s*,\s*\n\s*"hash"\s*:\s*")[^"]+(")',
-            rf"\g<1>v{version}\g<2>{checksum}\g<3>",
+            _repl,
             new,
         )
+        subs += k
+    if version != old_version and subs == 0:
+        return f"SKIP  {rel} (v{version} has no matching release assets)"
     if new != text:
         if apply:
             path.write_text(new)

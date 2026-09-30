@@ -2,7 +2,7 @@ class Orca < Formula
   desc "IDE for orchestrating AI coding agents across terminals and worktrees"
   homepage "https://onorca.dev/"
   license "MIT"
-  version "1.4.194"
+  version "1.4.217"
 
   livecheck do
     url :stable
@@ -22,12 +22,12 @@ class Orca < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-linux-arm64.AppImage"
-      sha256 "edb96cf68e4c5d9442b913e82cad5b6c23a6399f8398e8f4798955bbb9c94918"
+      url "https://github.com/stablyai/orca/releases/download/v1.4.217/orca-linux-arm64.AppImage"
+      sha256 "daf3be3c52beca2723ddd4e3bc42452bf93099719ee29dc73791090af1c693ce"
     end
     on_intel do
-      url "https://github.com/stablyai/orca/releases/download/v#{version}/orca-linux.AppImage"
-      sha256 "2e70cb5e199741e5602a7060825575319f5e03bc2faa4b89cd27328f3f55d4b4"
+      url "https://github.com/stablyai/orca/releases/download/v1.4.217/orca-linux.AppImage"
+      sha256 "b82943d14e015f6a3caa158c35115a014e3679b32251c346aa753a08a57b3082"
     end
   end
 

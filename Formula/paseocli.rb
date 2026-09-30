@@ -6,7 +6,7 @@ class Paseocli < Formula
   license "AGPL-3.0-or-later"
 
   livecheck do
-    url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.5.1.tgz"
+    url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.10.2.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 

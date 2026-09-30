@@ -6,7 +6,7 @@ class CodebuddyCode < Formula
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.137.1.tgz"
+    url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.160.0.tgz"
     regex(/"version"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 
