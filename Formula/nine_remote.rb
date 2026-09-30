@@ -1,8 +1,8 @@
 class NineRemote < Formula
   desc "Terminal in Your Pocket - remote access tool for Mac, Linux, and Windows"
   homepage "https://github.com/decolua/9remote"
-  url "https://registry.npmjs.org/9remote/-/9remote-3.0.30.tgz"
-  sha256 "88f4e871a1761592f19a9d0fa45ffef4dadb30c861ab67d126c5eed527544d3a"
+  url "https://registry.npmjs.org/9remote/-/9remote-3.0.32.tgz"
+  sha256 "16b04539caf252d48e5bd4969629ac0b9af4f5e02aad04031be0b2d4f994e1c6"
   license "MIT"
 
   livecheck do
