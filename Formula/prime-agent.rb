@@ -12,23 +12,23 @@ class PrimeAgent < Formula
   # linux-x64 有 baseline 变体；formula 取标准版。
   on_macos do
     on_arm do
-      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.7/prime-agent-0.9.7-darwin-arm64.tar.gz"
-      sha256 "c28db14d0cfd53375d1a5007d8edad521199ba289e7b6332e9886604a0a3c22b"
+      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.8/prime-agent-0.9.8-darwin-arm64.tar.gz"
+      sha256 "078c9abd519978ef27f6404367e37a2981267db47f1b95b60940ea7fe6ead8b9"
     end
     on_intel do
-      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.7/prime-agent-0.9.7-darwin-x64.tar.gz"
-      sha256 "7f11a168e51f8bedfde38c753e29abe89919678c3d9538637c9d5af5d0fa1501"
+      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.8/prime-agent-0.9.8-darwin-x64.tar.gz"
+      sha256 "0ddac4fa06eb47043f661bee8da8d16d9a7d740a09adb8269d12bf3a76ded87a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.7/prime-agent-0.9.7-linux-arm64.tar.gz"
-      sha256 "69383194c9edec4d54b82055da698d05281cec219200e6ff1341cf5445d177de"
+      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.8/prime-agent-0.9.8-linux-arm64.tar.gz"
+      sha256 "88a98ceff22d56f9a28ad8c41f38857f6586165f06761641f2190b0d5f8e4626"
     end
     on_intel do
-      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.7/prime-agent-0.9.7-linux-x64.tar.gz"
-      sha256 "47981c19396bcaabfabc4d6d788e64d55c057288d8676fc5733ab525803be066"
+      url "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.9.8/prime-agent-0.9.8-linux-x64.tar.gz"
+      sha256 "83fb09129bf78e3e60268212cd70932166591b15188caa70c1b0efbcc76235e2"
     end
   end
 

@@ -1,7 +1,7 @@
 class Cline < Formula
   desc "Autonomous coding agent CLI by Cline"
   homepage "https://cline.bot"
-  version "3.0.65"
+  version "3.0.66"
   license "Apache-2.0"
 
   # homebrew/core/cline is frozen at 3.0.3 (deprecated: non-FOSS
@@ -22,12 +22,12 @@ class Cline < Formula
     on_arm do
       url "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-#{version}.tgz",
           using: :nounzip
-      sha256 "f3e5c79f874457cfb776708b78e63e1350bd7ea9bf55837eeeb8910ca619c785"
+      sha256 "9eb0bddbdd474107d4b5b42dc0bc454b646d461702ae87893ad6eef6edd17c9b"
     end
     on_intel do
       url "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-#{version}.tgz",
           using: :nounzip
-      sha256 "d9d134aeade2a3f415459f3b2f9769dc5f0e8b68639bdf29f29e7b3e5f75c5c8"
+      sha256 "ff110c7e4df4728108c013a7ec00da9b2f23ac3c12f06abe704803253736362d"
     end
   end
 
@@ -35,12 +35,12 @@ class Cline < Formula
     on_arm do
       url "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-#{version}.tgz",
           using: :nounzip
-      sha256 "e0239ca1acc271cc6a3ae7758b661bf12c10635f02ffd872afd84b45565a17fd"
+      sha256 "a2623ce942309b0ff4edc8189c9e399a4c37371409118263f33d3e96bb870442"
     end
     on_intel do
       url "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-#{version}.tgz",
           using: :nounzip
-      sha256 "aa4cdccdd96ae79fcb980da34cea03027e8df77ec4553eb2a3806fc004900d13"
+      sha256 "d7052731de94f40f4e42eddd75407db97615af7813407d12daa31e1eec3ef94b"
     end
   end
 
