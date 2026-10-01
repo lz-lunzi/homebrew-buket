@@ -1,0 +1,50 @@
+{
+    "version": "1.4.218",
+    "description": "IDE for orchestrating AI coding agents across terminals and worktrees",
+    "homepage": "https://onorca.dev/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/stablyai/orca/releases/download/v1.4.218/orca-windows-setup.exe#/dl.7z",
+            "hash": "7663f6d10ee79f20e8644614fe6c9a598efa6f5d13cd34f008bdc8b8af863272",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+            ]
+        }
+    },
+    "bin": "resources\\bin\\orca.cmd",
+    "shortcuts": [
+        [
+            "Orca.exe",
+            "Orca"
+        ]
+    ],
+    "persist": [
+        [
+            "Application Data/Orca",
+            "appdata"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/stablyai/orca/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "v?([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/stablyai/orca/releases/download/v$version/orca-windows-setup.exe#/dl.7z"
+            }
+        }
+    },
+    "notes": [
+        "Orca 已安装！",
+        "",
+        "  - 桌面应用：Orca.exe，CLI：orca（可用于 orca serve 无头模式）",
+        "  - Agent 运行状态与 worktrees 存放在 ~/.orca",
+        "  - 请勿使用应用内自动更新，统一用 scoop update orca 升级",
+        "",
+        "官网：https://onorca.dev/"
+    ]
+}
