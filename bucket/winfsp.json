@@ -1,0 +1,24 @@
+{
+    "version": "2.1.25156",
+    "description": "WinFsp - Windows File System Proxy, user-mode file system framework (enables rclone mount)",
+    "homepage": "https://winfsp.dev/",
+    "license": "GPL-3.0-only",
+    "notes": "WinFsp installs a kernel driver + system service via MSI, so UAC elevation is required and the driver lives in Program Files, not the scoop dir. Official buckets do not carry it for this reason; this manifest only manages download/install/uninstall.",
+    "url": "https://github.com/winfsp/winfsp/releases/download/v2.1/winfsp-2.1.25156.msi",
+    "hash": "073a70e00f77423e34bed98b86e600def93393ba5822204fac57a29324db9f7a",
+    "checkver": {
+        "github": "https://github.com/winfsp/winfsp"
+    },
+    "autoupdate": {
+        "url": "https://github.com/winfsp/winfsp/releases/download/v$majorVersion.$minorVersion/winfsp-$version.msi"
+    },
+    "post_install": [
+        "$msi = Get-ChildItem $dir -Filter '*.msi' | Select-Object -First 1",
+        "if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { Start-Process msiexec.exe \"/i $($msi.FullName) /qn\" -Verb RunAs -Wait } else { Start-Process msiexec.exe \"/i $($msi.FullName) /qn\" -Wait }",
+        "if (Get-Service WinFsp.Launcher -ErrorAction SilentlyContinue) { Write-Host 'WinFsp service installed.' } else { error 'WinFsp service not found after install - did you accept the UAC prompt?' }"
+    ],
+    "pre_uninstall": [
+        "$msi = Get-ChildItem $dir -Filter '*.msi' | Select-Object -First 1",
+        "if ($msi) { if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { Start-Process msiexec.exe \"/x $($msi.FullName) /qn\" -Verb RunAs -Wait } else { Start-Process msiexec.exe \"/x $($msi.FullName) /qn\" -Wait } }"
+    ]
+}
