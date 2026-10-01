@@ -1,5 +1,5 @@
 cask "v2rayn" do
-  version "7.24.9"
+  version "7.25.4"
   sha256 :no_check
 
   on_arm do
@@ -18,7 +18,7 @@ cask "v2rayn" do
     strategy :github_latest
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "v2rayN.app"
 
