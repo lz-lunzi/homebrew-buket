@@ -2,7 +2,7 @@ class Omp < Formula
   desc "AI coding agent for the terminal"
   homepage "https://omp.sh"
   license "MIT"
-  version "18.4.9"
+  version "18.4.12"
 
   livecheck do
     url :stable
@@ -11,23 +11,23 @@ class Omp < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.9/omp-darwin-arm64"
-      sha256 "88c8ff6734bd62b9fe65004f265218eed8e5b8695e64da1172587f5aeb468681"
+      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.12/omp-darwin-arm64"
+      sha256 "1a81bd323ba6d67374adf5645fe52e194671416e15c69ef17ac18e32b42c55ff"
     end
     on_intel do
-      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.9/omp-darwin-x64"
-      sha256 "ac5b866d8e6f380836cc77c92253d6596e4b67932a95d02bd55a3ebc8c5c3845"
+      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.12/omp-darwin-x64"
+      sha256 "d3305b641d3e62c30f8cd5a44343d219cdc45c3ad9a6c13729df61749ff40ac6"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.9/omp-linux-arm64"
-      sha256 "c86ac994dd9a99b1f8df28b85c9ccc909c81f64c68f9e30039ee980a05308438"
+      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.12/omp-linux-arm64"
+      sha256 "7e9c91e9f34765abfd775b8f87c00bb82d5c14025d58770fe4213791452f3182"
     end
     on_intel do
-      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.9/omp-linux-x64"
-      sha256 "fe1ec455e3aa4536efc8e28b1023113de94b97e7dd68c726964dadeb488a1753"
+      url "https://github.com/can1357/oh-my-pi/releases/download/v18.4.12/omp-linux-x64"
+      sha256 "8178466631d09c2165c19c14c92ee7f4e3e68c5f41953e8815adfb1214a64999"
     end
   end
 
