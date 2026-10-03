@@ -1,5 +1,5 @@
 cask "flclash" do
-  version "0.8.98"
+  version "0.8.99"
   sha256 :no_check
 
   on_arm do
@@ -18,7 +18,7 @@ cask "flclash" do
     strategy :github_latest
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "FlClash.app"
 
