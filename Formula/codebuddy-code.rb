@@ -1,8 +1,8 @@
 class CodebuddyCode < Formula
   desc "Use CodeBuddy, Tencent's AI assistant, right from your terminal"
   homepage "https://cnb.cool/codebuddy/codebuddy-code"
-  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.161.2.tgz"
-  sha256 "5fde6da1e4e3b81e38387d2572ee0840880cebc11c88e639b1c62f4c96fd6cf4"
+  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.161.4.tgz"
+  sha256 "6b9b8eecc51343959a6d40718584c0f743defe3168e8671f62c72dc07a9abbb0"
   license "MIT"
 
   livecheck do
