@@ -1,11 +1,11 @@
 {
-    "version": "1.7.0",
+    "version": "1.7.1",
     "description": "Vercel Skills CLI - 开放代理技能工具，支持 OpenCode、Claude Code、Codex、Cursor 等 35+ 平台",
     "homepage": "https://github.com/vercel-labs/skills",
     "license": "MIT",
     "depends": "nodejs-lts",
-    "url": "https://registry.npmjs.org/skills/-/skills-1.7.0.tgz",
-    "hash": "8d1466f792baaee945dae88e05ee403d6f9e78a3ae8dcbf61496035ca274418d",
+    "url": "https://registry.npmjs.org/skills/-/skills-1.7.1.tgz",
+    "hash": "00a812f4b0d2559e54e655a97aae80a5b24acd0cf9db2177ec9942abb611058d",
     "installer": {
         "script": "npm install --global --prefix $dir $dir/skills-$version.tgz"
     },
