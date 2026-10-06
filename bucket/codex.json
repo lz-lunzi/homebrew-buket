@@ -1,0 +1,73 @@
+{
+    "version": "0.159.3",
+    "description": "OpenAI Codex CLI (my-bucket build: config junctioned into <scoop>/config/codex)",
+    "homepage": "https://github.com/openai/codex",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/openai/codex/releases/download/rust-v0.159.3/codex-package-x86_64-pc-windows-msvc.tar.gz",
+            "hash": "a174a1c8c0405076c7cc56534fa8d6760b83ce175526ddd20d1a182e33d9ebdb"
+        },
+        "arm64": {
+            "url": "https://github.com/openai/codex/releases/download/rust-v0.159.3/codex-package-aarch64-pc-windows-msvc.tar.gz",
+            "hash": "27594bdcad324d66aa49b9957e019daa593f2c4fc52600f61edc569373ad9718"
+        }
+    },
+    "bin": [
+        [
+            "bin\\codex.exe",
+            "codex"
+        ]
+    ],
+    "post_install": [
+        "$scoopRoot = if ($env:SCOOP) { $env:SCOOP } else { Split-Path (Split-Path (Split-Path $dir)) }",
+        "$target = Join-Path $scoopRoot 'config\\codex'",
+        "New-Item -ItemType Directory -Force -Path $target | Out-Null",
+        "$homeDir = Join-Path $env:USERPROFILE '.codex'",
+        "if (Test-Path $homeDir) {",
+        "    $item = Get-Item $homeDir -Force",
+        "    if (-not $item.LinkType) {",
+        "        robocopy $homeDir $target /E /XJ /R:1 /W:1 /NFL /NDL /NP | Out-Null",
+        "        if ($LASTEXITCODE -lt 8) {",
+        "            $backup = \"$homeDir.local-backup\"",
+        "            if (-not (Test-Path $backup)) {",
+        "                try {",
+        "                    Rename-Item $homeDir $backup -ErrorAction Stop",
+        "                    New-Item -ItemType Junction -Path $homeDir -Target $target -ErrorAction Stop | Out-Null",
+        "                    Write-Host \"codex: config junction -> $target (old dir kept at $backup)\" -ForegroundColor Green",
+        "                } catch {",
+        "                    Write-Warning \"codex: cannot move $homeDir (some app holds it open); junction skipped -- close it and re-install\"",
+        "                }",
+        "            } else { Write-Warning \"codex: $backup already exists; resolve manually and re-install\" }",
+        "        } else { Write-Warning 'codex: robocopy failed; junction skipped' }",
+        "    } elseif ($item.Target -eq $target) { Write-Host 'codex: config junction already in place' -ForegroundColor Green }",
+        "    else { Write-Warning \"codex: $homeDir is $($item.LinkType) -> $($item.Target); left untouched\" }",
+        "} else {",
+        "    New-Item -ItemType Junction -Path $homeDir -Target $target | Out-Null",
+        "    Write-Host \"codex: config junction -> $target (fresh)\" -ForegroundColor Green",
+        "}"
+    ],
+    "notes": [
+        "Config lives in <scoop>/config/codex (survives app update/uninstall, travels with the Scoop tree).",
+        "~/.codex is an NTFS junction created/repaired automatically on every install/update.",
+        "Uninstalling codex does NOT remove the config junction or the data."
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/openai/codex/releases",
+        "jsonpath": "$..tag_name",
+        "regex": "rust-v(\\d+\\.\\d+\\.\\d+)(?![^\\d]*alpha|[^\\d]*beta|[^\\d]*rc|[^\\d]*preview)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/openai/codex/releases/download/rust-v$version/codex-package-x86_64-pc-windows-msvc.tar.gz"
+            },
+            "arm64": {
+                "url": "https://github.com/openai/codex/releases/download/rust-v$version/codex-package-aarch64-pc-windows-msvc.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/codex-package_SHA256SUMS"
+        }
+    }
+}

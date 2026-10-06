@@ -1,0 +1,102 @@
+{
+    "version": "2.1.286",
+    "description": "Claude Code CLI (my-bucket build: config junctioned into <scoop>/config/claude)",
+    "homepage": "https://claude.com/product/claude-code",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.anthropic.com/legal/consumer-terms"
+    },
+    "suggest": {
+        "git": "main/git"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/2.1.286/win32-x64/claude.exe",
+            "hash": "0b6ecec8edef1ce3069682f696c894d1553239faa6b84e56e167a3ced88fa333"
+        },
+        "arm64": {
+            "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/2.1.286/win32-arm64/claude.exe",
+            "hash": "9109c7b0a0de5b40fd013b9009411e517199c8275d2363b824e851cc1133d3c3"
+        }
+    },
+    "bin": "claude.exe",
+    "post_install": [
+        "$scoopRoot = if ($env:SCOOP) { $env:SCOOP } else { Split-Path (Split-Path (Split-Path $dir)) }",
+        "$target = Join-Path $scoopRoot 'config\\claude'",
+        "New-Item -ItemType Directory -Force -Path $target | Out-Null",
+        "$homeDir = Join-Path $env:USERPROFILE '.claude'",
+        "if (Test-Path $homeDir) {",
+        "    $item = Get-Item $homeDir -Force",
+        "    if (-not $item.LinkType) {",
+        "        robocopy $homeDir $target /E /XJ /R:1 /W:1 /NFL /NDL /NP | Out-Null",
+        "        if ($LASTEXITCODE -lt 8) {",
+        "            $backup = \"$homeDir.local-backup\"",
+        "            if (-not (Test-Path $backup)) {",
+        "                try {",
+        "                    Rename-Item $homeDir $backup -ErrorAction Stop",
+        "                    New-Item -ItemType Junction -Path $homeDir -Target $target -ErrorAction Stop | Out-Null",
+        "                    Write-Host \"claude: config junction -> $target (old dir kept at $backup)\" -ForegroundColor Green",
+        "                } catch {",
+        "                    Write-Warning \"claude: cannot move $homeDir (some app holds it open); junction skipped -- close it and re-install\"",
+        "                }",
+        "            } else { Write-Warning \"claude: $backup already exists; resolve manually and re-install\" }",
+        "        } else { Write-Warning 'claude: robocopy failed; junction skipped' }",
+        "    } elseif ($item.Target -eq $target) { Write-Host 'claude: config junction already in place' -ForegroundColor Green }",
+        "    else { Write-Warning \"claude: $homeDir is $($item.LinkType) -> $($item.Target); left untouched\" }",
+        "} else {",
+        "    New-Item -ItemType Junction -Path $homeDir -Target $target | Out-Null",
+        "    Write-Host \"claude: config junction -> $target (fresh)\" -ForegroundColor Green",
+        "}",
+        "# ~/.claude.json: symlink into the config dir; fall back to a synced real copy",
+        "$claudeJson = Join-Path $env:USERPROFILE '.claude.json'",
+        "$targetJson = Join-Path $target '.claude.json'",
+        "if (Test-Path $claudeJson) {",
+        "    $cj = Get-Item $claudeJson",
+        "    if (-not $cj.LinkType) {",
+        "        Copy-Item $claudeJson $targetJson -Force",
+        "        $jsonBackup = \"$claudeJson.local-backup\"",
+        "        if (-not (Test-Path $jsonBackup)) {",
+        "            try {",
+        "                Rename-Item $claudeJson $jsonBackup -ErrorAction Stop",
+        "                New-Item -ItemType SymbolicLink -Path $claudeJson -Target $targetJson -ErrorAction Stop | Out-Null",
+        "                Write-Host \"claude: .claude.json symlink -> $targetJson\" -ForegroundColor Green",
+        "            } catch {",
+        "                if (-not (Test-Path $claudeJson)) { Copy-Item $targetJson $claudeJson }",
+        "                Write-Warning 'claude: symlink not permitted; kept a real copy of .claude.json (content synced to Scoop config)'",
+        "            }",
+        "        } else { Write-Warning \"claude: $jsonBackup already exists; kept real file\" }",
+        "    }",
+        "} elseif ((Test-Path $targetJson) -and -not (Test-Path \"$claudeJson.local-backup\")) {",
+        "    try { New-Item -ItemType SymbolicLink -Path $claudeJson -Target $targetJson -ErrorAction Stop | Out-Null } catch { Copy-Item $targetJson $claudeJson }",
+        "    Write-Host 'claude: .claude.json staged on fresh profile' -ForegroundColor Green",
+        "}"
+    ],
+    "notes": [
+        "Config lives in <scoop>/config/claude (survives app update/uninstall, travels with the Scoop tree).",
+        "~/.claude is an NTFS junction; ~/.claude.json is a symlink (or synced copy) created/repaired automatically on every install/update.",
+        "Uninstalling claude-code does NOT remove the config junction or the data.",
+        "Claude Code relies on Git (https://git-scm.com/downloads/win); set CLAUDE_CODE_GIT_BASH_PATH if Git Bash is not detected."
+    ],
+    "checkver": {
+        "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/latest",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$version/win32-x64/claude.exe",
+                "hash": {
+                    "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$version/manifest.json",
+                    "jsonpath": "$.platforms.win32-x64.checksum"
+                }
+            },
+            "arm64": {
+                "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$version/win32-arm64/claude.exe",
+                "hash": {
+                    "url": "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$version/manifest.json",
+                    "jsonpath": "$.platforms.win32-arm64.checksum"
+                }
+            }
+        }
+    }
+}
