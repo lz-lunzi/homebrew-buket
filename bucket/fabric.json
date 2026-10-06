@@ -1,20 +1,20 @@
 {
-    "version": "1.4.510",
+    "version": "1.4.515",
     "description": "Fabric 是一个开源的 AI 增强人类框架。它提供模块化系统，使用众包的 AI 提示词集解决特定问题，可在任何地方使用。",
     "homepage": "https://github.com/danielmiessler/Fabric",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.510/fabric_Windows_x86_64.zip",
-            "hash": "fe71abf04d60bfe27beced8ce582e9309bc5f238d7b77894d78f67dc8bd5343e"
+            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.515/fabric_Windows_x86_64.zip",
+            "hash": "2edd648153db133c1f177a8b0ba758303b8e94b76a1fcdbf9ff0fa97259e34ff"
         },
         "arm64": {
-            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.510/fabric_Windows_arm64.zip",
-            "hash": "09f3ebd47c540450a685896f09c963aaeb957dbf94b774ae14fb56357201f939"
+            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.515/fabric_Windows_arm64.zip",
+            "hash": "87170a0429ffd5aab3d54b61c569e112d7540d827605625e8881d0f5b5dc7349"
         },
         "32bit": {
-            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.510/fabric_Windows_i386.zip",
-            "hash": "23b4e16af6d6d091f5e3e85ed9364088aa0f20b6d7691d2504bb444a3711dac9"
+            "url": "https://github.com/danielmiessler/Fabric/releases/download/v1.4.515/fabric_Windows_i386.zip",
+            "hash": "dbed70ba66ef3b4d736b877265f9c49061aa8b0277118aec4148a73b14467bcf"
         }
     },
     "extract_dir": "fabric",
