@@ -36,7 +36,7 @@
     "bin": [
         "VirtualBox.exe",
         "VBoxManage.exe",
-        "VBoxVRDP.exe"
+        "VBoxHeadless.exe"
     ],
     "shortcuts": [
         [
