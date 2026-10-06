@@ -10,12 +10,28 @@
             "extract_dir": "VirtualBox"
         }
     },
-    "pre_install": "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }",
+    "pre_install": [
+        "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }",
+        "$uninst = 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*'",
+        "foreach ($p in (Get-ItemProperty $uninst -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -match 'VirtualBox' })) { if ($p.PSChildName -match '^\\{[0-9A-Fa-f-]+\\}$') { Start-Process -Wait msiexec \"/x $($p.PSChildName) /qn /norestart\" | Out-Null } }",
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "$chain = @(); $acc = [System.IO.Path]::GetPathRoot($dir).TrimEnd('\\')",
+        "foreach ($seg in ($dir.Substring($acc.Length).Trim('\\').Split('\\'))) { $acc = Join-Path $acc $seg; $chain += $acc }",
+        "foreach ($p in $chain) { icacls $p /remove:g '*S-1-5-11' | Out-Null; icacls $p /remove:g '*S-1-1-0' | Out-Null }"
+    ],
     "installer": {
-        "script": "Start-Process -Wait \"$dir\\VirtualBox-$version-Win.exe\" --silent --ignore-reboot --modifypath --installpath \"$dir\" -lp \"$dir\""
+        "script": "$boot = Get-Item \"$dir\\VirtualBox-*-Win.exe\" | Select-Object -First 1; Start-Process -Wait $boot.FullName -ArgumentList '--silent','--msiparams',\"INSTALLDIR=`\"$dir`\"\""
     },
+    "post_install": [
+        "$chain = @(); $acc = [System.IO.Path]::GetPathRoot($dir).TrimEnd('\\')",
+        "foreach ($seg in ($dir.Substring($acc.Length).Trim('\\').Split('\\'))) { $acc = Join-Path $acc $seg; $chain += $acc }",
+        "foreach ($p in $chain) { if ($p -ne $dir -and $p -ne (Split-Path $dir -Parent)) { icacls $p /grant '*S-1-5-11:(OI)(CI)M' | Out-Null } }"
+    ],
     "uninstaller": {
-        "script": "Start-Process -Wait msiexec \"/x {2648F21C-85B3-4D71-9BC5-1D8B749842B5} /qn\""
+        "script": [
+            "$uninst = 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*'",
+            "foreach ($p in (Get-ItemProperty $uninst -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -match 'VirtualBox' })) { if ($p.PSChildName -match '^\\{[0-9A-Fa-f-]+\\}$') { Start-Process -Wait msiexec \"/x $($p.PSChildName) /qn /norestart\" | Out-Null } }"
+        ]
     },
     "bin": [
         "VirtualBox.exe",
