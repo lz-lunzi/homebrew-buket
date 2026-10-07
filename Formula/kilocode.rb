@@ -21,23 +21,23 @@ class Kilocode < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.3/kilo-darwin-arm64.zip"
-      sha256 "768dc9961a210628afc8d8db3a6ec5efe963c8588c3b7a8dc083339c2cf82116"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.8/kilo-darwin-arm64.zip"
+      sha256 "67703d15d38be9e0b4b025491aa08017e7019e15ba47491b2c563e39136700fc"
     end
     on_intel do
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.3/kilo-darwin-x64.zip"
-      sha256 "c803df31d887be14d932067044c8901287cbeaffbacae2c89fc87a3123f09ba4"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.8/kilo-darwin-x64.zip"
+      sha256 "32c2391e4dd8d009df83f9c8c85467d8cf3afc6fa398c2cf6fbc3e7cdcefd3e1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.3/kilo-linux-arm64.tar.gz"
-      sha256 "4df707c953b7987e265582986feab390c802ebe5393e537e60b12162b7c9c59d"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.8/kilo-linux-arm64.tar.gz"
+      sha256 "abb057ef7bdd65987274a15731272350a61149d0bd343931c809c097a4265273"
     end
     on_intel do
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.3/kilo-linux-x64.tar.gz"
-      sha256 "43c32cc25e09f2c8ae82faf480f482fb7de1f34ec5047edfde86158681ccb6bc"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.8.8/kilo-linux-x64.tar.gz"
+      sha256 "1072997aa8d54f001cacf76527465353b7a7abd76b7e08828309bd3576c6429b"
     end
   end
 

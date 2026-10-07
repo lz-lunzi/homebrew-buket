@@ -1,8 +1,8 @@
 class OhMyOpencode < Formula
   desc "OpenCode 插件 - 自定义智能体（oracle、librarian）和增强功能。与 Sisyphus 结合的最好的智能体工具用于自主编程"
   homepage "https://github.com/code-yeongyu/oh-my-opencode"
-  url "https://registry.npmjs.org/oh-my-opencode/-/oh-my-opencode-5.1.21.tgz"
-  sha256 "6b40c692c1227fb5e684ca8d176117575da1aa572b58ad049eb5436f9e748261"
+  url "https://registry.npmjs.org/oh-my-opencode/-/oh-my-opencode-5.1.23.tgz"
+  sha256 "c05c7803889f9c82fcefef46b7af99ef7638e8681d73e53f2c615afcf9b7ea27"
   license "MIT"
 
   depends_on "node"
