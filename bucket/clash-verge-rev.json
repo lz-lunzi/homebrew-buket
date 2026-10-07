@@ -1,0 +1,61 @@
+{
+    "version": "2.5.7",
+    "description": "Continuation of Clash Verge - A Clash Meta GUI based on Tauri. 非管理员可升级版：未安装系统服务时无需提权。",
+    "homepage": "https://github.com/clash-verge-rev/clash-verge-rev",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.7/Clash.Verge_2.5.7_x64-setup.exe#/dl.7z",
+            "hash": "91990f1c1d7bfd3ca3de0faafef462b2305dc24afcf5c0dfcbe8d38dce0bf8b8"
+        },
+        "arm64": {
+            "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.7/Clash.Verge_2.5.7_arm64-setup.exe#/dl.7z",
+            "hash": "280d438e6d2eec2e010964b81a23527ea3fca267bbbc838fa4861cb013281f6f"
+        }
+    },
+    "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\uninst*\" -Force -Recurse",
+    "installer": {
+        "script": [
+            "ensure \"$persist_dir\" | Out-Null",
+            "$targetPath = \"$env:APPDATA\\io.github.clash-verge-rev.clash-verge-rev\"",
+            "$linkType = (Get-Item -Path $targetPath -ErrorAction SilentlyContinue).LinkType",
+            "if (Test-Path $targetPath) {",
+            "    if ($linkType -eq 'Junction') {",
+            "        Remove-Item -Path $targetPath -Force",
+            "    } else {",
+            "        Get-ChildItem -Path $targetPath -Force | Move-Item -Destination $persist_dir -Force",
+            "        Remove-Item -Path $targetPath -Force -Recurse",
+            "    }",
+            "}",
+            "New-Item \"$env:APPDATA\\io.github.clash-verge-rev.clash-verge-rev\" -ItemType Junction -Target \"$persist_dir\" | Out-Null"
+        ]
+    },
+    "pre_uninstall": [
+        "Stop-Process -Name 'clash-verge', 'clash-verge-service', 'verge-mihomo', 'clash-meta' -Force -ErrorAction SilentlyContinue",
+        "if (Get-Service -Name 'clash_verge_service' -ErrorAction SilentlyContinue) {",
+        "    if (is_admin) { Start-Process \"$dir\\resources\\clash-verge-service-uninstall.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden'; Start-Sleep -Seconds 3 }",
+        "    else { warn \"检测到 clash_verge_service，非管理员跳过服务卸载；如需彻底清理请以管理员运行 $dir\\resources\\clash-verge-service-uninstall.exe\" }",
+        "}"
+    ],
+    "uninstaller": {
+        "script": "Remove-Item \"$env:APPDATA\\io.github.clash-verge-rev.clash-verge-rev\" -Recurse -Force -ErrorAction 'SilentlyContinue'"
+    },
+    "shortcuts": [
+        [
+            "clash-verge.exe",
+            "Clash Verge"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v$version/Clash.Verge_$version_x64-setup.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v$version/Clash.Verge_$version_arm64-setup.exe#/dl.7z"
+            }
+        }
+    },
+    "notes": "与 extras 版差异：pre_uninstall 不再强制要求管理员（系统服务未安装时直接跳过清理），升级/卸载均可在普通权限完成。配置数据保存在 Scoop 全局 persist 目录。若需要 TUN 模式的系统服务，请在应用内手动安装服务，并在卸载前以管理员运行 resources\\clash-verge-service-uninstall.exe。"
+}
