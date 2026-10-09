@@ -30,7 +30,7 @@
 ### 支持的自动更新
 
 #### Formula
-agentsync、bifrost、codebuddy-code、litellm、nine_remote、nine_router、octopus、oh-my-openagent、omniroute、omp、pm2、qodercli、relayplane、trae-cli
+agentsync、bifrost、codebuddy-code、litellm、nine_remote、nine_router、octop、octopus、oh-my-openagent、omniroute、omp、pm2、qodercli、relayplane、trae-cli
 
 #### Cask
 ai-gateway、codebuddy-cn、flclash、github-store、nyro、otty、quotio、skills-manage、skills-manager、v2rayn、xterminal、z-code、zenflow

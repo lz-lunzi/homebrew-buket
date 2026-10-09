@@ -1,0 +1,48 @@
+{
+    "version": "1.0.2b6",
+    "description": "Tencent Octop - self-hosted AI assistant (multi-user, multi-agent), portable edition",
+    "homepage": "https://github.com/TencentCloud/Octop",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/TencentCloud/Octop/releases/download/v1.0.2b6/Octop-portable-windows-amd64-1.0.2b6.zip",
+            "hash": "95fa3deb19fbac211fd3ff186a9317737fc54acca39dd15e275f6d552bcb0e71",
+            "extract_dir": "Octop-windows-amd64"
+        },
+        "arm64": {
+            "url": "https://github.com/TencentCloud/Octop/releases/download/v1.0.2b6/Octop-portable-windows-arm64-1.0.2b6.zip",
+            "hash": "e5900833047fbc8b05814cf3a7a91fdee53b3dd70815ea5e55a3b45d59d5268a",
+            "extract_dir": "Octop-windows-arm64"
+        }
+    },
+    "bin": [
+        [
+            "start.bat",
+            "octop"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "start.bat",
+            "Octop"
+        ]
+    ],
+    "persist": "data",
+    "notes": "Run 'octop' to start the server; the dashboard is at http://127.0.0.1:8088. Use --home/--host/--port to customize.",
+    "checkver": {
+        "github": "https://github.com/TencentCloud/Octop"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/TencentCloud/Octop/releases/download/v$version/Octop-portable-windows-amd64-$version.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/TencentCloud/Octop/releases/download/v$version/Octop-portable-windows-arm64-$version.zip"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}
