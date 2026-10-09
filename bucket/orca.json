@@ -1,12 +1,12 @@
 {
-    "version": "1.4.221",
+    "version": "1.4.223",
     "description": "IDE for orchestrating AI coding agents across terminals and worktrees",
     "homepage": "https://onorca.dev/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/stablyai/orca/releases/download/v1.4.221/orca-windows-setup.exe#/dl.7z",
-            "hash": "d618239bc89429abb183b2832cc83d371b01e9b3fa296607f0073566d503a181",
+            "url": "https://github.com/stablyai/orca/releases/download/v1.4.223/orca-windows-setup.exe#/dl.7z",
+            "hash": "45c6a1bc8ea4144e106974d006a0f591b600d02eb1b9195842471be79ad35bdb",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
