@@ -1,10 +1,10 @@
 {
-    "version": "5.1.24",
+    "version": "5.1.27",
     "description": "AI Agent Harness with Multi-Model Orchestration and LSP/AST Tools",
     "homepage": "https://github.com/code-yeongyu/oh-my-openagent",
     "license": "SUL-1.0",
-    "url": "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-5.1.24.tgz",
-    "hash": "33c38c342a70233092247e362940bf8e4168db101bf4730e2953b705822b0422",
+    "url": "https://registry.npmjs.org/oh-my-openagent/-/oh-my-openagent-5.1.27.tgz",
+    "hash": "982408fc1f771f8deeefb4f4b7a1ed5c46ca3fb03abd3307952244e88c9e9449",
     "bin": [
         "oh-my-openagent",
         "bin/oh-my-openagent.js"
