@@ -30,8 +30,8 @@
         "  - 插件集成（飞书、微信、钉钉等）",
         "  - 接入豆包2.1、Kimi3、GLM5.2、DeepSeek V4、Seedance、Seedream 等模型",
         "",
-        "更新: scoop update traework",
-        "卸载: scoop uninstall traework",
+        "更新: scoop update trae-cn",
+        "卸载: scoop uninstall trae-cn",
         "",
         "官网: https://www.trae.cn",
         "更新日志: https://www.trae.cn/changelog"

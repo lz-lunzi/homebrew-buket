@@ -1,4 +1,4 @@
-cask "traework-cn" do
+cask "trae-cn" do
   arch arm: "arm64", intel: "x64"
 
   version "2.3.90452"
