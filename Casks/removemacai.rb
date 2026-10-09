@@ -1,6 +1,6 @@
 cask "removemacai" do
-  version "1.0.2"
-  sha256 "ec351378a053e047159b8432cd05c3c53fa273eef23d3b50cefd4ab74697cdfc"
+  version "1.0.3"
+  sha256 "adb7b8b0f16f6704b976f55f715f89b965fad7f4e09d358de5d28a37bfad8250"
 
   url "https://github.com/omlahore/RemoveMacAI/releases/download/v#{version}/RemoveMacAI.zip"
   name "RemoveMacAI"
