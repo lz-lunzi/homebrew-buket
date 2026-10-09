@@ -1,31 +1,33 @@
 cask "traework-cn" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.3.71801"
-  sha256 arm:   "5b683886b3d1f0464912c93033ccf90d880adf242bb0020c27db1a5dfb67e322",
-         intel: "fb0278252510a13eed4ced63f960e85ea77ca66c6880625d149c4109210484c7"
+  version "2.3.90452"
+  sha256 arm:   "62398d6a8622deb7ca633feb3d34db37ecf27b9e547774b11765af0d50818a28",
+         intel: "c1740a4722b67362508d33d49714490ac44aef7abfe592eca096f2702264fb8f"
 
-  url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/#{version}/darwin/TraeWork_CN-darwin-#{arch}.dmg"
-  name "TraeWork CN"
-  desc "AI-powered work platform by ByteDance (Chinese version)"
-  homepage "https://www.trae.cn/work"
+  url "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/#{version}/darwin/TRAE_CN-darwin-#{arch}.dmg"
+  name "Trae CN"
+  desc "AI IDE and work platform by ByteDance (Chinese version, Trae Work + Trae Code merged)"
+  homepage "https://www.trae.cn"
 
   livecheck do
     url "https://api.trae.cn/icube/api/v1/native/version/trae/cn/latest"
     strategy :json do |json|
-      json.dig("data", "solo", "darwin", "version")
+      json.dig("data", "manifest", "darwin", "download")
+          &.find { |d| d["region"] == "cn" }&.dig("apple")
+          &.[](%r{stable/(\d+(?:\.\d+)*)/}, 1)
     end
   end
 
   auto_updates true
   depends_on macos: :monterey
 
-  app "TRAE SOLO CN.app"
+  app "Trae CN.app"
 
   zap trash: [
-    "~/Library/Application Support/cn.trae.solo.app",
-    "~/Library/Caches/cn.trae.solo.app",
-    "~/Library/Preferences/cn.trae.solo.app.plist",
-    "~/Library/Saved Application State/cn.trae.solo.app.savedState",
+    "~/Library/Application Support/cn.trae.app",
+    "~/Library/Caches/cn.trae.app",
+    "~/Library/Preferences/cn.trae.app.plist",
+    "~/Library/Saved Application State/cn.trae.app.savedState",
   ]
 end

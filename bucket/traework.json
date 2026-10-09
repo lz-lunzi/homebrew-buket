@@ -1,26 +1,27 @@
 {
-    "version": "2.3.87413",
-    "description": "字节跳动 AI 办公平台 — 支持 Work/Design 双模式，集成自动生成 PPT、数据分析、深度研究、文档生成，接入豆包2.1、Kimi3、GLM5.2、DeepSeek V4 等模型",
+    "version": "2.3.90452",
+    "description": "字节跳动 AI IDE 与办公平台（Trae Work 与 Trae Code 已合并为 Trae CN）— AI 编程、自动生成 PPT、数据分析、深度研究、文档生成，接入豆包2.1、Kimi3、GLM5.2、DeepSeek V4 等模型",
     "homepage": "https://www.trae.cn",
     "license": "Freeware",
     "depends": "innounp",
-    "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.87413/win32/TraeWork_CN-Setup-x64.exe",
-    "hash": "d1482ee8ca099341229f359f10682a26a798335edb63e3210c061cd17ef4fc27",
+    "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.90452/win32/TRAE_CN-Setup-x64.exe",
+    "hash": "56a4c50383f6b9a93a971d5926e56c0b1520a5f7628a2a7fa0b493530cf4c2ea",
     "installer": {
         "script": "Expand-InnoArchive -Path \"$dir\\$fname\" -ExtractDir '{code_GetDestDir}' -Removal"
     },
     "shortcuts": [
         [
-            "TRAE SOLO CN.exe",
-            "TraeWork"
+            "Trae CN.exe",
+            "Trae CN"
         ]
     ],
     "notes": [
-        "TraeWork 已安装！",
+        "Trae CN 已安装（Trae Work 与 Trae Code 已合并）！",
         "",
-        "TraeWork 是字节跳动推出的 AI 办公平台，支持多种工作场景。",
+        "Trae CN 是字节跳动推出的 AI IDE 与办公平台。",
         "",
         "核心功能：",
+        "  - AI 编程：代码补全、Agent 编程、CLI 工具链",
         "  - Work 模式：自动生成 PPT、数据分析、深度研究、文档生成",
         "  - Design 模式：图片编辑与设计",
         "  - 电脑控制功能",
@@ -37,11 +38,11 @@
     ],
     "checkver": {
         "url": "https://api.trae.cn/icube/api/v1/native/version/trae/cn/latest",
-        "jsonpath": "$.data.solo.win32.download[0].x64",
-        "regex": "stable/([\\d.]+)/win32/TraeWork"
+        "jsonpath": "$.data.manifest.win32.download[0].x64",
+        "regex": "stable/([\\d.]+)/win32/TRAE"
     },
     "autoupdate": {
-        "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/$version/win32/TraeWork_CN-Setup-x64.exe",
+        "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/$version/win32/TRAE_CN-Setup-x64.exe",
         "hash": {
             "mode": "download"
         }
