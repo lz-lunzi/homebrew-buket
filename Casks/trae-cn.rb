@@ -31,3 +31,6 @@ cask "trae-cn" do
     "~/Library/Saved Application State/cn.trae.app.savedState",
   ]
 end
+
+  deprecate! date: "2026-10-10", because: "moved to homebrew/cask", replacement_cask: "trae-cn"
+  disable! date: "2027-10-10", because: "moved to homebrew/cask", replacement_cask: "trae-cn"
